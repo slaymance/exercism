@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/robot-name/obj/Debug/netcoreapp2.1/RobotName.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/robot-name/obj/Debug/netcoreapp2.1/RobotName.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/robot-name/obj/Debug/netcoreapp2.1/RobotName.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/RobotName.deps.json
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/RobotName.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/RobotName.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/RobotName.dll
+/Users/slaymanc/code/exercism/fsharp/robot-name/bin/Debug/netcoreapp2.1/RobotName.pdb
+/Users/slaymanc/code/exercism/fsharp/robot-name/obj/Debug/netcoreapp2.1/RobotName.dll
+/Users/slaymanc/code/exercism/fsharp/robot-name/obj/Debug/netcoreapp2.1/RobotName.pdb
