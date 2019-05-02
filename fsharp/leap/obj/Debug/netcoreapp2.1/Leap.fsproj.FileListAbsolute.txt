@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/leap/obj/Debug/netcoreapp2.1/Leap.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/leap/obj/Debug/netcoreapp2.1/Leap.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/leap/obj/Debug/netcoreapp2.1/Leap.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/Leap.deps.json
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/Leap.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/Leap.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/Leap.dll
+/Users/slaymanc/code/exercism/fsharp/leap/bin/Debug/netcoreapp2.1/Leap.pdb
+/Users/slaymanc/code/exercism/fsharp/leap/obj/Debug/netcoreapp2.1/Leap.dll
+/Users/slaymanc/code/exercism/fsharp/leap/obj/Debug/netcoreapp2.1/Leap.pdb

@@ -1,0 +1,3 @@
+/Users/slaymanc/code/exercism/fsharp/hamming/obj/Debug/netcoreapp2.1/Hamming.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/hamming/obj/Debug/netcoreapp2.1/Hamming.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/hamming/obj/Debug/netcoreapp2.1/Hamming.AssemblyInfo.fs
