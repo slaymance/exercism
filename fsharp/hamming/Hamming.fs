@@ -1,6 +1,11 @@
 ﻿module Hamming
 
 let distance (strand1: string) (strand2: string): int option =
-  let ham = 0
-  String.forall (fun c -> printfn "%d" c) strand1
-  1
+  if String.length strand1 <> String.length strand2 then None
+  else
+    Some(Seq.fold2 (fun accumulator char1 char2 ->
+      match char1 with
+      | char1 when char1 <> char2 -> accumulator + 1
+      | _ -> accumulator
+    ) 0 strand1 strand2)
+
