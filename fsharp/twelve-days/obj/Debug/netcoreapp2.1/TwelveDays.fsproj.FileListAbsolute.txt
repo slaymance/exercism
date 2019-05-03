@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/TwelveDays.deps.json
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/TwelveDays.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/TwelveDays.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/TwelveDays.dll
+/Users/slaymanc/code/exercism/fsharp/twelve-days/bin/Debug/netcoreapp2.1/TwelveDays.pdb
+/Users/slaymanc/code/exercism/fsharp/twelve-days/obj/Debug/netcoreapp2.1/TwelveDays.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/twelve-days/obj/Debug/netcoreapp2.1/TwelveDays.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/twelve-days/obj/Debug/netcoreapp2.1/TwelveDays.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/twelve-days/obj/Debug/netcoreapp2.1/TwelveDays.dll
+/Users/slaymanc/code/exercism/fsharp/twelve-days/obj/Debug/netcoreapp2.1/TwelveDays.pdb
