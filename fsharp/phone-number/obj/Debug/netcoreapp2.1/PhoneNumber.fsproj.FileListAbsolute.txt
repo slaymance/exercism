@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/phone-number/obj/Debug/netcoreapp2.1/PhoneNumber.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/phone-number/obj/Debug/netcoreapp2.1/PhoneNumber.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/phone-number/obj/Debug/netcoreapp2.1/PhoneNumber.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/PhoneNumber.deps.json
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/PhoneNumber.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/PhoneNumber.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/PhoneNumber.dll
+/Users/slaymanc/code/exercism/fsharp/phone-number/bin/Debug/netcoreapp2.1/PhoneNumber.pdb
+/Users/slaymanc/code/exercism/fsharp/phone-number/obj/Debug/netcoreapp2.1/PhoneNumber.dll
+/Users/slaymanc/code/exercism/fsharp/phone-number/obj/Debug/netcoreapp2.1/PhoneNumber.pdb
