@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/Isogram.deps.json
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/Isogram.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/Isogram.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/Isogram.dll
+/Users/slaymanc/code/exercism/fsharp/isogram/bin/Debug/netcoreapp2.1/Isogram.pdb
+/Users/slaymanc/code/exercism/fsharp/isogram/obj/Debug/netcoreapp2.1/Isogram.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/isogram/obj/Debug/netcoreapp2.1/Isogram.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/isogram/obj/Debug/netcoreapp2.1/Isogram.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/isogram/obj/Debug/netcoreapp2.1/Isogram.dll
+/Users/slaymanc/code/exercism/fsharp/isogram/obj/Debug/netcoreapp2.1/Isogram.pdb
