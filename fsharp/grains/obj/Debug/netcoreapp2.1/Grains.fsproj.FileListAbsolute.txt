@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/Grains.deps.json
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/Grains.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/Grains.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/Grains.dll
+/Users/slaymanc/code/exercism/fsharp/grains/bin/Debug/netcoreapp2.1/Grains.pdb
+/Users/slaymanc/code/exercism/fsharp/grains/obj/Debug/netcoreapp2.1/Grains.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/grains/obj/Debug/netcoreapp2.1/Grains.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/grains/obj/Debug/netcoreapp2.1/Grains.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/grains/obj/Debug/netcoreapp2.1/Grains.dll
+/Users/slaymanc/code/exercism/fsharp/grains/obj/Debug/netcoreapp2.1/Grains.pdb
