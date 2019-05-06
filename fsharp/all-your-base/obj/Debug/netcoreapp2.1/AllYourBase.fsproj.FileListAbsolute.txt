@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/AllYourBase.deps.json
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/AllYourBase.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/AllYourBase.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/AllYourBase.dll
+/Users/slaymanc/code/exercism/fsharp/all-your-base/bin/Debug/netcoreapp2.1/AllYourBase.pdb
+/Users/slaymanc/code/exercism/fsharp/all-your-base/obj/Debug/netcoreapp2.1/AllYourBase.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/all-your-base/obj/Debug/netcoreapp2.1/AllYourBase.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/all-your-base/obj/Debug/netcoreapp2.1/AllYourBase.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/all-your-base/obj/Debug/netcoreapp2.1/AllYourBase.dll
+/Users/slaymanc/code/exercism/fsharp/all-your-base/obj/Debug/netcoreapp2.1/AllYourBase.pdb
