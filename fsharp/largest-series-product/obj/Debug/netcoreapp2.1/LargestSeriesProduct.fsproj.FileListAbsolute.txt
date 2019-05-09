@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/LargestSeriesProduct.deps.json
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/LargestSeriesProduct.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/LargestSeriesProduct.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/LargestSeriesProduct.dll
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/bin/Debug/netcoreapp2.1/LargestSeriesProduct.pdb
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/obj/Debug/netcoreapp2.1/LargestSeriesProduct.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/obj/Debug/netcoreapp2.1/LargestSeriesProduct.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/obj/Debug/netcoreapp2.1/LargestSeriesProduct.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/obj/Debug/netcoreapp2.1/LargestSeriesProduct.dll
+/Users/slaymanc/code/exercism/fsharp/largest-series-product/obj/Debug/netcoreapp2.1/LargestSeriesProduct.pdb
