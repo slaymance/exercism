@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/NthPrime.deps.json
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/NthPrime.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/NthPrime.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/NthPrime.dll
+/Users/slaymanc/code/exercism/fsharp/nth-prime/bin/Debug/netcoreapp2.1/NthPrime.pdb
+/Users/slaymanc/code/exercism/fsharp/nth-prime/obj/Debug/netcoreapp2.1/NthPrime.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/nth-prime/obj/Debug/netcoreapp2.1/NthPrime.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/nth-prime/obj/Debug/netcoreapp2.1/NthPrime.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/nth-prime/obj/Debug/netcoreapp2.1/NthPrime.dll
+/Users/slaymanc/code/exercism/fsharp/nth-prime/obj/Debug/netcoreapp2.1/NthPrime.pdb
