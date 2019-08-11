@@ -1,0 +1,13 @@
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/ComplexNumbers.deps.json
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/ComplexNumbers.runtimeconfig.json
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/ComplexNumbers.runtimeconfig.dev.json
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/ComplexNumbers.dll
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/bin/Debug/netcoreapp2.1/ComplexNumbers.pdb
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/obj/Debug/netcoreapp2.1/ComplexNumbers.fsprojAssemblyReference.cache
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/obj/Debug/netcoreapp2.1/ComplexNumbers.AssemblyInfoInputs.cache
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/obj/Debug/netcoreapp2.1/ComplexNumbers.AssemblyInfo.fs
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/obj/Debug/netcoreapp2.1/ComplexNumbers.dll
+/Users/slaymanc/code/exercism/fsharp/complex-numbers/obj/Debug/netcoreapp2.1/ComplexNumbers.pdb
