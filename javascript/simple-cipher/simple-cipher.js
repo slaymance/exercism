@@ -15,8 +15,8 @@ export class Cipher {
    * e.g. a = 0, b = 1, c = 2, etc.
    */
   constructor(key = Cipher.generateRandomKey()) {
-    this.#key = key;
-    this.#keyShift = [...key].map(char => char.toLowerCase().charCodeAt(0) - ASCII_START);
+    this.#key = key.replace(/[^A-Za-z]/g, '');
+    this.#keyShift = [...this.#key].map(char => char.toLowerCase().charCodeAt(0) - ASCII_START);
   }
 
   /**
