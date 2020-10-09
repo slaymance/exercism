@@ -44,11 +44,9 @@ generateAlphaCombinations(ALPHABETICALS_LENGTH).forEach(alphaCombo => {
 
 // Randomly shuffle list of all possible names using Fisher-Yates
 const shuffleNames = ([...names]) => {
-  for (let i = names.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * i)
-    const temp = names[i]
-    names[i] = names[j]
-    names[j] = temp
+  for (let first = names.length - 1; first > 0; first--) {
+    const second = Math.floor(Math.random() * first);
+    [names[first], names[second]] = [names[second], names[first]];
   }
 
   return names;
