@@ -29,7 +29,9 @@ export class Cipher {
     ).join('');
   }
 
-  // Similar to encode, but subtracts the shift for each character based on the key
+  /**
+   * Similar to encode, but subtracts the shift for each character based on the key
+   */
   decode([...chars]) {
     return chars.map((char, i) => String.fromCharCode(
       ((char.charCodeAt(0) - ASCII_START) - (this.#keyShift[i % this.#keyShift.length]) + ASCII_LENGTH) % ASCII_LENGTH + ASCII_START)
