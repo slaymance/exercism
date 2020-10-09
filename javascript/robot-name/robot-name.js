@@ -3,7 +3,7 @@
 
 const ALPHABETICALS_LENGTH = 2;
 const NUMERICALS_LENGTH = 3;
-const FIRST_ASCII = 65;
+const FIRST_ASCII = 'A'.charCodeAt(0);
 
 export class Robot {
   #name
