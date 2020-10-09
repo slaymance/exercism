@@ -5,8 +5,6 @@ const ALPHABETICALS_LENGTH = 2;
 const NUMERICALS_LENGTH = 3;
 const FIRST_ASCII = 65;
 
-let possibleNames;
-
 export class Robot {
   #name
 
@@ -19,7 +17,7 @@ export class Robot {
   }
 
   reset() {
-    this.#name = possibleNames.pop();
+    this.#name = eligibleNames.pop();
   }
 }
 
@@ -36,19 +34,16 @@ const generateAlphaCombinations = (length, combo = '') => {
   return alphaCombos;
 }
 
-const generateAllNames = () => {
-  const names = [];
-  generateAlphaCombinations(ALPHABETICALS_LENGTH).forEach(alphaCombo => {
-    for (let num = 0; num < Math.pow(10, NUMERICALS_LENGTH); num++) {
-      names.push(alphaCombo + (`${num}`).padStart(NUMERICALS_LENGTH, '0'));
-    }
-  })
-
-  return names;
-};
+// Generate an array of all possible names only once
+const possibleNames = [];
+generateAlphaCombinations(ALPHABETICALS_LENGTH).forEach(alphaCombo => {
+  for (let num = 0; num < Math.pow(10, NUMERICALS_LENGTH); num++) {
+    possibleNames.push(alphaCombo + (`${num}`).padStart(NUMERICALS_LENGTH, '0'));
+  }
+});
 
 // Randomly shuffle list of all possible names using Fisher-Yates
-const shuffleNames = (names) => {
+const shuffleNames = ([...names]) => {
   for (let i = names.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * i)
     const temp = names[i]
@@ -59,7 +54,9 @@ const shuffleNames = (names) => {
   return names;
 };
 
+let eligibleNames;
+
 // An IIFE that makes all names eligible for selection
 (Robot.releaseNames = () => {
-  possibleNames = shuffleNames(generateAllNames());
+  eligibleNames = shuffleNames(possibleNames);
 })();
