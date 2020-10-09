@@ -46,5 +46,5 @@ const shuffleNames = (names) => {
 
 // An IIFE that makes all names eligible for selection
 (Robot.releaseNames = () => {
-  possibleNames = shuffleNames(generateAllNames([]));
+  possibleNames = shuffleNames(generateAllNames());
 })();
