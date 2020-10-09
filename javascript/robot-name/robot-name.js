@@ -1,6 +1,12 @@
 // This is only a SKELETON file for the 'Robot Name' exercise. It's been
 // provided as a convenience to get your started writing code faster.
 
+const ALPHABETICALS_LENGTH = 2;
+const NUMERICALS_LENGTH = 3;
+const FIRST_ASCII = 65;
+
+let possibleNames;
+
 export class Robot {
   #name
 
@@ -17,17 +23,26 @@ export class Robot {
   }
 }
 
-let possibleNames;
+const generateAlphaCombinations = (length, combo = '') => {
+  if (combo.length === length) {
+    return [combo];
+  }
+
+  const alphaCombos = [];
+  for (let i = 0; i < 26; i++) {
+    alphaCombos.push(...(generateAlphaCombinations(length, combo + String.fromCharCode(i + FIRST_ASCII))));
+  }
+
+  return alphaCombos;
+}
 
 const generateAllNames = () => {
   const names = [];
-  for (let firstLetter = 65; firstLetter <= 90; firstLetter++) {
-    for (let secondLetter = 65; secondLetter <= 90; secondLetter++) {
-      for (let num = 0; num < 1000; num++) {
-        names.push(`${String.fromCharCode(firstLetter)}${String.fromCharCode(secondLetter)}${num.toString().padStart(3, '0')}`);
-      }
+  generateAlphaCombinations(ALPHABETICALS_LENGTH).forEach(alphaCombo => {
+    for (let num = 0; num < Math.pow(10, NUMERICALS_LENGTH); num++) {
+      names.push(alphaCombo + (`${num}`).padStart(NUMERICALS_LENGTH, '0'));
     }
-  }
+  })
 
   return names;
 };
