@@ -35,7 +35,7 @@ const produceValidEquation = question => {
 
   // Check for proper syntax
   // Any valid expression in this case will have an odd number of symbols
-  // If index is even, then the element should be an operator; if odd, then it should be a number
+  // If index is even, then the element should be a number; if odd, then it should be an operator
   const equation = parsedQuestion.slice(2, -1);
   if (
     isEven(equation.length) || !equation.every(
