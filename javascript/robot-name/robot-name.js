@@ -12,14 +12,12 @@ export class Robot {
     this.reset();
   }
 
-  static eligibleNames
-
   get name() {
     return this.#name;
   }
 
   reset() {
-    this.#name = Robot.eligibleNames.pop();
+    this.#name = eligibleNames.pop();
   }
 }
 
@@ -54,7 +52,9 @@ const shuffleNames = ([...names]) => {
   return names;
 };
 
+let eligibleNames;
+
 // An IIFE that makes all names eligible for selection
 (Robot.releaseNames = () => {
-  Robot.eligibleNames = shuffleNames(possibleNames);
+  eligibleNames = shuffleNames(possibleNames);
 })();
