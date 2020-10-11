@@ -36,12 +36,12 @@ const checkForUnknownOperation = parsedQuestion => {
   return parsedQuestion;
 };
 
-const produceValidExpression = question => {
-  const expression = checkForUnknownOperation(parseQuestion(question)).slice(2, -1);
+const parseExpression = question => question.slice(2, -1);
 
-  // Check for proper syntax
-  // Any valid expression in this case will have an odd number of symbols
-  // If index is even, then the element should be a number; if odd, then it should be an operator
+// Check for proper syntax
+// Any valid expression in this case will have an odd number of symbols
+// If index is even, then the element should be a number; if odd, then it should be an operator
+const checkForSyntaxError = expression => {
   if (
     isEven(expression.length) || !expression.every(
       (word, i) => isEven(i) ? isNumber(word) : isOperatorString(word)
@@ -51,5 +51,11 @@ const produceValidExpression = question => {
   return expression;
 };
 
-export const answer = question => produceValidExpression(question)
-  .reduce((acc, cur, i, src) => isNumber(cur) ? acc : OPERATOR_MAP[cur](acc, src[i + 1]));
+export const answer = question => question
+  |> parseQuestion
+  |> checkForUnknownOperation
+  |> parseExpression
+  |> checkForSyntaxError
+  |> #.reduce(
+    (acc, cur, i, src) => isNumber(cur) ? acc : OPERATOR_MAP[cur](acc, src[i + 1])
+  );
