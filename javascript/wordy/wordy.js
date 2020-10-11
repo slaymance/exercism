@@ -12,18 +12,6 @@ const isNumber = x => !isNaN(x);
 const isEven = int => int % 2 === 0;
 const isOperatorString = word => typeof word === 'string' && word.match(/[\+\-\*\/]/);
 
-// Parse the question into an array made up of the question, numbers, and mathematical operators
-const parseQuestion = question => question
-  .replace(/plus/g, '+')
-  .replace(/minus/g, '-')
-  .replace(/multiplied by/g, '*')
-  .replace(/divided by/g, '/')
-  .replace(/raised to the/g, '**')
-  .replace(/(st|nd|rd|th)? power/g, '')
-  .replace('?', ' ?')
-  .split(' ')
-  .map(word => isNumber(word) ? Number(word) : word);
-
 // Make sure the question is in the form of 'What is ...?', numbers, and operators
 const checkForUnknownOperation = parsedQuestion => {
   if (!parsedQuestion.every((word, i) => {
@@ -50,9 +38,18 @@ const checkForSyntaxError = expression => {
 };
 
 export const answer = question => question
-  |> parseQuestion
+  // Lines 42-50 parse the question into an array in the form ['What', 'is', Number|Operator, '?']
+  |> #.replace(/raised to the/g, '**')
+  |> #.replace(/multiplied by/g, '*')
+  |> #.replace(/divided by/g, '/')
+  |> #.replace(/plus/g, '+')
+  |> #.replace(/minus/g, '-')
+  |> #.replace(/(st|nd|rd|th)? power/g, '')
+  |> #.replace('?', ' ?')
+  |> #.split(' ')
+  |> #.map(word => isNumber(word) ? Number(word) : word)
   |> checkForUnknownOperation
-  |> #.slice(2, -1)
+  |> #.slice(2, -1) // Get rid of 'What', 'is', and '?' so it's just the expression
   |> checkForSyntaxError
   |> #.reduce(
     (acc, cur, i, src) => isNumber(cur) ? acc : OPERATOR_MAP[cur](acc, src[i + 1])
