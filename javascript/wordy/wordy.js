@@ -28,10 +28,8 @@ const checkForUnknownOperation = parsedQuestion => {
 // Any valid expression in this case will have an odd number of symbols
 // If index is even, then the element should be a number; if odd, then it should be an operator
 const checkForSyntaxError = expression => {
-  if (
-    isEven(expression.length) || !expression.every(
-      (word, i) => isEven(i) ? isNumber(word) : isOperatorString(word)
-    )
+  if (isEven(expression.length) || !expression.every(
+    (word, i) => isEven(i) ? isNumber(word) : isOperatorString(word))
   ) throw new Error('Syntax error');
 
   return expression;
