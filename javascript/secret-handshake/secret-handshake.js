@@ -18,4 +18,4 @@ const ACTIONS = ['wink', 'double blink', 'close your eyes', 'jump'];
  * if it doesn't need to be reversed. It isn't optimal since I don't need to create a new array if a reverse isn't
  * needed. Any thoughts to improve it?
  */
-export const commands = int => ACTIONS.filter((_, i) => int & 2 ** i)[int & 16 ? 'reverse' : 'slice']();
+export const commands = int => ACTIONS.filter((_, i) => 1 << i & int)[int & 16 ? 'reverse' : 'slice']();
