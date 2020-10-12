@@ -10,7 +10,7 @@ const OPERATOR_MAP = {
 // Helper functions for verifying words in the supplied question
 const isNumber = x => !isNaN(x);
 const isEven = int => int % 2 === 0;
-const isOperatorString = word => typeof word === 'string' && word.match(/[\+\-\*\/]/);
+const isOperatorString = word => Object.keys(OPERATOR_MAP).includes(word);
 
 // Make sure the question is in the form of 'What is ...?', numbers, and operators
 const checkForUnknownOperation = parsedQuestion => {
