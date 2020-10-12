@@ -6,35 +6,35 @@ describe('Secret Handshake', () => {
       expect(commands(1)).toEqual(['wink']);
     });
 
-    xtest('double blink for 10', () => {
+    test('double blink for 10', () => {
       expect(commands(2)).toEqual(['double blink']);
     });
 
-    xtest('close your eyes for 100', () => {
+    test('close your eyes for 100', () => {
       expect(commands(4)).toEqual(['close your eyes']);
     });
 
-    xtest('jump for 1000', () => {
+    test('jump for 1000', () => {
       expect(commands(8)).toEqual(['jump']);
     });
 
-    xtest('combine two actions', () => {
+    test('combine two actions', () => {
       expect(commands(3)).toEqual(['wink', 'double blink']);
     });
 
-    xtest('reverse two actions', () => {
+    test('reverse two actions', () => {
       expect(commands(19)).toEqual(['double blink', 'wink']);
     });
 
-    xtest('reversing one action gives the same action', () => {
+    test('reversing one action gives the same action', () => {
       expect(commands(24)).toEqual(['jump']);
     });
 
-    xtest('reversing no actions still gives no actions', () => {
+    test('reversing no actions still gives no actions', () => {
       expect(commands(16)).toEqual([]);
     });
 
-    xtest('all possible actions', () => {
+    test('all possible actions', () => {
       expect(commands(15)).toEqual([
         'wink',
         'double blink',
@@ -43,7 +43,7 @@ describe('Secret Handshake', () => {
       ]);
     });
 
-    xtest('reverse all possible actions', () => {
+    test('reverse all possible actions', () => {
       expect(commands(31)).toEqual([
         'jump',
         'close your eyes',
@@ -52,7 +52,7 @@ describe('Secret Handshake', () => {
       ]);
     });
 
-    xtest('do nothing for zero', () => {
+    test('do nothing for zero', () => {
       expect(commands(0)).toEqual([]);
     });
   });
