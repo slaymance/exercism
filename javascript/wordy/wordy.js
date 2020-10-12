@@ -15,10 +15,12 @@ const isOperatorString = word => typeof word === 'string' && word.match(/[\+\-\*
 // Make sure the question is in the form of 'What is ...?', numbers, and operators
 const checkForUnknownOperation = parsedQuestion => {
   if (!parsedQuestion.every((word, i) => {
-    if (i === 0) return word === 'What';
-    if (i === 1) return word === 'is';
-    if (i === parsedQuestion.length - 1) return word === '?';
-    return isNumber(word) || isOperatorString(word);
+    switch (i) {
+      case 0: return word === 'What';
+      case 1: return word === 'is';
+      case parsedQuestion.length - 1: return word === '?';
+      default: return isNumber(word) || isOperatorString(word);
+    }
   })) throw new Error('Unknown operation');
 
   return parsedQuestion;
@@ -29,8 +31,8 @@ const checkForUnknownOperation = parsedQuestion => {
 // If index is even, then the element should be a number; if odd, then it should be an operator
 const checkForSyntaxError = expression => {
   if (isEven(expression.length) || !expression.every(
-    (word, i) => isEven(i) ? isNumber(word) : isOperatorString(word))
-  ) throw new Error('Syntax error');
+    (word, i) => isEven(i) ? isNumber(word) : isOperatorString(word)
+  )) throw new Error('Syntax error');
 
   return expression;
 };
