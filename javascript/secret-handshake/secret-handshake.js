@@ -11,10 +11,11 @@ const ACTIONS = ['wink', 'double blink', 'close your eyes', 'jump'];
  * For example:
  * 13 -> 1101 so handshake will include index 0 ('wink'), index  2 ('close your eyes'), and index 3 ('jump')
  * 
- * A reverse of the handshake actions only occurs if the integer is wholly divisible by 16 an odd number of times.
- * int / 16 & 1 truncates the float number and checks if it's odd.
+ * A reverse of the handshake actions only occurs if the integer has a 1 in its 16-bit place.
+ * int & 16 returns truthy if int is wholly divisible by 16 an odd number of times.
+ * 
  * I wanted to see if I could accomplish this solution in one line, hence the conditional to slice the handshake array
  * if it doesn't need to be reversed. It isn't optimal since I don't need to create a new array if a reverse isn't
  * needed. Any thoughts to improve it?
  */
-export const commands = int => ACTIONS.filter((_, i) => int & 2 ** i)[int / 16 & 1 ? 'reverse' : 'slice']();
+export const commands = int => ACTIONS.filter((_, i) => int & 2 ** i)[int & 16 ? 'reverse' : 'slice']();
