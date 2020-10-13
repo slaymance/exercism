@@ -3,4 +3,4 @@
 // convenience to get you started writing code faster.
 //
 
-export const isLeap = year => !(year % 4) && !!(year % 100) || !(year % 400);
+export const isLeap = year => !(year % 100) ? !(year % 400) : !(year % 4);
