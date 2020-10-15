@@ -7,28 +7,42 @@ const isNumber = n => !isNaN(n);
 const isPositive = n => n > 0;
 
 export class Triangle {
-  static verifyTriangle(side1, side2, side3) {
-    return [side1, side2, side3].every(side => isNumber(side) && isPositive(side)) &&
+  static verifyTriangle(sides) {
+    const [side1, side2, side3] = sides;
+    return sides.length === 3 &&
+      sides.every(side => isNumber(side) && isPositive(side)) &&
       Math.min(side1, side2) + Math.min(side2, side3) >= Math.max(side1, side2, side3);
   }
 
-  #validTriangle
-  #sides
+  #sides;
+  #isEquilateral = false;
+  #isIsosceles = false;
+  #isScalene = false;
 
   constructor(...sides) {
-    this.#validTriangle = Triangle.verifyTriangle(...sides);
-    this.#sides = sides.sort();
+    this.#sides = sides;
+
+    if (Triangle.verifyTriangle(sides)) {
+      const uniqueSides = new Set(sides);
+      this.#isEquilateral = uniqueSides.size === 1;
+      this.#isIsosceles = uniqueSides.size <= 2;
+      this.#isScalene = uniqueSides.size === 3;
+    }
+  }
+
+  get sides() {
+    return this.#sides;
   }
 
   isEquilateral() {
-    return this.#validTriangle && this.#sides[0] === this.#sides[1] && this.#sides[1] === this.#sides[2];
+    return this.#isEquilateral;
   }
 
   isIsosceles() {
-    return this.#validTriangle && this.#sides[0] === this.#sides[1] || this.#sides[1] === this.#sides[2];
+    return this.#isIsosceles;
   }
 
   isScalene() {
-    return this.#validTriangle && !this.isIsosceles();
+    return this.#isScalene;
   }
 }
