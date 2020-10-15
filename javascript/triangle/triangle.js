@@ -3,20 +3,32 @@
 // convenience to get you started writing code faster.
 //
 
+const isNumber = n => !isNaN(n);
+const isPositive = n => n > 0;
+
 export class Triangle {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  static verifyTriangle(side1, side2, side3) {
+    return [side1, side2, side3].every(side => isNumber(side) && isPositive(side)) &&
+      Math.min(side1, side2) + Math.min(side2, side3) >= Math.max(side1, side2, side3);
+  }
+
+  #validTriangle
+  #sides
+
+  constructor(...sides) {
+    this.#validTriangle = Triangle.verifyTriangle(...sides);
+    this.#sides = sides.sort();
   }
 
   isEquilateral() {
-    throw new Error("Remove this statement and implement this function");
+    return this.#validTriangle && this.#sides[0] === this.#sides[1] && this.#sides[1] === this.#sides[2];
   }
 
   isIsosceles() {
-    throw new Error("Remove this statement and implement this function");
+    return this.#validTriangle && this.#sides[0] === this.#sides[1] || this.#sides[1] === this.#sides[2];
   }
 
   isScalene() {
-    throw new Error("Remove this statement and implement this function");
+    return this.#validTriangle && !this.isIsosceles();
   }
 }
