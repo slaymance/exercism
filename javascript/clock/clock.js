@@ -16,14 +16,14 @@ export class Clock {
     return (minutes % Clock.MINUTES_IN_DAY + Clock.MINUTES_IN_DAY) % Clock.MINUTES_IN_DAY;
   }
 
-  #time;
+  #time = 0;
 
   /**
-   * Converts given hours and minutes into a time of day and sets it to #time.
+   * Converts given hours and minutes into total minutes and adds it to #time.
    * #time is made private so the only way it can be manipulated is through the `plus` and `minus` instance methods.
    */
   constructor(hours = 0, minutes = 0) {
-    this.#time = Clock.timeInMinutes(hours * Clock.MINUTES_IN_HOUR + minutes);
+    this.plus(hours * Clock.MINUTES_IN_HOUR + minutes);
   }
 
   get time() {
@@ -31,19 +31,19 @@ export class Clock {
   }
 
   toString() {
-    return `${Math.floor(this.time / Clock.MINUTES_IN_HOUR)}`.padStart(2, 0) // Calculates hour
-      + ':'
-      + `${this.time % Clock.MINUTES_IN_HOUR}`.padStart(2, 0); // Calculates minute
+    return [
+      `${Math.floor(this.time / Clock.MINUTES_IN_HOUR)}`, // Calculates hour
+      `${this.time % Clock.MINUTES_IN_HOUR}` // Calculates minute
+    ].map(num => num.padStart(2, 0)).join(':');
   }
 
-  plus(minutes) {
+  plus(minutes = 0) {
     this.#time = Clock.timeInMinutes(this.time + minutes);
     return this;
   }
 
-  minus(minutes) {
-    this.#time = Clock.timeInMinutes(this.time - minutes);
-    return this;
+  minus(minutes = 0) {
+    return this.plus(-minutes);
   }
 
   equals(clock) {
