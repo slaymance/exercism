@@ -22,7 +22,7 @@ export class Clock {
    * Converts given hours and minutes into a time of day and sets it to #time.
    * #time is made private so the only way it can be manipulated is through the `plus` and `minus` instance methods.
    */
-  constructor(hours, minutes = 0) {
+  constructor(hours = 0, minutes = 0) {
     this.#time = Clock.timeInMinutes(hours * Clock.MINUTES_IN_HOUR + minutes);
   }
 
