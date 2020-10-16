@@ -32,9 +32,9 @@ export class Clock {
 
   toString() {
     return [
-      `${this.time / Clock.MINUTES_IN_HOUR | 0}`, // Calculates hour
-      `${this.time % Clock.MINUTES_IN_HOUR}` // Calculates minute
-    ].map(num => num.padStart(2, 0)).join(':');
+      this.time / Clock.MINUTES_IN_HOUR | 0, // Calculates hour
+      this.time % Clock.MINUTES_IN_HOUR // Calculates minute
+    ].map(num => `${num}`.padStart(2, 0)).join(':');
   }
 
   plus(minutes = 0) {
