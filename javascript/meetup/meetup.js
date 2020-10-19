@@ -7,7 +7,7 @@ const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const DESCRIPTORS = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 /**
- * Eh, it's not my most elegant solution, but it works.
+ * Eh, it's not my most elegant solution, but it works without loops.
  */
 export const meetup = (year, month, desc, day) => {
   /**
