@@ -9,8 +9,8 @@ const OPERATOR_MAP = {
 
 // Helper functions for verifying words in the supplied question
 const isNumber = x => !isNaN(x);
-const isEven = int => int % 2 === 0;
-const isOperatorString = word => Object.keys(OPERATOR_MAP).includes(word);
+const isEven = int => !(int & 1);
+const isOperatorString = word => !!(OPERATOR_MAP[word]);
 
 // Make sure the question is in the form of 'What is ...?', numbers, and operators
 const checkForUnknownOperation = parsedQuestion => {
@@ -47,7 +47,7 @@ export const answer = question => question
   |> #.replace(/(st|nd|rd|th)? power/g, '')
   |> #.replace('?', ' ?')
   |> #.split(' ')
-  |> #.map(word => isNumber(word) ? Number(word) : word)
+  |> #.map(word => +word || word) // converts to numbers if needed
   |> checkForUnknownOperation
   |> #.slice(2, -1) // Get rid of 'What', 'is', and '?' so it's just the expression
   |> checkForSyntaxError
