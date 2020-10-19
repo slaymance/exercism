@@ -47,14 +47,6 @@ export const transform = scores => fromPairs([...{
 }]);
 
 /**
- * My first iteration of the problem. It's certainly simpler than my iterator approach lol.
+ * Here's a one-liner.
  */
-export const transformFirst = scores => {
-  const scoreMapping = {};
-
-  for (let [score, letters] of Object.entries(scores)) {
-    letters.forEach(letter => scoreMapping[letter.toLowerCase()] = Number(score));
-  }
-
-  return scoreMapping;
-};
+export const transformAlt = scores => Object.entries(scores).reduce((acc, [score, letters]) => ({ ...acc, ...(letters.reduce((acc2, letter) => ({ ...acc2, [letter.toLowerCase()]: Number(score) }), {})) }), {})
