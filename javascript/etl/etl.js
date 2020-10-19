@@ -28,4 +28,4 @@ export const transform = scores => Object.fromEntries([...{
 /**
  * Here's a one-liner.
  */
-export const transformAlt = scores => Object.fromEntries(Object.entries(scores).flatMap(([score, letters]) => [...letters.map(letter => [letter.toLowerCase(), +score])]));
+export const transformAlt = scores => Object.fromEntries(Object.entries(scores).flatMap(([score, letters]) => letters.map(letter => [letter.toLowerCase(), +score])));
