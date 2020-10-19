@@ -4,7 +4,7 @@
 //
 
 const calculateSteps = (n, stepCount = 0) =>
-  n === 1 ? stepCount : calculateSteps(n & 1 ? 3 * n + 1 : n / 2, ++stepCount);
+  n === 1 ? stepCount : calculateSteps(n & 1 ? 3 * n + 1 : n / 2, stepCount + 1);
 
 export const steps = n => {
   if (n <= 0) throw new Error('Only positive numbers are allowed');
