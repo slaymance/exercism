@@ -3,6 +3,12 @@
 // convenience to get you started writing code faster.
 //
 
-export const convert = () => {
-  throw new Error("Remove this statement and implement this function");
+const RAIN_MAPPING = {
+  3: 'Pling',
+  5: 'Plang',
+  7: 'Plong'
 };
+
+export const convert = num => Object.entries(RAIN_MAPPING)
+  .reduce((acc, [factor, rainDrop]) => num % +factor ? acc : acc + rainDrop, '') || `${num}`;
+
