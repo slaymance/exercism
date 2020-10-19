@@ -10,5 +10,5 @@ const RAIN_MAPPING = {
 };
 
 export const convert = num => Object.entries(RAIN_MAPPING)
-  .reduce((acc, [factor, rainDrop]) => num % +factor ? acc : acc + rainDrop, '') || `${num}`;
+  .reduce((acc, [factor, rainDrop]) => num % factor ? acc : acc + rainDrop, '') || `${num}`;
 
