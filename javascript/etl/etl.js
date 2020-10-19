@@ -47,7 +47,7 @@ export const transform = scores => fromPairs([...{
 }]);
 
 /**
- * My first iteration of the problem.
+ * My first iteration of the problem. It's certainly simpler than my iterator approach lol.
  */
 export const transformFirst = scores => {
   const scoreMapping = {};
