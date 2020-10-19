@@ -10,7 +10,7 @@
  * 
  * Object.fromEntries requires Node version >12.0.0.
  */
-export const transform = scores => Object.fromEntries([...{
+export const transformA = scores => Object.fromEntries([...{
   ...scores,
   /**
    * This is the iterator that yields a pairing of a lower case letter and its score on each iteration.
@@ -28,4 +28,4 @@ export const transform = scores => Object.fromEntries([...{
 /**
  * Here's a one-liner.
  */
-export const transformAlt = scores => Object.fromEntries(Object.entries(scores).reduce((acc, [score, letters]) => [...acc, ...letters.map(letter => [letter.toLowerCase(), +score])], []));
+export const transform = scores => Object.fromEntries(Object.entries(scores).flatMap(([score, letters]) => [...letters.map(letter => [letter.toLowerCase(), +score])]));
