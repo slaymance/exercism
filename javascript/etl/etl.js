@@ -46,3 +46,15 @@ export const transform = scores => fromPairs([...{
   }
 }]);
 
+/**
+ * My first iteration of the problem.
+ */
+export const transformFirst = scores => {
+  const scoreMapping = {};
+
+  for (let [score, letters] of Object.entries(scores)) {
+    letters.forEach(letter => scoreMapping[letter.toLowerCase()] = Number(score));
+  }
+
+  return scoreMapping;
+};
