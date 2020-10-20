@@ -8,7 +8,7 @@ const isPositiveNumber = n => isFiniteNumber(n) && n > 0;
 
 export class Triangle {
   static verifyTriangle(sides) {
-    const [side1, side2, side3] = sides.sort();
+    const [side1, side2, side3] = sides.sort((a, b) => a - b);
     return sides.length === 3 &&
       sides.every(isPositiveNumber) &&
       side1 + side2 >= side3;
