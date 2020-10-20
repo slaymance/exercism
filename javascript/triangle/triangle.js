@@ -3,14 +3,13 @@
 // convenience to get you started writing code faster.
 //
 
-const isNumber = n => !isNaN(n);
-const isPositive = n => n > 0;
+const isPositiveNumber = n => !isNaN(n) && n > 0;
 
 export class Triangle {
   static verifyTriangle(sides) {
     const [side1, side2, side3] = sides;
     return sides.length === 3 &&
-      sides.every(side => isNumber(side) && isPositive(side)) &&
+      sides.every(isPositiveNumber) &&
       Math.min(side1, side2) + Math.min(side2, side3) >= Math.max(side1, side2, side3);
   }
 
