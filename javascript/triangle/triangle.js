@@ -11,7 +11,7 @@ export class Triangle {
     const [side1, side2, side3] = sides.sort();
     return sides.length === 3 &&
       sides.every(isPositiveNumber) &&
-      Math.min(side1, side2) + Math.min(side2, side3) >= Math.max(side1, side2, side3);
+      side1 + side2 >= side3;
   }
 
   #sides;
