@@ -3,7 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-const isPositiveNumber = n => !isNaN(n) && n > 0;
+const isFiniteNumber = n => typeof n === 'number' && isFinite(n);
+const isPositiveNumber = n => isFiniteNumber(n) && n > 0;
 
 export class Triangle {
   static verifyTriangle(sides) {
