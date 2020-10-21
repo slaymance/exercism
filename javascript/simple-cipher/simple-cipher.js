@@ -7,8 +7,12 @@ const ASCII_END = 122;
 const ASCII_LENGTH = ASCII_END - ASCII_START + 1;
 
 export class Cipher {
-  #key
-  #keyShift
+  static generateRandomKey() {
+    return String.fromCharCode(...[...Array(100)].map(() => Math.floor(Math.random() * ASCII_LENGTH) + ASCII_START));
+  }
+
+  #key;
+  #keyShift;
 
   /**
    * #keyShift is an array of the numerical values which represent shifts based on the key
@@ -24,22 +28,18 @@ export class Cipher {
    * Wraps to first character of key if text is longer than key
    */
   encode([...chars]) {
-    return chars.map((char, i) => String.fromCharCode(
-      ((char.charCodeAt(0) - ASCII_START) + (this.#keyShift[i % this.#keyShift.length])) % ASCII_LENGTH + ASCII_START)
-    ).join('');
+    return String.fromCharCode(...chars.map((char, i) =>
+      ((char.charCodeAt(0) - ASCII_START) + (this.#keyShift[i % this.#keyShift.length]))
+      % ASCII_LENGTH + ASCII_START))
   }
 
   /**
    * Similar to encode, but subtracts the shift for each character based on the key
    */
   decode([...chars]) {
-    return chars.map((char, i) => String.fromCharCode(
-      ((char.charCodeAt(0) - ASCII_START) - (this.#keyShift[i % this.#keyShift.length]) + ASCII_LENGTH) % ASCII_LENGTH + ASCII_START)
-    ).join('');
-  }
-
-  static generateRandomKey() {
-    return [...Array(100)].map(() => String.fromCharCode(Math.floor(Math.random() * ASCII_LENGTH) + ASCII_START)).join('');
+    return String.fromCharCode(...chars.map((char, i) =>
+      ((char.charCodeAt(0) - ASCII_START) - (this.#keyShift[i % this.#keyShift.length]) + ASCII_LENGTH)
+      % ASCII_LENGTH + ASCII_START))
   }
 
   get key() {
