@@ -15,23 +15,7 @@ export class Allergies {
     'cats'
   ];
 
-  #score;
-
-  constructor(score = 0) {
-    this.#score = score;
-  }
-
-  get score() {
-    return this.#score;
-  }
-
-  list() {
-    return Allergies.ALLERGENS.filter((_, i) => this.#allergicToIndex(i));
-  }
-
-  allergicTo(allergen) {
-    return this.#allergicToIndex(Allergies.ALLERGENS.indexOf(allergen));
-  }
+  #allergens;
 
   /**
    * Each allergen is assigned to an index such that 2^index = allergen score.
@@ -45,7 +29,15 @@ export class Allergies {
    * From right, 0, 2, 4, and 5 places have a 1
    * So allergies = [eggs, shellfish, tomatoes, chocolate]
    */
-  #allergicToIndex(index) {
-    return !!(this.score >> index & 1);
+  constructor(score = 0) {
+    this.#allergens = Allergies.ALLERGENS.filter((_, i) => score >> i & 1);
+  }
+
+  list() {
+    return this.#allergens;
+  }
+
+  allergicTo(allergen) {
+    return this.#allergens.includes(allergen);
   }
 }
