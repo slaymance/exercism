@@ -15,9 +15,9 @@ export class Allergies {
     'cats'
   ];
 
-  #score = 0;
+  #score;
 
-  constructor(score) {
+  constructor(score = 0) {
     this.#score = score;
   }
 
