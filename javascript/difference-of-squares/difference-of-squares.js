@@ -10,15 +10,20 @@ export class Squares {
     this.#number = number;
   }
 
-  /**
-   * What? You didn't think I would try to solve this without .reduce, did you?
-   */
+  get number() {
+    return this.#number;
+  }
+
+  get sum() {
+    return this.number * (this.number + 1) / 2;
+  }
+
   get sumOfSquares() {
-    return Array(this.#number + 1).fill().reduce((sum, _, i) => sum + i ** 2, 0);
+    return this.sum * (2 * this.number + 1) / 3;
   }
 
   get squareOfSum() {
-    return (this.#number * (this.#number + 1) / 2) ** 2;
+    return this.sum ** 2;
   }
 
   get difference() {
