@@ -16,7 +16,6 @@ const isNaturalNumber = n => isFiniteNumber(n) && n > 0;
 export const classify = num => {
   if (!isNaturalNumber(num)) throw new Error('Classification is only possible for natural numbers.');
 
-  const aliquotSum = [...Array(Math.floor(Math.sqrt(num)) + 1).keys()].reduce((sum, val) => num % val === 0 ?
-    sum + val + (Math.sqrt(num) !== val && num / val) : sum) - num;
+  const aliquotSum = [...Array(Math.floor(Math.sqrt(num)) + 1).keys()].reduce((sum, val) => sum + (num % val === 0 && val + (Math.sqrt(num) !== val && num / val))) - num;
   return aliquotSum > num ? 'abundant' : aliquotSum < num ? 'deficient' : 'perfect';
 };
