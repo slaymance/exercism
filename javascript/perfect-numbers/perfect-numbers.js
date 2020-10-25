@@ -19,3 +19,30 @@ export const classify = num => {
   const aliquotSum = [...Array(Math.floor(Math.sqrt(num)) + 1).keys()].reduce((sum, val) => sum + (num % val === 0 && val + (Math.sqrt(num) !== val && num / val))) - num;
   return aliquotSum > num ? 'abundant' : aliquotSum < num ? 'deficient' : 'perfect';
 };
+
+/**
+ * Here's a more readable version so people can learn from it.
+ */
+const isFactor = num => val => num % val === 0;
+const isSqrt = num => val => Math.sqrt(num) === val;
+
+export const classifyReadable = num => {
+  if (!isNaturalNumber(num)) throw new Error('Classification is only possible for natural numbers.');
+
+  const isFactorOfNum = isFactor(num);
+  const isSqrtOfNum = isSqrt(num);
+
+  const numsUpToSqrt = [...Array(Math.floor(Math.sqrt(num)) + 1).keys()];
+  const aliquotSum = numsUpToSqrt.reduce((sum, val) => {
+    if (isFactorOfNum(val)) {
+      if (isSqrtOfNum(val)) return sum + val;
+      else return sum + val + num / val;
+    } else {
+      return sum;
+    }
+  }) - num; // We subtract num here since the algorith adds 1 and num together
+
+  if (aliquotSum > num) return 'abundant';
+  else if (aliquotSum < num) return 'deficient';
+  else return 'perfect';
+};
