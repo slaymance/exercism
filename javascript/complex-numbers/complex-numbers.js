@@ -7,7 +7,7 @@ export class ComplexNumber {
   #real;
   #imag;
 
-  constructor(real, imag) {
+  constructor(real = 0, imag = 0) {
     this.#real = real;
     this.#imag = imag;
   }
