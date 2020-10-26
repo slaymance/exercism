@@ -3,11 +3,16 @@
 // convenience to get you started writing code faster.
 //
 
+// Helper function for argument validation
+const isRealNumber = n => typeof n == 'number' && !isNaN(n) && isFinite(n);
+
 export class ComplexNumber {
   #real;
   #imag;
 
   constructor(real = 0, imag = 0) {
+    if (![real, imag].every(isRealNumber)) throw new Error('Complex number\'s a and b must be real numbers.');
+
     this.#real = real;
     this.#imag = imag;
   }
