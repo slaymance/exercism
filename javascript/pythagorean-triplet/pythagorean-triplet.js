@@ -29,8 +29,8 @@ export class Triplet {
   }
 
   isPythagorean() {
-    const [side1, side2, side3] = this.sides;
-    return side1 ** 2 + side2 ** 2 === side3 ** 2;
+    const [a, b, c] = this.sides;
+    return a ** 2 + b ** 2 === c ** 2;
   }
 
   /**
