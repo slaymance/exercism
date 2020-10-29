@@ -18,9 +18,9 @@ describe('Triplet', () => {
   });
 
   test('can make triplets up to 10', () => {
-    const triplets = Triplet.where({ maxFactor: 10 });
+    const triplets = Triplet.where({ maxFactor: 9 });
     const products = triplets.sort().map(triplet => triplet.product());
-    expect(products).toEqual([60, 480]);
+    expect(products).toEqual([60]);
   });
 
   test('can make triplets 11 through 20', () => {
