@@ -8,7 +8,7 @@
  * made faster by creating an object or Map to count the occurrences of characters in each word and compare the
  * counts for each character.
  */
-export const findAnagramsAlt = (word, anagrams) => {
+export const findAnagrams = (word, anagrams) => {
   const lowerWord = word.toLowerCase();
   const sortedWord = [...lowerWord].sort().join('');
   return anagrams.filter(anagram => {
