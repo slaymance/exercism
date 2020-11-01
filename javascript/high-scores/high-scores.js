@@ -26,6 +26,6 @@ export class HighScores {
   }
 
   get personalTopThree() {
-    return this.scores.sort(descending).slice(0, 3);
+    return [...this.scores].sort(descending).slice(0, 3);
   }
 }
