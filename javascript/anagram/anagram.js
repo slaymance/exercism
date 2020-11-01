@@ -4,9 +4,8 @@
 //
 
 /**
- * This solution takes about 80 seconds to get anagrams if given all words in the English language. I think it could be
- * made faster by creating an object or Map to count the occurrences of characters in each word and compare the
- * counts for each character.
+ * According to Jest, this solution finds all anagrams in the English language in about 150 ms. I'm sure it could be
+ * made faster since I'm using .sort() and .join() here.
  */
 export const findAnagrams = (word, anagrams) => {
   const lowerWord = word.toLowerCase();
