@@ -9,4 +9,5 @@
  */
 export const parse = phrase => phrase
   .split(/[\s-]+/)
-  .reduce((acronym, word) => acronym + word.match(/[A-Za-z]/)[0].toUpperCase(), '');
+  .reduce((acronym, word) => acronym + word.match(/[A-Za-z]/)[0], '')
+  .toUpperCase();
