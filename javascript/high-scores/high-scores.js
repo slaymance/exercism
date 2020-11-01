@@ -28,17 +28,4 @@ export class HighScores {
   get personalTopThree() {
     return this.scores.sort(descending).slice(0, 3);
   }
-
-  /**
-   * This solution is more optimized if the number of scores is large.
-   */
-  get personalTopThreeAlt() {
-    return this.scores
-      .reduce((topScores, score) => {
-        const lowScore = Math.min(...topScores);
-        return topScores[topScores.indexOf(lowScore)] = Math.max(score, lowScore) && topScores;
-      }, Array(3).fill(0))
-      .filter(score => score > 0)
-      .sort(descending);
-  }
 }
