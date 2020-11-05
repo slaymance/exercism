@@ -5,7 +5,6 @@
 
 // Helper functions for clarity
 const containsNonDigits = string => /\D/.test(string);
-const range = max => [...Array(max + 1).keys()]; // Creates array of integers from 0 to max inclusive
 
 export class Series {
   #digits;
@@ -21,6 +20,6 @@ export class Series {
 
   slices(length = 0) {
     if (length > this.digits.length) throw new Error('Slice size is too big.');
-    return range(this.digits.length - length).map(i => this.digits.slice(i, i + length));
+    return Array.from(Array(this.digits.length - length + 1), (_, i) => this.digits.slice(i, i + length))
   }
 }
