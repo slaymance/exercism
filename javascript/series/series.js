@@ -18,8 +18,8 @@ export class Series {
     return this.#digits;
   }
 
-  slices(length = 0) {
-    if (length > this.digits.length) throw new Error('Slice size is too big.');
-    return Array.from(Array(this.digits.length - length + 1), (_, i) => this.digits.slice(i, i + length))
+  slices(size = 0) {
+    if (size > this.digits.length) throw new Error('Slice size is too big.');
+    return Array.from(Array(this.digits.length - size + 1), (_, i) => this.digits.slice(i, i + size))
   }
 }
