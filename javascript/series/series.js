@@ -5,7 +5,6 @@
 
 // Helper functions for clarity
 const containsNonDigits = string => /\D/.test(string);
-const makeInteger = numString => +numString;
 const range = max => [...Array(max + 1).keys()]; // Creates array of integers from 0 to max inclusive
 
 export class Series {
@@ -13,7 +12,7 @@ export class Series {
 
   constructor(digits = '') {
     if (containsNonDigits(digits)) throw new Error('Series must contain only digits.');
-    this.#digits = digits.split``.map(makeInteger);
+    this.#digits = [...digits].map(Number);
   }
 
   get digits() {
