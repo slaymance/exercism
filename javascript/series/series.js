@@ -9,9 +9,9 @@ const containsNonDigits = string => /\D/.test(string);
 export class Series {
   #digits;
 
-  constructor(digits = '') {
-    if (containsNonDigits(digits)) throw new Error('Series must contain only digits.');
-    this.#digits = [...digits].map(Number);
+  constructor(series = '') {
+    if (containsNonDigits(series)) throw new Error('Series must contain only digits.');
+    this.#digits = [...series].map(Number);
   }
 
   get digits() {
