@@ -3,8 +3,6 @@
 // convenience to get you started writing code faster.
 //
 
-import { Series } from '../series/series';
-
 // Helper functions for clarity
 const containsNonDigits = string => /\D/.test(string);
 const productBy = array => array.reduce((product, num) => product * num, 1);
