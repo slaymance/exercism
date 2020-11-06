@@ -10,7 +10,7 @@ export class Series {
   #digits;
 
   constructor(series = '') {
-    if (containsNonDigits(series)) throw new Error('Series must contain only digits.');
+    if (containsNonDigits(series)) throw new Error('Digits input must only contain digits');
     this.#digits = [...series].map(Number);
   }
 
