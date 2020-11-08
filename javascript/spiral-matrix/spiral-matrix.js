@@ -12,16 +12,16 @@ export class SpiralMatrix {
     let row = 0;
     let col = 0;
 
-    while (num < size ** 2) {
+    while (num <= size ** 2) {
       while (col < max) { matrix[row][col++] = num++ }
       while (row < max) { matrix[row++][col] = num++ }
       while (col > min) { matrix[row][col--] = num++ }
       min++;
       while (row > min) { matrix[row--][col] = num++ }
       max--;
+      if (num === size ** 2) matrix[row][col] = num++;
     }
 
-    if (size > 0) matrix[row][col] = num;
     return matrix;
   }
 }
