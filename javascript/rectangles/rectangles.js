@@ -26,14 +26,14 @@ const validRectangleOfLength = length => crossSection => new RegExp(
  * As soon as a possible cross section is found that would preclude a valid rectangle from forming in any of the
  * following cross sections, it breaks out of the rectangle search loop and looks for another possible rectangle.
  */
-export const count = (plane = []) => plane.reduce((rectangles, cross, crossInd) => rectangles +
-  [...cross].reduce((count, char, charInd) => {
+export const count = (plane = []) => plane.reduce((rectangles, [...cross], crossInd) => rectangles +
+  cross.reduce((count, char, charInd) => {
     if (char === CORNER) {
-      for (let i = charInd + 1; i < cross.length; i++) {
-        if (!VALID_HORIZONTALS.includes(cross[i])) break;
-        if (cross[i] === CORNER) {
-          for (let j = crossInd + 1; j < plane.length; j++) {
-            const possibleCross = plane[j].slice(charInd, i + 1);
+      for (const [i, nextChar] of [...cross.entries()].slice(charInd + 1)) {
+        if (!VALID_HORIZONTALS.includes(nextChar)) break;
+        if (nextChar === CORNER) {
+          for (const nextCross of plane.slice(crossInd + 1)) {
+            const possibleCross = nextCross.slice(charInd, i + 1);
             if (!validCrossOfLength(i - charInd - 1)(possibleCross)) break;
             if (validRectangleOfLength(i - charInd - 1)(possibleCross)) count++;
           }
