@@ -4,10 +4,6 @@
 //
 
 // Helper functions for clarity
-const maxIndeces = numbers => {
-  const max = Math.max(...numbers);
-  return numbers.flatMap((num, i) => num === max ? i : []);
-};
 const createSaddlePoint = (col, row) => ({ column: col + 1, row: row + 1 });
 
 /**
@@ -16,5 +12,5 @@ const createSaddlePoint = (col, row) => ({ column: col + 1, row: row + 1 });
  * we only want values that meet the saddle point criteria), .flatMap makes the code much less cluttered since you don't
  * need to spread the accumulator array and you just return an empty array if the condition isn't meant.
  */
-export const saddlePoints = matrix => matrix.flatMap((nums, row) => maxIndeces(nums)
-  .flatMap(col => matrix.every(nums2 => nums2[col] >= nums[col]) ? createSaddlePoint(col, row) : []));
+export const saddlePoints = matrix => matrix.flatMap((points, row) => points.flatMap((point, col) =>
+  points.every(num => num <= point) && matrix.every(nums => nums[col] >= point) ? createSaddlePoint(col, row) : []));
