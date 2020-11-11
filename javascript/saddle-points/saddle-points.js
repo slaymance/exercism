@@ -14,7 +14,7 @@ const isSaddlePoint = (point, row, column) => row.every(lte(point)) && column.ev
  * Lately, when it comes to accumulating values in an array, I've been reaching for .flatMap instead of .reduce. When
  * you're faced with the problem of conditionally adding a value to the accumulated array (which is the case here since
  * we only want values that meet the saddle point criteria), .flatMap makes the code much less cluttered since you don't
- * need to spread the accumulator array and you just return an empty array if the condition isn't meant.
+ * need to spread the accumulator array and you just return an empty array if the condition isn't met.
  */
 export const saddlePoints = matrix => matrix.flatMap((nums, row) => nums.flatMap((point, col) =>
   isSaddlePoint(point, nums, column(matrix, col)) ? createSaddlePoint(col, row) : []));
