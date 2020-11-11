@@ -7,9 +7,9 @@
 const lte = second => first => first <= second;
 const gte = second => first => first >= second;
 const column = (matrix, col) => matrix.map(nums => nums[col]);
-const createSaddlePoint = (col, row) => ({ column: col + 1, row: row + 1 });
-const isSaddlePoint = (matrix, row, col) => matrix[row].every(lte(matrix[row][col])) &&
-  column(matrix, col).every(gte(matrix[row][col]));
+const createSaddlePoint = (row, col) => ({ row: row + 1, column: col + 1 });
+const isSaddlePoint = (matrix, row, col) =>
+  matrix[row].every(lte(matrix[row][col])) && column(matrix, col).every(gte(matrix[row][col]));
 
 /**
  * Lately, when it comes to accumulating values in an array, I've been reaching for .flatMap instead of .reduce. When
@@ -18,4 +18,4 @@ const isSaddlePoint = (matrix, row, col) => matrix[row].every(lte(matrix[row][co
  * need to spread the accumulator array and you just return an empty array if the condition isn't met.
  */
 export const saddlePoints = matrix => matrix.flatMap((nums, row) => nums.flatMap((_, col) =>
-  isSaddlePoint(matrix, row, col) ? createSaddlePoint(col, row) : []));
+  isSaddlePoint(matrix, row, col) ? createSaddlePoint(row, col) : []));
