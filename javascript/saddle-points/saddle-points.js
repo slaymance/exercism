@@ -8,7 +8,8 @@ const lte = second => first => first <= second;
 const gte = second => first => first >= second;
 const column = (matrix, col) => matrix.map(nums => nums[col]);
 const createSaddlePoint = (col, row) => ({ column: col + 1, row: row + 1 });
-const isSaddlePoint = (point, row, column) => row.every(lte(point)) && column.every(gte(point));
+const isSaddlePoint = (matrix, row, col) => matrix[row].every(lte(matrix[row][col])) &&
+  column(matrix, col).every(gte(matrix[row][col]));
 
 /**
  * Lately, when it comes to accumulating values in an array, I've been reaching for .flatMap instead of .reduce. When
@@ -16,5 +17,5 @@ const isSaddlePoint = (point, row, column) => row.every(lte(point)) && column.ev
  * we only want values that meet the saddle point criteria), .flatMap makes the code much less cluttered since you don't
  * need to spread the accumulator array and you just return an empty array if the condition isn't met.
  */
-export const saddlePoints = matrix => matrix.flatMap((nums, row) => nums.flatMap((point, col) =>
-  isSaddlePoint(point, nums, column(matrix, col)) ? createSaddlePoint(col, row) : []));
+export const saddlePoints = matrix => matrix.flatMap((nums, row) => nums.flatMap((_, col) =>
+  isSaddlePoint(matrix, row, col) ? createSaddlePoint(col, row) : []));
