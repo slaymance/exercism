@@ -21,7 +21,7 @@ const getAnimal = num => ANIMALS[num][0];
 const getAnimalLine = num => ANIMALS[num][1];
 const know = animal => `I know an old lady who swallowed a ${animal}.\n`;
 const swallow = (swallowed, caught) => `She swallowed the ${swallowed} to catch the ${caught}${caught === 'spider' ?
-  ' that wriggled and jiggled and tickled inside her' : ''}.\n`
+  ' that wriggled and jiggled and tickled inside her' : ''}.\n`;
 
 /**
  * I refactored the code and the tests to use functions instead of a class. Since we're not managing state within the
@@ -33,6 +33,6 @@ export const verse = num => {
 
   return range(0, num - 2).reduceRight((verse, line) =>
     verse + swallow(getAnimal(line + 1), getAnimal(line)), firstLines) + getAnimalLine(0);
-}
+};
 
 export const verses = (first, last) => range(first, last).reduce((song, verseNum) => song + verse(verseNum) + '\n', '');
