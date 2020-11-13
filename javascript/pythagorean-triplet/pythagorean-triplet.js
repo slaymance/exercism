@@ -43,7 +43,7 @@ export class Triplet {
 
     return range(minFactor, maxFactor - 1).flatMap(a => range(a + 1, maxFactor).flatMap(b => {
       const c = Math.sqrt(a ** 2 + b ** 2);
-      return (isIntLessThanMaxFactor(c) && meetsSumRequirement(a, b, c)) ? new Triplet(a, b, c) : [];
+      return isIntLessThanMaxFactor(c) && meetsSumRequirement(a, b, c) ? new Triplet(a, b, c) : [];
     }));
   }
 }
