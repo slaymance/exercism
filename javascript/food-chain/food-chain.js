@@ -18,32 +18,19 @@ export class Song {
     ['horse', 'She\'s dead, of course!\n']
   ];
 
-  #know(animal) {
-    return `I know an old lady who swallowed a ${animal}.\n`;
-  }
-
-  #swallow(swallowed, caught) {
-    return `She swallowed the ${swallowed} to catch the ${caught}${caught === 'spider' ?
-      ' that wriggled and jiggled and tickled inside her' : ''}.\n`
-  }
-
-  #getAnimal(num) {
-    return Song.#animals[num][0];
-  }
-
-  #getAnimalLine(num) {
-    return Song.#animals[num][1];
-  }
+  static #getAnimal = num => Song.#animals[num][0];
+  static #getAnimalLine = num => Song.#animals[num][1];
+  static #know = animal => `I know an old lady who swallowed a ${animal}.\n`;
+  static #swallow = (swallowed, caught) => `She swallowed the ${swallowed} to catch the ${caught}${caught === 'spider' ?
+    ' that wriggled and jiggled and tickled inside her' : ''}.\n`
 
   verse(num) {
-    const firstLines = this.#know(this.#getAnimal(num - 1)) + this.#getAnimalLine(num - 1);
+    const firstLines = Song.#know(Song.#getAnimal(num - 1)) + Song.#getAnimalLine(num - 1);
     if (num === 1 || num === 8) return firstLines;
 
     return range(0, num - 2).reduceRight((verse, line) =>
-      verse + this.#swallow(this.#getAnimal(line + 1), this.#getAnimal(line)), firstLines) + this.#getAnimalLine(0);
+      verse + Song.#swallow(Song.#getAnimal(line + 1), Song.#getAnimal(line)), firstLines) + Song.#getAnimalLine(0);
   }
 
-  verses(first, last) {
-    return range(first, last).reduce((song, verse) => song + this.verse(verse) + '\n', '');
-  }
+  verses = (first, last) => range(first, last).reduce((song, verse) => song + this.verse(verse) + '\n', '');
 }
