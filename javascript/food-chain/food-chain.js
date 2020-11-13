@@ -30,7 +30,7 @@ const swallow = num => `She swallowed the ${getAnimal(num + 1)} to catch the ${g
  */
 export const verse = num => {
   const firstLines = know(num - 1) + getAnimalLine(num - 1);
-  if (num === 1 || num === 8) return firstLines;
+  if (['fly', 'horse'].includes(getAnimal(num - 1))) return firstLines;
 
   return range(0, num - 2).reduceRight((verse, line) => verse + swallow(line), firstLines) + getAnimalLine(0);
 };
