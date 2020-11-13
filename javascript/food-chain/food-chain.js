@@ -7,7 +7,7 @@
 const range = (min, max) => [...Array(max + 1).keys()].slice(min, max + 1);
 
 export class Song {
-  static #animals = [
+  static #ANIMALS = [
     ['fly', 'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n'],
     ['spider', 'It wriggled and jiggled and tickled inside her.\n'],
     ['bird', 'How absurd to swallow a bird!\n'],
@@ -18,8 +18,8 @@ export class Song {
     ['horse', 'She\'s dead, of course!\n']
   ];
 
-  static #getAnimal = num => Song.#animals[num][0];
-  static #getAnimalLine = num => Song.#animals[num][1];
+  static #getAnimal = num => Song.#ANIMALS[num][0];
+  static #getAnimalLine = num => Song.#ANIMALS[num][1];
   static #know = animal => `I know an old lady who swallowed a ${animal}.\n`;
   static #swallow = (swallowed, caught) => `She swallowed the ${swallowed} to catch the ${caught}${caught === 'spider' ?
     ' that wriggled and jiggled and tickled inside her' : ''}.\n`
