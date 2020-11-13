@@ -1,18 +1,12 @@
-import { Song } from './food-chain';
+import { verse, verses } from './food-chain';
 
 describe('Food Chain', () => {
-  let song;
-
-  beforeEach(() => {
-    song = new Song();
-  });
-
   test('fly', () => {
     const expected = `I know an old lady who swallowed a fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(1)).toEqual(expected);
+    expect(verse(1)).toEqual(expected);
   });
 
   test('spider', () => {
@@ -22,7 +16,7 @@ She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(2)).toEqual(expected);
+    expect(verse(2)).toEqual(expected);
   });
 
   test('bird', () => {
@@ -33,7 +27,7 @@ She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(3)).toEqual(expected);
+    expect(verse(3)).toEqual(expected);
   });
 
   test('cat', () => {
@@ -45,7 +39,7 @@ She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(4)).toEqual(expected);
+    expect(verse(4)).toEqual(expected);
   });
 
   test('dog', () => {
@@ -58,7 +52,7 @@ She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(5)).toEqual(expected);
+    expect(verse(5)).toEqual(expected);
   });
 
   test('goat', () => {
@@ -72,7 +66,7 @@ She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(6)).toEqual(expected);
+    expect(verse(6)).toEqual(expected);
   });
 
   test('cow', () => {
@@ -87,7 +81,7 @@ She swallowed the spider to catch the fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 `;
 
-    expect(song.verse(7)).toEqual(expected);
+    expect(verse(7)).toEqual(expected);
   });
 
   test('horse', () => {
@@ -95,7 +89,7 @@ I don't know why she swallowed the fly. Perhaps she'll die.
 She's dead, of course!
 `;
 
-    expect(song.verse(8)).toEqual(expected);
+    expect(verse(8)).toEqual(expected);
   });
 
   test('multiple verses', () => {
@@ -109,7 +103,7 @@ I don't know why she swallowed the fly. Perhaps she'll die.
 
 `;
 
-    expect(song.verses(1, 2)).toEqual(expected);
+    expect(verses(1, 2)).toEqual(expected);
   });
 
   test('the whole song', () => {
@@ -166,6 +160,6 @@ She's dead, of course!
 
 `;
 
-    expect(song.verses(1, 8)).toEqual(expected);
+    expect(verses(1, 8)).toEqual(expected);
   });
 });
