@@ -21,9 +21,8 @@ const ANIMALS = [
 const getAnimal = num => ANIMALS[num][0];
 const getAnimalLine = num => ANIMALS[num][1];
 const know = num => `I know an old lady who swallowed a ${getAnimal(num)}.\n`;
-const swallow = num =>
-  `She swallowed the ${getAnimal(num + 1)} to catch the ${getAnimal(num)}${getAnimal(num) === 'spider' ?
-    ` that ${WRIGGLED}` : ''}.\n`;
+const swallow = num => `She swallowed the ${getAnimal(num + 1)} to catch the ${getAnimal(num) +
+  (getAnimal(num) === 'spider' ? ` that ${WRIGGLED}` : '')}.\n`;
 
 /**
  * I refactored the code and the tests to use functions instead of a class. Since we're not managing state within the
