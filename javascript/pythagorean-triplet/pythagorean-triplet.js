@@ -41,13 +41,9 @@ export class Triplet {
     const isIntLessThanMaxFactor = isIntLessThan(maxFactor);
     const meetsSumRequirement = meetsRequirment(sum);
 
-    return range(minFactor, maxFactor - 1).flatMap(a =>
-      range(a + 1, maxFactor).reduce((triplets, b) => {
-        const c = Math.sqrt(a ** 2 + b ** 2);
-        return (isIntLessThanMaxFactor(c) && meetsSumRequirement(a, b, c)) ?
-          [...triplets, new Triplet(a, b, c)] :
-          triplets;
-      }, [])
-    );
+    return range(minFactor, maxFactor - 1).flatMap(a => range(a + 1, maxFactor).flatMap(b => {
+      const c = Math.sqrt(a ** 2 + b ** 2);
+      return (isIntLessThanMaxFactor(c) && meetsSumRequirement(a, b, c)) ? new Triplet(a, b, c) : [];
+    }));
   }
 }
