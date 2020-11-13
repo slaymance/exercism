@@ -5,7 +5,6 @@
 
 // Helper functions for clarity
 const range = (min, max) => [...Array(max + 1).keys()].slice(min, max + 1);
-const reverseRange = (min, max) => range(min, max).reverse();
 
 export class Song {
   static #animals = [
@@ -40,7 +39,7 @@ export class Song {
     const firstLines = this.#know(this.#getAnimal(num - 1)) + this.#getAnimalLine(num - 1);
     if (num === 1 || num === 8) return firstLines;
 
-    return reverseRange(0, num - 2).reduce((verse, line) =>
+    return range(0, num - 2).reduceRight((verse, line) =>
       verse + this.#swallow(this.#getAnimal(line + 1), this.#getAnimal(line)), firstLines) + this.#getAnimalLine(0);
   }
 
