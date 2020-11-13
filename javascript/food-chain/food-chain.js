@@ -4,7 +4,7 @@
 //
 
 // Helper functions for clarity
-const range = (min, max) => [...Array(max + 1).keys()].slice(min, max + 1);
+const range = (min, max) => [...Array(max + 1).keys()].slice(min);
 
 const WRIGGLED = 'wriggled and jiggled and tickled inside her';
 const ANIMALS = [
