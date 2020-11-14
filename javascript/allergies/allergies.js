@@ -33,11 +33,6 @@ export class Allergies {
     this.#allergens = Allergies.ALLERGENS.filter((_, i) => score >> i & 1);
   }
 
-  list() {
-    return this.#allergens;
-  }
-
-  allergicTo(allergen) {
-    return this.#allergens.includes(allergen);
-  }
+  list = () => this.#allergens;
+  allergicTo = allergen => this.#allergens.includes(allergen);
 }
