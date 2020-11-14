@@ -24,7 +24,7 @@ const LINES = [
 const getObject = num => LINES[num][0];
 const getAction = num => LINES[num][1];
 const firstLine = num => [`This is the ${getObject(num)}`];
-const subLine = num => `that ${getAction(num)} the ${getObject(num)}`
+const subLine = num => `that ${getAction(num)} the ${getObject(num)}`;
 
 /**
  * This is essentially identical to my solution to food-chain. Refactored to not use a class.
