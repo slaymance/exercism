@@ -30,4 +30,4 @@ const subLine = num => `that ${getAction(num)} the ${getObject(num)}`;
  * This is essentially identical to my solution to food-chain. Refactored to not use a class.
  */
 export const verse = num => firstLine(num - 1).concat(range(0, num - 2).reverse().map(subLine));
-export const verses = (first, last) => range(first, last).flatMap(line => verse(line).concat(line === last ? [] : ''));
+export const verses = (first, last) => range(first, last).flatMap(num => verse(num).concat(num === last ? [] : ''));
