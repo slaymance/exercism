@@ -7,9 +7,7 @@
  * other vowels occur. Luckily, I don't think any such words exist. I also don't deal with capitalization and
  * punctuation.
  */
-const VOWELS = ['[aeio]', '(?<!q)u', '(?<=[a-z])y', 'xr', 'yt'];
-
-const firstVowelIndex = string => string.search(new RegExp(VOWELS.join('|'), 'i'));
+const firstVowelIndex = string => string.search(/[aeio]|(?<!q)u|(?<=[a-z])y|xr|yt/i);
 const splitAtIndex = (string, index) => string.slice(index) + string.slice(0, index);
 
 export const translate = string => string
