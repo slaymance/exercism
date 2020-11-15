@@ -10,7 +10,7 @@
  * For startsWithVowel, I start each vowel in the regular expression with ^ which tests if the vowel occurs at the
  * beginning of the string.
  */
-const VOWELS = ['[aeio]', '(?<!q)u', 'xr', 'yt', '(?<=[a-z])y'];
+const VOWELS = ['[aeio]', '(?<!q)u', '(?<=[a-z])y', 'xr', 'yt'];
 
 const startsWithVowel = string => new RegExp(`^${VOWELS.join('|^')}`, 'i').test(string);
 const firstVowelIndex = string => string.search(new RegExp(VOWELS.join('|'), 'i'));
