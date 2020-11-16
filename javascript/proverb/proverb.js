@@ -10,5 +10,5 @@ const line = (object, subject) => `For want of a ${object} the ${subject} was lo
 const finalLine = (object, qualifier) => `And all for the want of a ${(qualifier ? qualifier + ' ' : '') + object}.`
 
 export const proverb = (...inputs) => inputs.slice(0, -1).reduce(
-  (result, object, i) => result + (isString(inputs[i + 1]) ? line(object, inputs[i + 1]) : ''), '')
-  + finalLine(inputs[0], inputs[inputs.length - 1]?.qualifier);
+  (result, object, i) => result + (isString(inputs[i + 1]) ? line(object, inputs[i + 1]) : ''), ''
+) + finalLine(inputs[0], inputs[inputs.length - 1]?.qualifier);
