@@ -4,19 +4,22 @@
 //
 
 export class Matrix {
-  #matrix;
+  #rows;
+  #columns;
 
   constructor(matrix) {
-    this.#matrix = matrix
+    this.#rows = matrix
       .split('\n')
       .map(rowString => rowString.split(' ').map(Number));
+
+    this.#columns = this.#rows[0].map((_, col) => this.#rows.map(row => row[col]));
   }
 
   get rows() {
-    return this.#matrix;
+    return this.#rows;
   }
 
   get columns() {
-    return this.rows[0].map((_, col) => this.rows.map(row => row[col]));
+    return this.#columns;
   }
 }
