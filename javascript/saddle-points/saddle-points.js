@@ -19,3 +19,15 @@ const isSaddlePoint = (matrix, row, col) =>
  */
 export const saddlePoints = matrix => matrix.flatMap((nums, row) => nums.flatMap((_, col) =>
   isSaddlePoint(matrix, row, col) ? createSaddlePoint(row, col) : []));
+
+/**
+ * This is the same solution using .reduce intead of .flatMap.
+ */
+export const saddlePointsAltA = matrix => matrix.reduce((result, nums, row) => nums.reduce((points, _, col) =>
+  isSaddlePoint(matrix, row, col) ? [...points, createSaddlePoint(row, col)] : points, result), []);
+
+/**
+ * Reduce solution using .concat instead of spreading (...) the points accumulator array.
+ */
+export const saddlePointsAltB = matrix => matrix.reduce((result, nums, row) => nums.reduce((points, _, col) =>
+  points.concat(isSaddlePoint(matrix, row, col) ? createSaddlePoint(row, col) : []), result), []);
