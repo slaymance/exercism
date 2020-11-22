@@ -46,7 +46,7 @@ export class Rational {
     }
 
     this.a = b < 0 ? -a : a;
-    this.b = this.a === 0 ? 1 : Math.abs(b);
+    this.b = a === 0 ? 1 : Math.abs(b);
 
     return this;
   }
