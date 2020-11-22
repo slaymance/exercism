@@ -9,45 +9,44 @@ const minMagnitude = (...nums) => Math.min(...nums.map(Math.abs));
 
 export class Rational {
   constructor(a, b) {
-    this.a = a;
-    this.b = b;
+    this.reduce(a, b);
   }
 
   add({ a, b }) {
-    return new Rational(this.a * b + a * this.b, this.b * b).reduce();
+    return new Rational(this.a * b + a * this.b, this.b * b);
   }
 
   sub({ a, b }) {
-    return new Rational(this.a * b - a * this.b, this.b * b).reduce();
+    return new Rational(this.a * b - a * this.b, this.b * b);
   }
 
   mul({ a, b }) {
-    return new Rational(this.a * a, this.b * b).reduce();
+    return new Rational(this.a * a, this.b * b);
   }
 
   div({ a, b }) {
-    return new Rational(this.a * b, a * this.b).reduce();
+    return new Rational(this.a * b, a * this.b);
   }
 
   abs() {
-    return new Rational(...[this.a, this.b].map(Math.abs)).reduce();
+    return new Rational(...[this.a, this.b].map(Math.abs));
   }
 
   exprational(n) {
-    return new Rational(this.a ** n, this.b ** n).reduce();
+    return new Rational(this.a ** n, this.b ** n);
   }
 
   expreal(x) {
     return +(x ** (this.a / this.b)).toFixed(2); // .toFixed deals with floating point precision error
   }
 
-  reduce() {
-    if (this.a === 0) return new Rational(0, 1);
-    if (this.b < 0) return new Rational(-this.a, -this.b).reduce();
-
-    for (let i = 2; i <= minMagnitude(this.a, this.b); i++) {
-      if ([this.a, this.b].every(isFactor(i))) return new Rational(this.a / i, this.b / i).reduce();
+  reduce(a = this.a, b = this.b) {
+    for (let i = 2; i <= minMagnitude(a, b); i++) {
+      if ([a, b].every(isFactor(i))) return this.reduce(a / i, b / i);
     }
+
+    this.a = b < 0 ? -a : a;
+    this.b = this.a === 0 ? 1 : Math.abs(b);
 
     return this;
   }
