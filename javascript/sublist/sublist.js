@@ -18,13 +18,14 @@ export class List {
   }
 
   isSuperListOf({ list }) {
-    return this.list.some((_, i) => areEqualLists(list, this.list.slice(i, i + list.length)));
+    return this.list.length > list.length && this.list.some((_, i) =>
+      areEqualLists(list, this.list.slice(i, i + list.length)));
   }
 
   compare(other) {
     if (areEqualLists(other.list, this.list)) return 'EQUAL';
-    if (this.list.length > other.list.length && this.isSuperListOf(other)) return 'SUPERLIST';
-    if (this.list.length < other.list.length && other.isSuperListOf(this)) return 'SUBLIST';
+    if (this.isSuperListOf(other)) return 'SUPERLIST';
+    if (other.isSuperListOf(this)) return 'SUBLIST';
     return 'UNEQUAL';
   }
 }
