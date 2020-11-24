@@ -8,6 +8,14 @@ export class BinarySearchTree {
   #left;
   #right;
 
+  #insertLeft(value) {
+    this.#left ? this.#left.insert(value) : this.#left = new BinarySearchTree(value);
+  }
+
+  #insertRight(value) {
+    this.#right ? this.#right.insert(value) : this.#right = new BinarySearchTree(value);
+  }
+
   constructor(value) {
     this.#data = value;
   }
@@ -15,25 +23,17 @@ export class BinarySearchTree {
   get data() {
     return this.#data;
   }
+
   get right() {
     return this.#right;
-  }
-
-  set right(value) {
-    this.#right = new BinarySearchTree(value);
   }
 
   get left() {
     return this.#left;
   }
 
-  set left(value) {
-    this.#left = new BinarySearchTree(value);
-  }
-
   insert(value) {
-    const branch = value <= this.data ? 'left' : 'right';
-    this[branch] ? this[branch].insert(value) : this[branch] = value;
+    this.data >= value ? this.#insertLeft(value) : this.#insertRight(value);
   }
 
   each(iterator) {
