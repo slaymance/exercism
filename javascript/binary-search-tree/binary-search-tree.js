@@ -24,12 +24,12 @@ export class BinarySearchTree {
     return this.#data;
   }
 
-  get right() {
-    return this.#right;
-  }
-
   get left() {
     return this.#left;
+  }
+
+  get right() {
+    return this.#right;
   }
 
   insert(value) {
