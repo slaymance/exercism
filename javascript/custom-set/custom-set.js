@@ -47,10 +47,10 @@ export class CustomSet {
   }
 
   intersection(set) {
-    return new CustomSet(this.#set.flatMap(value => set.contains(value) ? value : []));
+    return new CustomSet(this.#set.filter(value => set.contains(value)));
   }
 
   difference(set) {
-    return new CustomSet(this.#set.flatMap(value => !set.contains(value) ? value : []));
+    return new CustomSet(this.#set.filter(value => !set.contains(value)));
   }
 }
