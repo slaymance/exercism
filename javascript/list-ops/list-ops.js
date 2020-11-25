@@ -3,9 +3,6 @@
 // convenience to get you started writing code faster.
 //
 
-// I use this to allow values of undefined in foldl
-const NOT_SUPPLIED = 'NOT_SUPPLIED';
-
 /**
  * I managed not to use any Array prototype methods or properties, but I'm not happy about it.
  * Everything is implemented in terms of foldl to demonstrate the power of reduce.
@@ -22,37 +19,35 @@ export class List {
   }
 
   append(list) {
-    return new List(list.foldl((acc, value) => [...acc, value], this.#values))
+    return list.foldl((acc, value) => new List([...acc.values, value]), this);
   }
 
   concat(list) {
-    return this.append(list.foldl((acc, value) =>
-      acc.append(value instanceof List ? value : new List([value])), new List()));
+    return list.foldl((acc, value) => acc.append(value instanceof List ? value : new List([value])), this);
   }
 
   filter(pred) {
-    return new List(this.foldl((acc, value) => pred(value) ? [...acc, value] : acc, []));
+    return this.foldl((acc, value) => pred(value) ? acc.append(new List([value])) : acc);
   }
 
   map(fn) {
-    return new List(this.foldl((acc, value) => [...acc, fn(value)], []));
+    return this.foldl((acc, value) => acc.append(new List([fn(value)])));
   }
 
   length() {
     return this.foldl(length => length + 1, 0);
   }
 
-  foldl(fn, acc = NOT_SUPPLIED, list = this) {
-    const [first = NOT_SUPPLIED, ...rest] = list.values;
-    if (first === NOT_SUPPLIED) return acc === NOT_SUPPLIED ? undefined : acc;
-    return list.foldl(fn, acc === NOT_SUPPLIED ? first : fn(acc, first), new List(rest));
+  foldl(fn, acc = new List()) {
+    const [first, ...rest] = this.#values;
+    return first === undefined ? acc : new List(rest).foldl(fn, fn(acc, first));
   }
 
-  foldr(fn, acc) {
-    return this.foldl(fn, acc, this.reverse());
+  foldr() {
+    return this.reverse().foldl(...arguments);
   }
 
   reverse() {
-    return this.foldl((acc, value) => new List([value]).append(acc), new List());
+    return this.foldl((acc, value) => new List([value]).append(acc));
   }
 }
