@@ -48,13 +48,8 @@ export class List {
 
   foldl(fn, acc = NOT_SUPPLIED, list = this) {
     const [first = NOT_SUPPLIED, ...rest] = list.values;
-    let mutableAcc = acc === NOT_SUPPLIED ? first : first === NOT_SUPPLIED ? acc : fn(acc, first);
-
-    for (const value of rest) {
-      mutableAcc = fn(mutableAcc, value);
-    }
-
-    return mutableAcc;
+    if (first === NOT_SUPPLIED) return acc === NOT_SUPPLIED ? undefined : acc;
+    return list.foldl(fn, acc === NOT_SUPPLIED ? first : fn(acc, first), new List(rest));
   }
 
   foldr(fn, acc) {
