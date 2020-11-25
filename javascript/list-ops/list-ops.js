@@ -8,6 +8,7 @@ const NOT_SUPPLIED = 'NOT_SUPPLIED';
 
 /**
  * I managed not to use any Array prototype methods or properties, but I'm not happy about it.
+ * I've demonstrated the power of reduce by implementing every method using only foldl and append.
  */
 export class List {
   #values;
