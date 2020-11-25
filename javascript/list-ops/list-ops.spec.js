@@ -1,6 +1,4 @@
-import {
-  List
-} from './list-ops';
+import { List } from './list-ops';
 
 describe('append entries to a list and return the new list', () => {
   test('empty lists', () => {
@@ -29,12 +27,6 @@ describe('concat lists and lists of lists into new list', () => {
     const list2 = new List();
     expect(list1.concat(list2).values).toEqual([]);
   });
-
-  test('one list', () => {
-    const list1 = new List([1, 2]);
-    const list2 = new List([3, 4]);
-    expect(list1.concat(list2).values).toEqual([1, 2, 3, 4]);
-  })
 
   test('list of lists', () => {
     const list1 = new List([1, 2]);

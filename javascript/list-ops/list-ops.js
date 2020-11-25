@@ -3,91 +3,64 @@
 // convenience to get you started writing code faster.
 //
 
+// I use this to allow values of undefined in foldl
+const NOT_SUPPLIED = 'NOT_SUPPLIED';
+
+/**
+ * I managed not to use any Array prototype methods or properties, but I'm not happy about it.
+ */
 export class List {
-  constructor(items = []) {
-    this.values = items;
+  #values;
+
+  constructor(values = []) {
+    this.#values = values;
   }
 
-  push(value) {
-    this.values = [...this.values, value];
+  get values() {
+    return [...this.#values];
   }
 
-  append({
-    values
-  }) {
-    for (let value of values) {
-      this.push(value);
-    }
-
-    return this;
+  append({ values }) {
+    return new List([...this.#values, ...values]);
   }
 
-  concat({
-    values
-  }) {
-    for (let value of values) {
-      if (value instanceof List) {
-        this.concat(value);
-      } else {
-        this.push(value);
-      }
-    }
+  flatten() {
+    return this.foldl((acc, value) =>
+      acc.append(value instanceof List ? value.flatten() : new List([value])), new List());
+  }
 
-    return this;
+  concat(list) {
+    return this.append(list.flatten());
   }
 
   filter(pred) {
-    const filteredList = new List();
-    for (let value of this.values) {
-      if (pred(value)) {
-        filteredList.push(value);
-      }
-    }
-
-    return filteredList;
+    return new List(this.foldl((acc, value) => pred(value) ? [...acc, value] : acc, []));
   }
 
   map(fn) {
-    const mappedList = new List();
-    for (let value of this.values) {
-      mappedList.push(fn(value));
-    }
-
-    return mappedList;
+    return new List(this.foldl((acc, value) => [...acc, fn(value)], []));
   }
 
   length() {
-    let i = 0;
-    for (let value of this.values) {
-      i++;
-    }
-
-    return i;
+    return this.foldl(length => length + 1, 0);
   }
 
-  foldl(fn, acc) {
-    for (let value of this.values) {
-      acc = fn(acc, value);
+  foldl(fn, acc = NOT_SUPPLIED, list = this) {
+    const [first = NOT_SUPPLIED, ...rest] = list.values;
+    let mutableAcc = acc === NOT_SUPPLIED ? first : first === NOT_SUPPLIED ? acc : fn(acc, first);
+
+    for (const value of rest) {
+      mutableAcc = fn(mutableAcc, value);
     }
 
-    return acc;
+    return mutableAcc;
   }
 
   foldr(fn, acc) {
-    const foldrList = new List();
-    for (let value of this.reverse().values) {
-      acc = fn(acc, value);
-    }
-
-    return acc;
+    return this.foldl(fn, acc, this.reverse());
   }
 
   reverse() {
-    const reversedList = new List();
-    for (let i = this.length() - 1; i >= 0; i--) {
-      reversedList.push(this.values[i]);
-    }
-
-    return reversedList;
+    return this.foldl((acc, value) => new List([value]).append(acc), new List());
   }
 }
