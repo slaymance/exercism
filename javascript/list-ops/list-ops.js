@@ -8,7 +8,7 @@ const NOT_SUPPLIED = 'NOT_SUPPLIED';
 
 /**
  * I managed not to use any Array prototype methods or properties, but I'm not happy about it.
- * I've demonstrated the power of reduce by implementing every method using only foldl and append.
+ * Everything is implemented in terms of foldl to demonstrate the power of reduce.
  */
 export class List {
   #values;
@@ -21,8 +21,8 @@ export class List {
     return [...this.#values];
   }
 
-  append({ values }) {
-    return new List([...this.#values, ...values]);
+  append(list) {
+    return new List(list.foldl((acc, value) => [...acc, value], this.#values))
   }
 
   flatten() {
