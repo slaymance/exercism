@@ -25,13 +25,9 @@ export class List {
     return new List(list.foldl((acc, value) => [...acc, value], this.#values))
   }
 
-  flatten() {
-    return this.foldl((acc, value) =>
-      acc.append(value instanceof List ? value.flatten() : new List([value])), new List());
-  }
-
   concat(list) {
-    return this.append(list.flatten());
+    return this.append(list.foldl((acc, value) =>
+      acc.append(value instanceof List ? value : new List([value])), new List()));
   }
 
   filter(pred) {
