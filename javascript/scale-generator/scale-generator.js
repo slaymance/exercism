@@ -8,8 +8,6 @@
  * of the notes present in the scale and pull those elements.
  */
 export class Scale {
-  static FLAT = 'b';
-  static SHARP = '#';
   static STEPS = {
     m: 1,
     M: 2,
@@ -19,10 +17,9 @@ export class Scale {
   #chromatic;
 
   constructor(tonic) {
-    const { FLAT, SHARP } = Scale;
     const usesFlats = /^.b|[Fdgcf]$/.test(tonic);
     const chromatic = ['A', '', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G', ''].map((note, i, src) =>
-      note || (usesFlats ? src[(i + 1) % src.length] + FLAT : src[i - 1] + SHARP));
+      note || (usesFlats ? src[(i + 1) % src.length] + 'b' : src[i - 1] + '#'));
     this.#chromatic = chromatic.splice(chromatic.indexOf(tonic[0].toUpperCase() + (tonic[1] || ''))).concat(chromatic);
   }
 
