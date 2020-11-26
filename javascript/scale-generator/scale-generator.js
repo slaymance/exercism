@@ -20,7 +20,7 @@ export class Scale {
 
   constructor(tonic) {
     const { FLAT, SHARP } = Scale;
-    const usesFlats = /^.{1}b|[Fdgcf]$/.test(tonic);
+    const usesFlats = /^.b|[Fdgcf]$/.test(tonic);
     const chromatic = ['A', '', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G', ''].map((note, i, src) =>
       note || (usesFlats ? src[(i + 1) % src.length] + FLAT : src[i - 1] + SHARP));
     this.#chromatic = chromatic.splice(chromatic.indexOf(tonic[0].toUpperCase() + (tonic[1] || ''))).concat(chromatic);
