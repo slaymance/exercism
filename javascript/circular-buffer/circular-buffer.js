@@ -28,7 +28,7 @@ class CircularBuffer {
     try {
       this.write(value);
     } catch {
-      this.#values = [...this.#values.slice(1), value];
+      if (!isNil(value)) this.#values = this.#values.slice(1).concat(value);
     }
   }
 
