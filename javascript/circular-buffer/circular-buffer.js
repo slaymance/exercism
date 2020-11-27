@@ -66,7 +66,6 @@ class CircularBuffer {
 
   clear() {
     this.#values.fill(null);
-    this.#readIndex = this.#writeIndex = 0;
   }
 }
 
