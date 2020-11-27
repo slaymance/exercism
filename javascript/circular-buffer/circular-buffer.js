@@ -36,15 +36,15 @@ class CircularBuffer {
     return isNil(this.#values[this.#readIndex]);
   }
 
-  #setValue(value, useWriteIndex) {
+  #setValue(value, useReadIndex) {
     if (isNil(value)) return;
-    this.#values[useWriteIndex ? this.#writeIndex : this.#readIndex] = value instanceof Null ? null : value;
-    useWriteIndex ? this.#incrementWrite() : this.#incrementRead();
+    this.#values[useReadIndex ? this.#readIndex : this.#writeIndex] = value instanceof Null ? null : value;
+    useReadIndex ? this.#incrementRead() : this.#incrementWrite();
   }
 
   write(value) {
     if (this.#isFull) throw new BufferFullError();
-    this.#setValue(value, true);
+    this.#setValue(value);
   }
 
   read() {
@@ -52,16 +52,12 @@ class CircularBuffer {
 
     const value = this.#values[this.#readIndex];
     if (this.#isFull) this.#writeIndex = this.#readIndex;
-    this.#setValue(new Null(), false);
+    this.#setValue(new Null(), true);
     return value;
   }
 
   forceWrite(value) {
-    try {
-      this.write(value);
-    } catch {
-      this.#setValue(value, false);
-    }
+    this.#setValue(value, this.#isFull);
   }
 
   clear() {
