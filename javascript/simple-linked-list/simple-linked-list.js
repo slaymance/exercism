@@ -19,6 +19,14 @@ export class List {
     values.forEach(value => this.add(new Element(value)));
   }
 
+  /**
+   * This makes any instance of List an iterable and makes the toArray method obsolete. If you want to cast the list to
+   * an array, you just spread it into an array:
+   * 
+   * const list = new List([1, 2, 3]);
+   * const array = [...list];
+   * console.log(array) --> [3, 2, 1]
+   */
   *[Symbol.iterator]() {
     for (let node = this.#head; node; node = node.next) {
       yield node.value;
