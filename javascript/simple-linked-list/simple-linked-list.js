@@ -4,9 +4,10 @@
 //
 
 export class Element {
+  next = null;
+
   constructor(value) {
     this.value = value;
-    this.next = null;
   }
 }
 
@@ -15,7 +16,7 @@ export class List {
   #length = 0;
 
   constructor(values = []) {
-    values.forEach(this.add.bind(this));
+    values.forEach(value => this.add(new Element(value)));
   }
 
   *[Symbol.iterator]() {
@@ -24,10 +25,8 @@ export class List {
     }
   }
 
-  add(value) {
-    const element = value instanceof Element ? value : new Element(value);
-    element.next = this.#head;
-    this.#head = element;
+  add(element) {
+    [element.next, this.#head] = [this.#head, element];
     this.#length++;
   }
 
@@ -47,4 +46,3 @@ export class List {
     return new List(this.toArray());
   }
 }
-
