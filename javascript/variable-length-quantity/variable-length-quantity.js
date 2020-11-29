@@ -6,12 +6,12 @@
 const BASE = 127;
 const BITS = BASE.toString(2).length;
 
-export const encode = (numbers = []) => numbers.flatMap(number => {
-  if (!number) return [0];
+export const encode = (nums = []) => nums.flatMap(num => {
+  if (!num) return [0];
 
   const bytes = [];
-  for (let byte = number; byte; byte >>>= BITS) {
-    bytes.push((byte & BASE) + (byte !== number && BASE + 1));
+  for (let byte = num; byte; byte >>>= BITS) {
+    bytes.push((byte & BASE) + (byte !== num && BASE + 1));
   }
   return bytes.reverse();
 });
