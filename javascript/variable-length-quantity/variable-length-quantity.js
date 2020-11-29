@@ -7,23 +7,23 @@ const BASE = 127;
 const BITS = BASE.toString(2).length;
 
 export const encode = (numbers = []) => numbers.flatMap(number => {
-  if (!number) return [number];
+  if (!number) return [0];
 
   const bytes = [];
   for (let byte = number; byte; byte >>>= BITS) {
-    bytes.push(byte & BASE);
+    bytes.push((byte & BASE) + (byte !== number && BASE + 1));
   }
-  return bytes.map((byte, i) => byte + (i && BASE + 1)).reverse();
+  return bytes.reverse();
 });
 
 export const decode = (bytes = []) => {
   if (bytes[bytes.length - 1] & BASE + 1) throw new Error('Incomplete sequence');
 
-  return bytes.reduce((numbers, byte, i, src) => {
-    const lastIndex = Math.max(numbers.length - 1, 0);
-    numbers[lastIndex] = (numbers[lastIndex] << BITS) + (byte & BASE) >>> 0;
-    if (!(byte & BASE + 1) && i !== src.length - 1) numbers.push([]);
-    return numbers;
+  return bytes.reduce((nums, byte, i, src) => {
+    const lastIndex = Math.max(nums.length - 1, 0);
+    nums[lastIndex] = (nums[lastIndex] << BITS) + (byte & BASE) >>> 0;
+    if (!(byte & BASE + 1) && i !== src.length - 1) nums.push([]);
+    return nums;
   }, []);
 };
 
@@ -42,9 +42,8 @@ export const decode = (bytes = []) => {
  * - We iterate over 7-bit blocks of the number using byte >>>= BITS
  *   - Using unsigned right shift (>>>) is essential for dealing with 32-bit integers. If we used a regular right
  *     shift (>>), then integers greater than 32 bits will become negative. See https://mzl.la/2Vg7P7Q.
- * - On each iteration, we push the last seven bits to the bytes array (byte & BASE gives us the last 7 bits)
- * - We determine the eighth bit of every byte. All of them will have a 1 as the eighth bit except the first
- *   byte since that represents the end of the byte sequence for that number.
+ * - On each iteration, we push the last seven bits to the bytes array (byte & BASE gives us the last 7 bits) and set
+ *   the eighth bit to 1 if it's not the last byte in the sequence (+ (byte !== number && BASE + 1)).
  * - Finally, we reverse the array since bytes are added from right to left.
  *
  * Decode:
