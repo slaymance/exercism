@@ -4,7 +4,7 @@
 //
 
 const BASE = 127;
-const countBits = num => parseInt(Math.log(num) / Math.log(2) + 1) || 1;
+const countBits = num => 1 + ~~(Math.log(num) / Math.log(2));
 const BITS = countBits(BASE);
 
 export const encode = (nums = []) => nums.flatMap(num => Array
@@ -14,12 +14,10 @@ export const encode = (nums = []) => nums.flatMap(num => Array
 export const decode = (bytes = []) => {
   if (bytes[bytes.length - 1] & BASE + 1) throw new Error('Incomplete sequence');
 
-  return bytes.reduce((nums, byte, i, src) => {
-    const lastIndex = Math.max(nums.length - 1, 0);
-    nums[lastIndex] = (nums[lastIndex] << BITS) + (byte & BASE) >>> 0;
-    if (!(byte & BASE + 1) && i !== src.length - 1) nums.push([]);
-    return nums;
-  }, []);
+  return bytes
+    .flatMap((byte, i) => byte & BASE + 1 ? [] : i + 1)
+    .map((end, i, ends) => bytes.slice(ends[i - 1], end))
+    .map(bytes => bytes.reduce((num, byte) => (num << BITS) + (byte & BASE) >>> 0, 0));
 };
 
 /**
@@ -41,11 +39,10 @@ export const decode = (bytes = []) => {
  *
  * Decode:
  * - We first check to see if the last byte in the input has a 1 as the eighth bit and throw an error if so.
- * - Our reduce function starts with an empty array accumulator. The last element of the accumulator is shifted 7 bits
- *   to the left and the byte's last 7 bits are added to it. If the last element is an empty array, the byte's last 7
- *   bits are just added to the array.
- *   - Again, we need to use unsigned right shift to deal with 32-bit integers (>>> 0 converts any signed integer
- *     resulting from left shifting to an unsigned integer)
- * - Finally, if the current byte is not the final byte of the input and it has a 0 as the eighth bit (indicating the
- *   end of a sequence), we push an empty array to the accumulator to prime it for a new number to be decoded.
+ * - We use flatMap to get the indeces of the start of each new number in the bytes sequence.
+ * - The first map slices up the bytes array into arrays of byte sequences representing each number.
+ * - Our final map iterates over the byte sequences, reducing them to their numbers. Each iteration of reduce:
+ *   - Shifts the number left by 7 bits (num << BITS)
+ *   - Adds the current byte (ignoring the eighth bit by using byte & BASE)
+ *   - Does unsigned right shift to handle numbers greater than 32 bits (>>> 0)
  */
