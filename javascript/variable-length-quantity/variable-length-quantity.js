@@ -4,17 +4,12 @@
 //
 
 const BASE = 127;
-const BITS = BASE.toString(2).length;
+const countBits = num => parseInt(Math.log(num) / Math.log(2) + 1) || 1;
+const BITS = countBits(BASE);
 
-export const encode = (nums = []) => nums.flatMap(num => {
-  if (!num) return [0];
-
-  const bytes = [];
-  for (let byte = num; byte; byte >>>= BITS) {
-    bytes.push((byte & BASE) + (byte !== num && BASE + 1));
-  }
-  return bytes.reverse();
-});
+export const encode = (nums = []) => nums.flatMap(num => Array
+  .from(Array(Math.ceil(countBits(num) / BITS)), (_, i) => (num >>> BITS * i & BASE) + (i && BASE + 1))
+  .reverse());
 
 export const decode = (bytes = []) => {
   if (bytes[bytes.length - 1] & BASE + 1) throw new Error('Incomplete sequence');
@@ -37,13 +32,11 @@ export const decode = (bytes = []) => {
  *
  * Encode:
  * Every number in the input will be represented by an array of bytes, hence the use of .flatMap. For each number:
- * - We check if it's 0 and, if so, we just return an array of 0 ([0]).
- * - We create a byte array to represent the integer
- * - We iterate over 7-bit blocks of the number using byte >>>= BITS
+ * - We create an array with a length of the number of bytes needed to represent the number.
+ * - For each index, we right shift the number 7 bits times the index and take the right most 7 bits to become our byte.
  *   - Using unsigned right shift (>>>) is essential for dealing with 32-bit integers. If we used a regular right
  *     shift (>>), then integers greater than 32 bits will become negative. See https://mzl.la/2Vg7P7Q.
- * - On each iteration, we push the last seven bits to the bytes array (byte & BASE gives us the last 7 bits) and set
- *   the eighth bit to 1 if it's not the last byte in the sequence (+ (byte !== number && BASE + 1)).
+ * - If the index is not 0 (meaning it's not the end of a byte sequence), we set the eighth bit to 1 (+ (i && BASE + 1))
  * - Finally, we reverse the array since bytes are added from right to left.
  *
  * Decode:
