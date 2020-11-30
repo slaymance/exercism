@@ -7,6 +7,11 @@ const BASE = 127;
 const countBits = num => 1 + ~~(Math.log(num) / Math.log(2));
 const BITS = countBits(BASE);
 
+// Helper function that chunks sequences of bytes
+const chunk = ([...array]) => array.length ?
+  [array.splice(0, 1 + array.findIndex(byte => !(byte & BASE + 1))), ...chunk(array)] :
+  [];
+
 export const encode = (nums = []) => nums.flatMap(num => Array
   .from(Array(Math.ceil(countBits(num) / BITS)), (_, i) => (num >>> BITS * i & BASE) + (i && BASE + 1))
   .reverse());
@@ -14,10 +19,7 @@ export const encode = (nums = []) => nums.flatMap(num => Array
 export const decode = (bytes = []) => {
   if (bytes[bytes.length - 1] & BASE + 1) throw new Error('Incomplete sequence');
 
-  return bytes
-    .flatMap((byte, i) => byte & BASE + 1 ? [] : i + 1)
-    .map((end, i, ends) => bytes.slice(ends[i - 1], end))
-    .map(bytes => bytes.reduce((num, byte) => (num << BITS) + (byte & BASE) >>> 0, 0));
+  return chunk(bytes).map(bytes => bytes.reduce((num, byte) => (num << BITS) + (byte & BASE) >>> 0, 0));
 };
 
 /**
@@ -39,8 +41,7 @@ export const decode = (bytes = []) => {
  *
  * Decode:
  * - We first check to see if the last byte in the input has a 1 as the eighth bit and throw an error if so.
- * - We use flatMap to get the indeces of the start of each new number in the bytes sequence.
- * - The first map slices up the bytes array into arrays of byte sequences representing each number.
+ * - We chunk the bytes array into numbers represented by sequences of bytes
  * - Our final map iterates over the byte sequences, reducing them to their numbers. Each iteration of reduce:
  *   - Shifts the number left by 7 bits (num << BITS)
  *   - Adds the current byte (ignoring the eighth bit by using byte & BASE)
