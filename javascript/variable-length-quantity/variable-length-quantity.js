@@ -19,7 +19,7 @@ export const encode = (nums = []) => nums.flatMap(num => Array
 export const decode = (bytes = []) => {
   if (bytes[bytes.length - 1] & BASE + 1) throw new Error('Incomplete sequence');
 
-  return chunk(bytes).map(bytes => bytes.reduce((num, byte) => (num << BITS) + (byte & BASE) >>> 0, 0));
+  return chunk(bytes).map(byteChunk => byteChunk.reduce((num, byte) => (num << BITS) + (byte & BASE) >>> 0, 0));
 };
 
 /**
