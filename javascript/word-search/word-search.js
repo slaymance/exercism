@@ -47,11 +47,10 @@ class WordSearch {
 
   #traverseGrid(word) {
     for (const [char, row, col] of this) {
-      const start = this.#search(char, row, col);
-      if (start) {
+      if (char === word[0]) {
         for (const direction of WordSearch.#MOVEMENTS) {
           const end = this.#search(word, row, col, direction)
-          if (end) return { start, end };
+          if (end) return { start: this.#search(char, row, col), end };
         }
       }
     }
