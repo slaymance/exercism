@@ -15,19 +15,15 @@ const memoize = fn => {
 const rotateAndReflect = matrix =>
   matrix[0].map((_, col) => matrix.map((_, row) => matrix[matrix.length - row - 1][col]).reverse());
 
-const findPath = memoize((row, col, tiles) => {
-  if (row === tiles.length - 1) return true;
-
-  return [
-    [row - 1, col],
-    [row - 1, col + 1],
-    [row, col - 1],
-    [row, col + 1],
-    [row + 1, col - 1],
-    [row + 1, col]
-  ].some(([testRow, testCol]) =>
-    tiles[testRow]?.[testCol] === tiles[row][col] && findPath(testRow, testCol, tiles));
-});
+const findPath = memoize((row, col, tiles) => row === tiles.length - 1 || [
+  [row - 1, col],
+  [row - 1, col + 1],
+  [row, col - 1],
+  [row, col + 1],
+  [row + 1, col - 1],
+  [row + 1, col]
+].some(([testRow, testCol]) =>
+  tiles[testRow]?.[testCol] === tiles[row][col] && findPath(testRow, testCol, tiles)));
 
 const isWinner = (stone, tiles) =>
   tiles[0].some((tile, col) => tile === stone && findPath(0, col, tiles)) ? stone : '';
