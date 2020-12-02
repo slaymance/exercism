@@ -3,6 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
+const STOP = 'STOP';
+
 const invert = obj => Object.fromEntries(
   Object.entries(obj).flatMap(([protein, codons]) => codons.map(codon => [codon, protein]))
 );
@@ -15,11 +17,11 @@ const TRANSLATIONS = invert({
   Tyrosine: ['UAU', 'UAC'],
   Cysteine: ['UGU', 'UGC'],
   Tryptophan: ['UGG'],
-  STOP: ['', 'UAA', 'UAG', 'UGA']
+  [STOP]: ['', 'UAA', 'UAG', 'UGA']
 });
 
 export const translate = (rna = '') => {
   const protein = TRANSLATIONS[rna.slice(0, 3)];
   if (!protein) throw new Error('Invalid codon');
-  return protein === 'STOP' ? [] : [protein].concat(translate(rna.slice(3)));
+  return protein === STOP ? [] : [protein].concat(translate(rna.slice(3)));
 };
