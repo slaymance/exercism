@@ -29,8 +29,8 @@ const findPath = memoize((row, col, tiles) => {
     tiles[testRow]?.[testCol] === tiles[row][col] && findPath(testRow, testCol, tiles));
 });
 
-const isWinner = (stone, board) =>
-  board[0].some((hex, col) => hex === stone && findPath(0, col, board)) ? stone : '';
+const isWinner = (stone, tiles) =>
+  tiles[0].some((tile, col) => tile === stone && findPath(0, col, tiles)) ? stone : '';
 
 export const winner = (board = [], stoneOne = 'O', stoneTwo = 'X') => {
   const tiles = board.map(row => row.trim().split(' '));
