@@ -3,6 +3,5 @@
 // convenience to get you started writing code faster.
 //
 
-export const isArmstrongNumber = num => `${num}`
-  .split('')
+export const isArmstrongNumber = num => [...`${num}`]
   .reduce((sum, digit, _, src) => sum + digit ** src.length, 0) === num;
