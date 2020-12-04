@@ -8,7 +8,7 @@ const sumOf = (array = []) => array.reduce((sum, num) => sum + num, 0);
 const last = array => array[array.length - 1];
 
 export class Bowling {
-  static ROUNDS = 10;
+  static FRAMES = 10;
   static PINS = 10;
 
   static isSpare(frame) {
@@ -27,7 +27,7 @@ export class Bowling {
   #bonus = [];
 
   get inBonus() {
-    if (this.isLastRound()) {
+    if (this.isLastFrame()) {
       if (Bowling.isStrike(last(this.#frames))) return this.#bonus.length !== 2;
       if (Bowling.isSpare(last(this.#frames))) return this.#bonus.length !== 1;
     }
@@ -35,11 +35,11 @@ export class Bowling {
   }
 
   get gameOver() {
-    return this.isLastRound() && !this.inBonus && Bowling.isFullFrame(last(this.#frames));
+    return this.isLastFrame() && !this.inBonus && Bowling.isFullFrame(last(this.#frames));
   }
 
-  isLastRound(roundNum = this.#frames.length) {
-    return roundNum === Bowling.ROUNDS;
+  isLastFrame(frameNum = this.#frames.length) {
+    return frameNum === Bowling.FRAMES;
   }
 
   verifyRoll(pins) {
@@ -72,7 +72,7 @@ export class Bowling {
         return bonus;
       }, 0);
 
-      if (this.isLastRound(i + 1)) score += accumulate && this.#bonus[0];
+      if (this.isLastFrame(i + 1)) score += accumulate && this.#bonus[0];
       else accumulate += Bowling.isSpare(frame) && 1 || Bowling.isStrike(frame) && 2;
 
       return score;
