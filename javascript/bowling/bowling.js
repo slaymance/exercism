@@ -19,24 +19,27 @@ export class Bowling {
     return sumOf(frame) === Bowling.PINS && frame.length === 1;
   }
 
+  static isFullFrame(frame) {
+    return Bowling.isStrike(frame) ? frame.length === 1 : frame.length === 2;
+  }
+
   #frames = [[]];
   #bonus = [];
 
-  get gameOver() {
-    if (this.#frames.length === Bowling.ROUNDS) {
-      if (Bowling.isStrike(last(this.#frames))) return this.#bonus.length === 2;
-      if (Bowling.isSpare(last(this.#frames))) return this.#bonus.length === 1;
-      return last(this.#frames).length === 2;
-    }
-    return false;
-  }
-
   get inBonus() {
-    if (this.#frames.length === Bowling.ROUNDS) {
+    if (this.isLastRound()) {
       if (Bowling.isStrike(last(this.#frames))) return this.#bonus.length !== 2;
       if (Bowling.isSpare(last(this.#frames))) return this.#bonus.length !== 1;
     }
     return false;
+  }
+
+  get gameOver() {
+    return this.isLastRound() && !this.inBonus && Bowling.isFullFrame(last(this.#frames));
+  }
+
+  isLastRound(roundNum = this.#frames.length) {
+    return roundNum === Bowling.ROUNDS;
   }
 
   verifyRoll(pins) {
@@ -45,7 +48,7 @@ export class Bowling {
     if ([
       roll => roll,
       roll => !this.inBonus && sumOf(last(this.#frames).concat(roll)),
-      roll => this.inBonus && this.#bonus[0] !== Bowling.PINS && sumOf(this.#bonus.concat(roll))
+      roll => this.inBonus && !Bowling.isStrike(this.#bonus) && sumOf(this.#bonus.concat(roll))
     ].some(count => count(pins) > Bowling.PINS)) throw new Error('Pin count exceeds pins on the lane');
   }
 
@@ -53,9 +56,7 @@ export class Bowling {
     this.verifyRoll(pins);
 
     (this.inBonus ? this.#bonus : last(this.#frames)).push(pins);
-    if (!this.gameOver && !this.inBonus) {
-      if (Bowling.isStrike(last(this.#frames)) || last(this.#frames).length === 2) this.#frames.push([]);
-    }
+    if (!this.gameOver && !this.inBonus && Bowling.isFullFrame(last(this.#frames))) this.#frames.push([]);
   }
 
   score() {
@@ -71,7 +72,7 @@ export class Bowling {
         return bonus;
       }, 0);
 
-      if (i + 1 === Bowling.ROUNDS) score += accumulate && this.#bonus[0];
+      if (this.isLastRound(i + 1)) score += accumulate && this.#bonus[0];
       else accumulate += Bowling.isSpare(frame) && 1 || Bowling.isStrike(frame) && 2;
 
       return score;
