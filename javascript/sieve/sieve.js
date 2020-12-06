@@ -3,12 +3,14 @@
 // convenience to get you started writing code faster.
 //
 
-export const primes = max => [...Array(max + 1)].reduce((primeNums, _, i, sieve) => {
-  if (i < 2 || sieve[i] === 0) return primeNums;
+const COMPOSITE = 'COMPOSITE';
 
-  for (let multiple = i * 2; multiple <= sieve.length; multiple += i) {
-    sieve[multiple] = 0;
+export const primes = max => [...Array(max + 1)].reduce((primeNums, _, num, sieve) => {
+  if (num < 2 || sieve[num] === COMPOSITE) return primeNums;
+
+  for (let multiple = num * 2; multiple <= sieve.length; multiple += num) {
+    sieve[multiple] = COMPOSITE;
   }
 
-  return primeNums.concat(i);
+  return primeNums.concat(num);
 }, []);
