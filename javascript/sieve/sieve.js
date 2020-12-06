@@ -3,8 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export const primes = max => [...Array(max + 1)].reduce((primes, _, n, sieve) => {
-  if (n < 2 || sieve[n] === 0) return primes;
+export const primes = max => [...Array(max + 1)].reduce((primeNums, _, n, sieve) => {
+  if (n < 2 || sieve[n] === 0) return primeNums;
 
   for (let i = 2; i < sieve.length; i++) {
     const multiple = n * i;
@@ -12,5 +12,5 @@ export const primes = max => [...Array(max + 1)].reduce((primes, _, n, sieve) =>
     sieve[multiple] = 0;
   }
 
-  return primes.concat(n);
+  return primeNums.concat(n);
 }, []);
