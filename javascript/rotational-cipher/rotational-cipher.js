@@ -3,8 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-const UPPER_ASCII_START = 65;
-const LOWER_ASCII_START = 97;
+const UPPER_ASCII_START = 'A'.charCodeAt();
+const LOWER_ASCII_START = 'a'.charCodeAt();
 const NUMBER_OF_LETTERS = 26;
 
 const transpose = shift => char => {
