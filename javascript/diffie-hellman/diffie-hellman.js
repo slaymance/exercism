@@ -32,8 +32,7 @@ export class DiffieHellman {
   }
 
   getPublicKeyFromPrivateKey(a) {
-    if (a <= 1) throw new Error('Private key must be greater than 1.');
-    if (a >= this.#p) throw new Error('Private key must be greater than p.');
+    if (a <= 1 || a >= this.#p) throw new Error('Private key must be between 1 and p.');
 
     return this.#g ** a % this.#p;
   }
