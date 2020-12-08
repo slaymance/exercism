@@ -25,7 +25,7 @@ export class Allergies {
    * based on which digits are 1.
    * For example:
    * Allergies score = 53
-   * 43 in binary = 110101
+   * 53 in binary = 110101
    * From right, 0, 2, 4, and 5 places have a 1
    * So allergies = [eggs, shellfish, tomatoes, chocolate]
    */
