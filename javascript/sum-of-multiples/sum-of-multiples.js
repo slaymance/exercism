@@ -4,5 +4,4 @@
 //
 
 export const sum = (factors, max) => [...Array(max).keys()]
-  .slice(Math.min(...factors))
   .reduce((multipleSum, multiple) => multipleSum + (factors.some(factor => multiple % factor === 0) && multiple), 0);
