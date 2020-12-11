@@ -42,7 +42,7 @@ export const calculate = (coins, target) => {
  *
  * - Returns the coin if it's equal to the target.
  * - Checks if the target is greater than the coin, and, if so recurses with a new target of
- *   target - coin, and sets [coin].concat(recurse(target - coin)) as the least amount of coins
+ *   target - coin, and sets [coin, ...getChange(target - coin)] as the least amount of coins
  *   if it's less than change that's already been calculated.
  * - Returns change that's already been calculated if neither of the above is true (and change will be
  *   null if it can't be made with the coins provided).
