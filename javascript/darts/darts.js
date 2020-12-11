@@ -19,4 +19,4 @@ const POINTS = [
   [Infinity, 0]
 ];
 
-export const score = (x, y) => POINTS.find(circle => Math.sqrt(x ** 2 + y ** 2) <= circle[0])[1];
+export const score = (x, y) => POINTS.find(circle => Math.hypot(x, y) <= circle[0])[1];
