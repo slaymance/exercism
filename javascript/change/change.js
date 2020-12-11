@@ -17,14 +17,14 @@ export const calculate = (coins, target) => {
   if (target < 0) throw new Error('Negative totals are not allowed.');
   if (target === 0) return [];
 
-  const getChange = memoize((remainder) => coins.reduce((change, coin) => {
+  const getChange = memoize((remainder) => coins.reduceRight((change, coin) => {
     if (remainder === coin) {
       return [coin];
     }
 
     if (remainder > coin) {
       const memoChange = getChange(remainder - coin);
-      if (memoChange && (change?.length ?? Infinity) > memoChange.length + 1) return [coin, ...memoChange];
+      if (memoChange && (change?.length ?? Infinity) > memoChange.length + 1) return memoChange.concat(coin);
     }
 
     return change;
@@ -38,11 +38,11 @@ export const calculate = (coins, target) => {
 /**
  * My strategy here is to use an inner recursive memoized function (getChange) which calculates the
  * coins needed for the target change by using a top-down approach. It takes the target, iterates
- * over each coin, then does one of the following:
+ * over each coin from the right, then does one of the following:
  *
  * - Returns the coin if it's equal to the target.
  * - Checks if the target is greater than the coin, and, if so recurses with a new target of
- *   target - coin, and sets [coin, ...getChange(target - coin)] as the least amount of coins
+ *   target - coin, and sets getChange(target - coin).concat(coin) as the least amount of coins
  *   if it's less than change that's already been calculated.
  * - Returns change that's already been calculated if neither of the above is true (and change will be
  *   null if it can't be made with the coins provided).
