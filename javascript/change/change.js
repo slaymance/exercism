@@ -24,7 +24,7 @@ export const calculate = (coins, target) => {
 
     if (remainder > coin) {
       const memoChange = getChange(remainder - coin);
-      if (memoChange && (change?.length ?? Infinity) > memoChange.length + 1) return [coin].concat(memoChange);
+      if (memoChange && (change?.length ?? Infinity) > memoChange.length + 1) return [coin, ...memoChange];
     }
 
     return change;
