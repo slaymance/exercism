@@ -4,7 +4,7 @@
 //
 
 const convertToBase = (num, base, numLength = 1 + ~~(Math.log(num) / Math.log(base))) =>
-  numLength ? convertToBase(num / base | 0, base, numLength - 1).concat(num % base) : [];
+  numLength ? [...convertToBase(num / base | 0, base, numLength - 1), num % base] : [];
 
 export const convert = (digits, a = 0, b = 0) => {
   if (a <= 1 || a % 1) throw new Error('Wrong input base');
