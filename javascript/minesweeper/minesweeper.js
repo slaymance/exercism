@@ -16,8 +16,6 @@ const ADJACENTS = [
   [1, 1]
 ];
 
-const parseMatrix = board => board.map(row => [...row]);
-
 export const annotate = input => input
   .reduce((result, [...chars], row) => chars.reduce((result, char, col) => {
     if (char === MINE) {
@@ -29,5 +27,5 @@ export const annotate = input => input
     }
 
     return result;
-  }, result), parseMatrix(input))
+  }, result), input.map(row => [...row]))
   .map(row => row.join(''));
