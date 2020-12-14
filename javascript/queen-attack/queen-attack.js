@@ -5,7 +5,7 @@
 
 export class QueenAttack {
   static get BOARD() {
-    return Array.from(Array(8), () => Array(8).fill('_'));
+    return Array.from({ length: 8 }, () => Array(8).fill('_'));
   }
 
   #black;
