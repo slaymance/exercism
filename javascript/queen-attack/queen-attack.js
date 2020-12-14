@@ -4,20 +4,15 @@
 //
 
 export class QueenAttack {
-  static get BOARD() {
-    return Array.from({ length: 8 }, () => Array(8).fill('_'));
-  }
-
-  #black;
+  #board = Array.from({ length: 8 }, () => Array(8).fill('_'));
   #white;
-  #board;
+  #black;
 
   constructor({ white, black } = { white: [0, 3], black: [7, 3] }) {
     if (white.every((_, i) => white[i] === black[i])) throw new Error('Queens cannot share the same space');
 
     this.#white = white;
     this.#black = black;
-    this.#board = QueenAttack.BOARD;
 
     this.#board[white[0]][white[1]] = 'W';
     this.#board[black[0]][black[1]] = 'B';
