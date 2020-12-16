@@ -50,10 +50,10 @@ const createPredicate = (options, pattern) => string => options.includes(INVERT_
   const fileLines = await Promise.all(files.map(file => fs.readFile(path.resolve(file), { encoding: 'utf-8' })));
   const matchesPattern = createPredicate(options, pattern);
 
-  options.includes(FILES_WITH_MATCHES)
-    ? fileLines.forEach((lines, fileNum) => matchesPattern(lines) && console.log(files[fileNum]))
-    : fileLines.forEach((lines, fileNum) => lines
-      .split(/\r?\n/)
+  fileLines.forEach((lines, fileNum) => options.includes(FILES_WITH_MATCHES)
+    ? matchesPattern(lines) && console.log(files[fileNum])
+    : lines
+      .split('\n')
       .forEach((line, lineNum) => matchesPattern(line) && console.log([
         files.length > 1 ? files[fileNum] : [],
         options.includes(LINE_NUMBER) ? lineNum + 1 : [],
