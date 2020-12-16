@@ -1,0 +1,36 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2023dceec3fe5a747e981d5a0d4cfc6a111057404efa2ab8be9fe514b6c3a4b7
+
+name:           leap
+version:        1.6.0.10
+build-type:     Simple
+
+library
+  exposed-modules:
+      LeapYear
+  other-modules:
+      Paths_leap
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_leap
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , leap
+  default-language: Haskell2010
