@@ -23,7 +23,7 @@ const VALID_OPTIONS = [
  */
 const parseArgs = ([...args]) => ({
   options: args.splice(0, args.filter(arg => VALID_OPTIONS.includes(arg)).length),
-  pattern: args.slice(0, 1),
+  pattern: args[0],
   files: args.slice(1)
 });
 
