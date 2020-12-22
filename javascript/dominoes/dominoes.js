@@ -14,7 +14,7 @@ export const chain = (dominoes, placed = []) => {
 
     const result = chain(
       dominoes.slice(0, i).concat(dominoes.slice(i + 1)),
-      [...placed, lineUp(lastPlaced, dominoes[i]) ? dominoes[i] : [...dominoes[i]].reverse()]
+      [...placed, lineUp(lastPlaced, dominoes[i]) ? dominoes[i] : [...dominoes[i]].reverse()],
     );
 
     if (result) return result;
