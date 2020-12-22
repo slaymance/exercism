@@ -3,6 +3,16 @@
 // convenience to get you started writing code faster.
 //
 
+/**
+ * Most everything is handled by this parent Cell class that I've created. Cell keeps
+ * track of the following:
+ *  - a compute function which determines the cell's value
+ *  - the stored cell's value from the last time the compute function was run
+ *  - a dependency cell if one is needed for a callback function
+ *  - a list of dependent cells which react to a change in the cell's value
+ * Whenever a cell's value is requested, it runs the compute function, sees if the
+ * value has changed, updates dependents if so, and sets the new value.
+ */
 class Cell {
   #fn = () => null;
   #value = this.#fn();
@@ -11,10 +21,6 @@ class Cell {
 
   get value() {
     return this.setValue(this.#fn)
-  }
-
-  get dependency() {
-    return this.#dependency;
   }
 
   setValue(value) {
@@ -30,6 +36,15 @@ class Cell {
     return this.#value;
   }
 
+  get dependency() {
+    return this.#dependency;
+  }
+
+  setDependency(cell) {
+    this.#dependency = cell;
+    return this;
+  }
+
   addCallback(cb) {
     this.#dependents.push(cb.setDependency(this));
   }
@@ -37,11 +52,6 @@ class Cell {
   removeCallback(cb) {
     const cbIndex = this.#dependents.findIndex(dependent => dependent === cb) + 1 || this.#dependents.length + 1;
     this.#dependents = this.#dependents.slice(0, cbIndex - 1).concat(this.#dependents.slice(cbIndex));
-  }
-
-  setDependency(cell) {
-    this.#dependency = cell;
-    return this;
   }
 }
 
