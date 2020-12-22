@@ -10,6 +10,7 @@
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-pipeline-operator": "^7.10.5",
     "@babel/plugin-syntax-bigint": "^7.8.3",
     "@babel/preset-env": "^7.12.11",
     "@types/jest": "^26.0.19",
@@ -31,7 +32,7 @@
     "test": "jest --no-cache ./dominoes/*",
     "test-exercise": "jest --no-cache",
     "watch": "jest --no-cache --watch ./*",
-    "lint": "eslint"
+    "lint": "eslint ."
   },
   "license": "MIT",
   "dependencies": {},
