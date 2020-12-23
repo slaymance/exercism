@@ -5,13 +5,42 @@
  *
  */
 
-const ALPHABETICALS_LENGTH = 2;
-const NUMERICALS_LENGTH = 3;
+const LENGTH_OF_ALPHABET = 26;
 const FIRST_ASCII = 'A'.charCodeAt(0);
 
-let eligibleNames;
+/**
+ * The strategy here is to generate every possible name once, then randomly shuffle them. If we were to
+ * randomly generate a name each time, it becomes increasingly unlikely that we'll generate a unique
+ * name. By creating an array of all possibilities that have been shuffled, we ensure we get an unused
+ * name by popping from that list every time we need a new one.
+ */
+const generateAlphaCombos = (length, combo = '') => length
+  ? [...Array(LENGTH_OF_ALPHABET).keys()]
+    .flatMap(i => generateAlphaCombos(length - 1, combo + String.fromCharCode(i + FIRST_ASCII)))
+  : combo;
+
+const generateNumericalCombos = length => [...Array(10 ** length).keys()].map(num => `${num}`.padStart(length, '0'));
+
+const generatePossibleNames = (alphaLength, numLength) => generateAlphaCombos(alphaLength)
+  .flatMap(alphaCombo => generateNumericalCombos(numLength).map(numCombo => alphaCombo + numCombo));
+
+// Randomly shuffle list of all possible names using Fisher-Yates
+const shuffleNames = ([...names]) => names.reduce((shuffled, _, first) => {
+  const second = Math.floor(Math.random() * first);
+  [shuffled[first], shuffled[second]] = [shuffled[second], shuffled[first]];
+  return shuffled;
+}, names);
 
 export class Robot {
+  static ALPHABETICALS_LENGTH = 2;
+  static NUMERICALS_LENGTH = 3;
+  static POSSIBLE_NAMES = generatePossibleNames(Robot.ALPHABETICALS_LENGTH, Robot.NUMERICALS_LENGTH);
+  static ELIGIBLE_NAMES = shuffleNames(Robot.POSSIBLE_NAMES);
+
+  static releaseNames() {
+    Robot.ELIGIBLE_NAMES = shuffleNames(Robot.POSSIBLE_NAMES);
+  }
+
   #name
 
   constructor() {
@@ -23,43 +52,6 @@ export class Robot {
   }
 
   reset() {
-    this.#name = eligibleNames.pop();
+    this.#name = Robot.ELIGIBLE_NAMES.pop();
   }
 }
-
-const generateAlphaCombinations = (length, combo = '') => {
-  if (combo.length === length) {
-    return [combo];
-  }
-
-  const alphaCombos = [];
-  for (let i = 0; i < 26; i++) {
-    alphaCombos.push(...(generateAlphaCombinations(length, combo + String.fromCharCode(i + FIRST_ASCII))));
-  }
-
-  return alphaCombos;
-}
-
-// Generate an array of all possible names only once
-const possibleNames = [];
-generateAlphaCombinations(ALPHABETICALS_LENGTH).forEach(alphaCombo => {
-  for (let num = 0; num < 10 ** NUMERICALS_LENGTH; num++) {
-    possibleNames.push(alphaCombo + (`${num}`).padStart(NUMERICALS_LENGTH, '0'));
-  }
-});
-
-// Randomly shuffle list of all possible names using Fisher-Yates
-const shuffleNames = ([...names]) => {
-  for (let first = names.length - 1; first > 0; first--) {
-    const second = Math.floor(Math.random() * first);
-    [names[first], names[second]] = [names[second], names[first]];
-  }
-
-  return names;
-};
-
-
-// An IIFE that makes all names eligible for selection
-(Robot.releaseNames = () => {
-  eligibleNames = shuffleNames(possibleNames);
-})();
