@@ -11,5 +11,9 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['@babel/plugin-syntax-bigint', ['@babel/plugin-proposal-pipeline-operator', { proposal: 'smart' }]],
+  plugins: [
+    '@babel/plugin-syntax-bigint',
+    ['@babel/plugin-proposal-pipeline-operator', { proposal: 'smart' }],
+    '@babel/plugin-syntax-class-properties',
+  ],
 };
