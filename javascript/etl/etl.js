@@ -17,8 +17,8 @@ export const transform = scores => Object.fromEntries([...{
    * e.g. ['a', 1]
    */
   *[Symbol.iterator]() {
-    for (let [score, letters] of Object.entries(this)) {
-      for (let letter of letters) {
+    for (const [score, letters] of Object.entries(this)) {
+      for (const letter of letters) {
         yield [letter.toLowerCase(), +score]; // This is the pairing
       }
     }

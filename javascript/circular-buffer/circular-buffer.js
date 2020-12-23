@@ -7,6 +7,10 @@
 const isNil = value => value == null;
 class Null { } // This is for resetting a value after reading since null values can't be written
 
+export class BufferFullError extends Error { }
+
+export class BufferEmptyError extends Error { }
+
 class CircularBuffer {
   #values;
   #readIndex = 0;
@@ -66,7 +70,3 @@ class CircularBuffer {
 }
 
 export default CircularBuffer;
-
-export class BufferFullError extends Error { }
-
-export class BufferEmptyError extends Error { }

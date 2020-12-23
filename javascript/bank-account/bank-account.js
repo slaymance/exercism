@@ -3,6 +3,12 @@
 // convenience to get you started writing code faster.
 //
 
+export class ValueError extends Error {
+  constructor() {
+    super('Bank account error');
+  }
+}
+
 export class BankAccount {
   #balance = null;
 
@@ -29,11 +35,5 @@ export class BankAccount {
   get balance() {
     if (this.#balance === null) throw new ValueError();
     return this.#balance;
-  }
-}
-
-export class ValueError extends Error {
-  constructor() {
-    super('Bank account error');
   }
 }

@@ -43,8 +43,8 @@ export class List {
     return first === undefined ? acc : new List(rest).foldl(fn, fn(acc, first));
   }
 
-  foldr() {
-    return this.reverse().foldl(...arguments);
+  foldr(...args) {
+    return this.reverse().foldl(...args);
   }
 
   reverse() {

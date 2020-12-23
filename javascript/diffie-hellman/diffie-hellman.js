@@ -26,7 +26,7 @@ export class DiffieHellman {
 
   constructor(p, g) {
     if (!isPrime(p)) throw new Error('p must be prime.');
-    if (!isPrimitiveRoot(p)(g)) throw new error('g must be a primitive root of p.');
+    if (!isPrimitiveRoot(p)(g)) throw new Error('g must be a primitive root of p.');
 
     [this.#p, this.#g] = [p, g];
   }

@@ -36,13 +36,13 @@ export const classifyReadable = num => {
   const aliquotSum = numsUpToSqrt.reduce((sum, val) => {
     if (isFactorOfNum(val)) {
       if (isSqrtOfNum(val)) return sum + val;
-      else return sum + val + num / val;
-    } else {
+      return sum + val + num / val;
+    } 
       return sum;
-    }
+    
   }) - num; // We subtract num here since the algorith adds 1 and num together
 
   if (aliquotSum > num) return 'abundant';
   else if (aliquotSum < num) return 'deficient';
-  else return 'perfect';
+  return 'perfect';
 };

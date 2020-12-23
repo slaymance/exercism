@@ -27,7 +27,7 @@ export class QueenAttack {
   }
 
   toString() {
-    return this.#board.map(row => row.join(' ')).join('\n') + '\n';
+    return `${this.#board.map(row => row.join(' ')).join('\n')  }\n`;
   }
 
   canAttack() {

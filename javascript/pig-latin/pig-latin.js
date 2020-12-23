@@ -15,5 +15,5 @@ const splitAtIndex = (string, index) => string.slice(index) + string.slice(0, in
 
 export const translate = string => string
   .split(' ')
-  .map(word => splitAtIndex(word, firstVowelIndex(word)) + 'ay')
+  .map(word => `${splitAtIndex(word, firstVowelIndex(word))  }ay`)
   .join(' ');

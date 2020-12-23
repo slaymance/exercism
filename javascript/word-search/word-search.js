@@ -49,7 +49,7 @@ class WordSearch {
     for (const [char, row, col] of this) {
       if (char === word[0]) {
         for (const direction of WordSearch.#MOVEMENTS) {
-          const end = this.#search(word, row, col, direction)
+          const end = this.#search(word, row, col, direction);
           if (end) return { start: this.#search(char, row, col), end };
         }
       }

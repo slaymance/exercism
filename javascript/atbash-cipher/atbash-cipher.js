@@ -16,12 +16,12 @@ const CHUNK_SIZE = 5;
  * include the plugin in your babel.config file (the bigint plugin is already included in the project):
  * plugins: ["@babel/plugin-syntax-bigint", ["@babel/plugin-proposal-pipeline-operator", { "proposal": "smart" }]]
  */
+export const decode = string => string
+  .replace(/\W/g, '')
+  .replace(/[a-z]/g, char => String.fromCharCode(ASCII_START + ASCII_END - char.charCodeAt()));
+
 export const encode = string => string
   |> #.toLowerCase()
   |> decode(#)
   |> #.match(new RegExp(`.{1,${CHUNK_SIZE}}`, 'g'))
   |> #.join(' ');
-
-export const decode = string => string
-  .replace(/\W/g, '')
-  .replace(/[a-z]/g, char => String.fromCharCode(ASCII_START + ASCII_END - char.charCodeAt()));

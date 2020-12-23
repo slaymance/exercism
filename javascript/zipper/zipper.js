@@ -9,8 +9,11 @@ export class Zipper {
   }
 
   #parent = null;
+
   #value = null;
+
   #left = null;
+
   #right = null;
 
   constructor(tree, parent) {

@@ -5,6 +5,8 @@ const ALPHABETICALS_LENGTH = 2;
 const NUMERICALS_LENGTH = 3;
 const FIRST_ASCII = 'A'.charCodeAt(0);
 
+let eligibleNames;
+
 export class Robot {
   #name
 
@@ -37,7 +39,7 @@ const generateAlphaCombinations = (length, combo = '') => {
 // Generate an array of all possible names only once
 const possibleNames = [];
 generateAlphaCombinations(ALPHABETICALS_LENGTH).forEach(alphaCombo => {
-  for (let num = 0; num < Math.pow(10, NUMERICALS_LENGTH); num++) {
+  for (let num = 0; num < 10 ** NUMERICALS_LENGTH; num++) {
     possibleNames.push(alphaCombo + (`${num}`).padStart(NUMERICALS_LENGTH, '0'));
   }
 });
@@ -52,7 +54,6 @@ const shuffleNames = ([...names]) => {
   return names;
 };
 
-let eligibleNames;
 
 // An IIFE that makes all names eligible for selection
 (Robot.releaseNames = () => {

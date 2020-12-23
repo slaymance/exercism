@@ -24,10 +24,10 @@ const DAYS = [
   'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'
 ];
 
-const produceLine = line => `On the ${DAYS[line]} day of Christmas my true love gave to me: ` + GIFTS
+const produceLine = line => `On the ${DAYS[line]} day of Christmas my true love gave to me: ${  GIFTS
   .slice(GIFTS.length - line)
   .concat(`${line === 0 ? '' : 'and '}a Partridge in a Pear Tree.`)
-  .join(', ') + '\n';
+  .join(', ')  }\n`;
 
 export const recite = (first, last) => range(first - 1, last || first)
   .map(produceLine)

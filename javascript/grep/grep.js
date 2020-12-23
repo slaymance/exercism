@@ -34,7 +34,7 @@ const parseArgs = ([...args]) => ({
  */
 const createPredicate = (options, pattern) => string => options.includes(INVERT_MATCH) ^ new RegExp(
   options.includes(LINE_REGEXP) ? `^${pattern}$` : pattern,
-  'm' + (options.includes(IGNORE_CASE) ? 'i' : '')
+  `m${  options.includes(IGNORE_CASE) ? 'i' : ''}`
 ).test(string);
 
 /**

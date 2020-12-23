@@ -5,15 +5,13 @@
 
 import { reverseString } from '../reverse-string/reverse-string';
 
-const range = (min, max) => [...Array(max + 1).keys()].slice(min);
+const isPalindrome = num => `${num}` === reverseString(`${num}`);
+const getFactors = (min, max, palindrome = 0) => [...Array(Math.min(max, Math.floor(Math.sqrt(palindrome))) + 1).keys()]
+  .slice(min)
+  .reduce((factors, num) => palindrome % num || palindrome / num > max
+    ? factors
+    : [...factors, [num, palindrome / num]], []);
 
-/**
- * This isn't an efficient solution. It could be made more efficient by getting factor pairs through for loops rather
- * than my range function. Also, the filtering out of non-palindromes could be more efficient without string conversion
- * since that can be costly. Finally, I suppose you could do iteration from the left until you find your first
- * palindrome, then do the same from the right. You don't need to generate every possible palindrome to meet the test
- * cases, just the smallest and largest in the given range.
- */
 export class Palindromes {
   #value;
   #factors;
@@ -34,15 +32,22 @@ export class Palindromes {
   static generate({ maxFactor, minFactor }) {
     if (minFactor > maxFactor) throw new Error('min must be <= max');
 
-    const palindromes = Object.entries(range(minFactor, maxFactor)
-      .flatMap(factor => range(factor, maxFactor).map(num => [factor, num]))
-      .filter(([factor, num]) => `${factor * num}` === reverseString(`${factor * num}`))
-      .reduce((map, [factor, num]) => ({ ...map, [factor * num]: [...(map[factor * num] || []), [factor, num]] }), {})
-    ).map(([palindrome, factors]) => new Palindromes(+palindrome, factors));
+    let min;
+    let max;
+
+    for (let i = minFactor; i <= maxFactor; i++) {
+      for (let j = i; j <= maxFactor; j++) {
+        const product = i * j;
+        if (isPalindrome(product)) {
+          min = Math.min(product, min ?? Infinity);
+          max = Math.max(product, max ?? 0);
+        }
+      }
+    }
 
     return {
-      smallest: palindromes[0] || new Palindromes(),
-      largest: palindromes[palindromes.length - 1] || new Palindromes()
+      smallest: new Palindromes(min, getFactors(minFactor, maxFactor, min)),
+      largest: new Palindromes(max, getFactors(minFactor, maxFactor, max))
     };
   }
 }

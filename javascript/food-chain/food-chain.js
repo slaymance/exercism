@@ -35,4 +35,4 @@ export const verse = num => {
   return range(0, num - 2).reduceRight((verse, line) => verse + swallow(line), firstLines) + getAnimalLine(0);
 };
 
-export const verses = (first, last) => range(first, last).reduce((song, verseNum) => song + verse(verseNum) + '\n', '');
+export const verses = (first, last) => range(first, last).reduce((song, verseNum) => `${song + verse(verseNum)  }\n`, '');
