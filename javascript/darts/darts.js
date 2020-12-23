@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Darts' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 /**
  * I chose a simple array to represent each circle: the 0 index of each element

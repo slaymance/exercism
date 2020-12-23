@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Space Age' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 const SECONDS_IN_EARTH_YEAR = 31557600;
 const ORBIT_MAP = {

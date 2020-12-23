@@ -1,4 +1,11 @@
 /**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
+
+/**
  * As with all language parsing problems, it comes down to arcane regular expressions.
  * ?<! is a negative lookbehind, so (?<!q)u will only match a 'u' that is not preceded by a 'q'.
  * ?<= is a positive lookbehind, so (?<=\w)y will only match a 'y' that is preceded by another letter.
@@ -15,5 +22,5 @@ const splitAtIndex = (string, index) => string.slice(index) + string.slice(0, in
 
 export const translate = string => string
   .split(' ')
-  .map(word => `${splitAtIndex(word, firstVowelIndex(word))  }ay`)
+  .map(word => `${splitAtIndex(word, firstVowelIndex(word))}ay`)
   .join(' ');

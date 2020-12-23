@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Simple Cipher' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 const ASCII_START = 97;
 const ASCII_END = 122;
 const ASCII_LENGTH = ASCII_END - ASCII_START + 1;

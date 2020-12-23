@@ -1,3 +1,10 @@
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
+
 // Mapping of string operators to their javascript mathematical equivalents
 const OPERATOR_MAP = {
   '**': (num1, num2) => num1 ** num2,

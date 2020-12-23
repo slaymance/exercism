@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Yacht' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 const sum = array => array.reduce((sum, num) => sum + num, 0);
 const sumRoll = target => dice => sum(dice.filter(roll => roll === target));

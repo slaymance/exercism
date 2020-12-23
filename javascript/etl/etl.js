@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'ETL' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 /**
  * I wanted to try my hand at creating an iterator with a generator. It's mostly unnecessary for this problem, but

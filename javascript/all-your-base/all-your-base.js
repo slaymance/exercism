@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'All Your Base' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 const convertToBase = (num, base, numLength = 1 + ~~(Math.log(num) / Math.log(base))) =>
   numLength ? [...convertToBase(num / base | 0, base, numLength - 1), num % base] : [];

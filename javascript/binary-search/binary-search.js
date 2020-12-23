@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Binary Search' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 /**
  * When recursing the right side of an array, be sure to add the midpoint to offset the change in indeces.

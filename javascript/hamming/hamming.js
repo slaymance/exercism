@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Hamming' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 export const compute = (str1, str2) => {
   if (!str1.length && str2.length) throw new Error('left strand must not be empty');

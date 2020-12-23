@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Twelve Days' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 // Helper function
 const range = (min, max) => [...Array(max).keys()].slice(min);

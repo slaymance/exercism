@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'D&D Character' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 export const abilityModifier = ability => {
   if (ability < 3) throw new Error('Ability scores must be at least 3');

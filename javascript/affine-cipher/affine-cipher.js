@@ -1,3 +1,10 @@
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
+
 const ASCII_START = 'a'.charCodeAt();
 const NUMBER_OF_LETTERS = 26;
 const CHUNK_SIZE = 5;

@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Custom Set' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 /**
  * I kind of feel like using an array and its methods to solve this is cheating, but eh.

@@ -1,5 +1,9 @@
-// This is only a SKELETON file for the 'Robot Name' exercise. It's been
-// provided as a convenience to get your started writing code faster.
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 const ALPHABETICALS_LENGTH = 2;
 const NUMERICALS_LENGTH = 3;

@@ -1,6 +1,8 @@
-//
-// This is only a SKELETON file for the 'Two fer' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 export const twoFer = (name = 'you') => `One for ${name}, one for me.`;

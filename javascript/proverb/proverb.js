@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Proverb' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 const line = (object, subject) => `For want of a ${object} the ${subject} was lost.\n`;
 const finalLine = (object, qualifier) => `And all for the want of a ${(qualifier ? `${qualifier  } ` : '') + object}.`

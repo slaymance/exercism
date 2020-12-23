@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'Queen Attack' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 export class QueenAttack {
   #board = Array.from({ length: 8 }, () => Array(8).fill('_'));

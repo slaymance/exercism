@@ -1,7 +1,9 @@
-//
-// This is only a SKELETON file for the 'High Scores' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+/**
+ * Check out all my JavaScript Exercism solutions at:
+ *
+ * github.com/slaymance/exercism/tree/master/javascript
+ *
+ */
 
 // Helper function for clarity.
 const descending = (a, b) => b - a;
