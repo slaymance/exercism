@@ -5,13 +5,13 @@
  *
  */
 
-const getLast = array => array[array.length - 1];
+const last = array => array[array.length - 1];
 
 export class Triangle {
   static buildTriangle = (rows = 0, triangle = []) => {
     if (triangle.length === rows) return triangle;
 
-    const lastRow = getLast(triangle) ?? [];
+    const lastRow = last(triangle) ?? [];
     return Triangle.buildTriangle(rows, [
       ...triangle,
       Array.from(Array(lastRow.length + 1), (_, i) => lastRow[i - 1] + lastRow[i] || 1)
@@ -25,7 +25,7 @@ export class Triangle {
   }
 
   get lastRow() {
-    return getLast(this.#triangle)?.slice();
+    return last(this.#triangle)?.slice();
   }
 
   get rows() {
