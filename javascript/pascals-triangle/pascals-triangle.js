@@ -5,30 +5,11 @@
  *
  */
 
-const last = array => array[array.length - 1];
+const buildNextRow = (lastRow = []) => Array.from(
+  Array(lastRow.length + 1),
+  (_, i) => lastRow[i - 1] + lastRow[i] || 1
+);
 
-export class Triangle {
-  static buildTriangle = (rows = 0, triangle = []) => {
-    if (triangle.length === rows) return triangle;
-
-    const lastRow = last(triangle) ?? [];
-    return Triangle.buildTriangle(rows, [
-      ...triangle,
-      Array.from(Array(lastRow.length + 1), (_, i) => lastRow[i - 1] + lastRow[i] || 1)
-    ]);
-  };
-
-  #triangle = [];
-
-  constructor(numberOfRows) {
-    this.#triangle = Triangle.buildTriangle(numberOfRows)
-  }
-
-  get lastRow() {
-    return last(this.#triangle)?.slice();
-  }
-
-  get rows() {
-    return [...this.#triangle];
-  }
-}
+export const rows = (numberOfRows = 0, triangle = []) => numberOfRows
+  ? rows(numberOfRows - 1, [...triangle, buildNextRow(triangle[triangle.length - 1])])
+  : triangle;
