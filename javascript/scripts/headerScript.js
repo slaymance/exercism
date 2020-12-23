@@ -1,5 +1,7 @@
 const fs = require('fs').promises;
 
+const { RESTRICTED_FILES } = require('./constants');
+
 const CUSTOM_HEADER =
   `/**
  * Check out all my JavaScript Exercism solutions at:
@@ -10,13 +12,6 @@ const CUSTOM_HEADER =
 `;
 
 const REPLACED_HEADER = /\/\/\n\/\/ This is only a SKELETON file for the '.*' exercise\. It's been provided as a\n\/\/ convenience to get you started writing code faster\.\n\/\/\n/;
-
-const RESTRICTED_FILES = [
-  'node_modules',
-  '.eslintrc.js',
-  'babel.config.js',
-  'headerScript.js'
-];
 
 const getAllJSFiles = async (dir = '.', files = []) => {
   for (const file of await fs.readdir(dir)) {
