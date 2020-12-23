@@ -13,7 +13,7 @@ const AREA_CODE_INDEX = 0;
 const EXCHANGE_CODE_INDEX = 3;
 
 export const clean = phoneNumber => {
-  const cleanedNumber = phoneNumber.replace(/[\s\.\-\(\)\+]/g, '');
+  const cleanedNumber = phoneNumber.replace(/[\s.\-()+]/g, '');
   if (/[A-Za-z]/.test(cleanedNumber)) throw new Error('Letters not permitted');
   if (/\D/.test(cleanedNumber)) throw new Error('Punctuations not permitted');
   if (cleanedNumber.length < VALID_NUMBER_LENGTH) throw new Error('Incorrect number of digits');

@@ -12,7 +12,7 @@ const BRACKET_MAP = {
 };
 
 // Helper functions for clarity
-const bracketCharacters = string => string.match(/[\(\[{}\]\)]/g) || [];
+const bracketCharacters = string => string.match(/[([{}\])]/g) || [];
 const isOpenBracket = bracket => !!BRACKET_MAP[bracket];
 const arePairedBrackets = (openBracket, closingBracket) => BRACKET_MAP[openBracket] === closingBracket;
 const isEmptyStack = stack => stack.length === 0;
