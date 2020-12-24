@@ -8,7 +8,7 @@ const { sh } = require('./helpers');
   stdout.split('\n').forEach(file => {
     if (!RESTRICTED_FILES.includes(file)) {
       console.log(`Submitting solution to: ${file}`);
-      sh(`exercism submit ${file}/${file}.js ${file}/${file}.spec.js`);
+      sh(`exercism submit ${file}/${file}.js`);
     }
   })
 })();

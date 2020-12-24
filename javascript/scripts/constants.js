@@ -6,8 +6,7 @@ const RESTRICTED_FILES = [
   'yarn.lock',
   '.eslintrc.js',
   'babel.config.js',
-  'headerScript.js',
-  'submit.js',
+  'scripts',
   ''
 ];
 const SOLUTION_IDS = [
