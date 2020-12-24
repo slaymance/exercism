@@ -1,12 +1,7 @@
 /* eslint-disable no-console */
 
-const { exec } = require('child_process');
-
 const { RESTRICTED_FILES } = require('./constants');
-
-const sh = async cmd => new Promise((resolve, reject) =>
-  exec(cmd, (err, stdout, stderr) => err ? reject(err) : resolve({ stdout, stderr }))
-);
+const { sh } = require('./helpers');
 
 (async function main() {
   const { stdout } = await sh('ls');
