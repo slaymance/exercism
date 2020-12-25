@@ -30,7 +30,7 @@ const findPath = memoize((row, col, tiles) => row === tiles.length - 1 || [
 const isWinner = (stone, tiles) =>
   tiles[0].some((tile, col) => tile === stone && findPath(0, col, tiles)) ? stone : '';
 
-export const winner = (board = [], stoneOne = 'O', stoneTwo = 'X') => {
+const winner = (board = [], stoneOne = 'O', stoneTwo = 'X') => {
   const tiles = board.map(row => row.trim().split(' '));
   return isWinner(stoneOne, tiles) || isWinner(stoneTwo, rotateAndReflect(tiles));
 };
@@ -70,3 +70,16 @@ export const winner = (board = [], stoneOne = 'O', stoneTwo = 'X') => {
  *   - For the left-to-right player, in order for the algorithm to work the same way, the board has to be rotated 90
  *     degrees clockwise and reflected across the y-axis, which is handled by the helper function 'rotateAndReflect'.
  */
+
+/**
+* The below code is only used to make the tests pass.
+*/
+export class Board {
+  constructor(board) {
+    this.board = board;
+  }
+
+  winner() {
+    return winner(this.board);
+  }
+}

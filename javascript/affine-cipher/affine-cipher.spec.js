@@ -29,7 +29,7 @@ describe('Affine cipher', () => {
     test('encode deep thought', () => {
       expect(encode('Truth is fiction.', { a: 5, b: 17 })).toBe('iynia fdqfb ifje');
     });
-
+    
     test('encode all the letters', () => {
       expect(encode('The quick brown fox jumps over the lazy dog.', { a: 17, b: 33 })).toBe('swxtj npvyk lruol iejdc blaxk swxmh qzglf');
     });

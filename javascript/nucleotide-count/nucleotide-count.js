@@ -15,7 +15,16 @@ const NUCLEOTIDE_INDECES = {
 /**
  * I refactored the problem and its tests to just use a function instead of a class.
  */
-export const parse = ([...strand]) => strand.reduce((counts, nucleotide) => {
+const parse = ([...strand]) => strand.reduce((counts, nucleotide) => {
   if (NUCLEOTIDE_INDECES[nucleotide] === undefined) throw new Error('Invalid nucleotide in strand');
   return ++counts[NUCLEOTIDE_INDECES[nucleotide]] && counts;
 }, [0, 0, 0, 0]).join(' ');
+
+/**
+ * The below code is only used to make the tests pass.
+ */
+export class NucleotideCounts {
+  static parse(...args) {
+    return parse(...args);
+  }
+}

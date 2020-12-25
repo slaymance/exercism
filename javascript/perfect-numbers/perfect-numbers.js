@@ -18,7 +18,8 @@ const isNaturalNumber = n => isFiniteNumber(n) && n > 0;
 export const classify = num => {
   if (!isNaturalNumber(num)) throw new Error('Classification is only possible for natural numbers.');
 
-  const aliquotSum = [...Array(Math.floor(Math.sqrt(num)) + 1).keys()].reduce((sum, val) => sum + (num % val === 0 && val + (Math.sqrt(num) !== val && num / val))) - num;
+  const aliquotSum = [...Array(Math.floor(Math.sqrt(num)) + 1).keys()]
+    .reduce((sum, val) => sum + (num % val === 0 && val + (Math.sqrt(num) !== val && num / val))) - num;
   return aliquotSum > num ? 'abundant' : aliquotSum < num ? 'deficient' : 'perfect';
 };
 
@@ -39,9 +40,9 @@ export const classifyReadable = num => {
     if (isFactorOfNum(val)) {
       if (isSqrtOfNum(val)) return sum + val;
       return sum + val + num / val;
-    } 
-      return sum;
-    
+    }
+    return sum;
+
   }) - num; // We subtract num here since the algorith adds 1 and num together
 
   if (aliquotSum > num) return 'abundant';

@@ -33,10 +33,6 @@ describe('Wordy', () => {
     expect(answer('What is 33 divided by -3?')).toEqual(-11);
   });
 
-  test('exponentiation', () => {
-    expect(answer('What is 2 raised to the 3rd power?')).toEqual(8);
-  })
-
   test('multiple additions', () => {
     expect(answer('What is 1 plus 1 plus 1?')).toEqual(3);
   });

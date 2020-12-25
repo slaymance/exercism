@@ -15,4 +15,13 @@ const transpose = shift => char => {
   return String.fromCharCode((asciiCode - asciiStart + shift) % NUMBER_OF_LETTERS + asciiStart);
 };
 
-export const rotate = (string, shift) => string.replace(/[a-z]/gi, transpose(shift));
+const rotate = (string, shift) => string.replace(/[a-z]/gi, transpose(shift));
+
+/**
+ * The below code is only used to make the tests pass.
+ */
+export class RotationalCipher {
+  static rotate(...args) {
+    return rotate(...args);
+  }
+}

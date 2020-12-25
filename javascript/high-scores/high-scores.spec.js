@@ -40,10 +40,4 @@ describe('High Scores Test Suite', () => {
     const input = [40];
     expect(new HighScores(input).personalTopThree).toEqual([40]);
   });
-
-  test('Lots of scores', () => {
-    const numOfScores = 1000000;
-    const input = [...Array(numOfScores).keys()].slice(1);
-    expect(new HighScores(input).personalTopThree).toEqual([numOfScores - 1, numOfScores - 2, numOfScores - 3]);
-  })
 });

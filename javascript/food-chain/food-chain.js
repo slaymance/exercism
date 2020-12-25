@@ -30,11 +30,24 @@ const swallow = num => `She swallowed the ${getAnimal(num + 1)} to catch the ${g
  * I refactored the code and the tests to use functions instead of a class. Since we're not managing state within the
  * class, functions are sufficient.
  */
-export const verse = num => {
+const verse = num => {
   const firstLines = know(num - 1) + getAnimalLine(num - 1);
   if (['fly', 'horse'].includes(getAnimal(num - 1))) return firstLines;
 
   return range(0, num - 2).reduceRight((verse, line) => verse + swallow(line), firstLines) + getAnimalLine(0);
 };
 
-export const verses = (first, last) => range(first, last).reduce((song, verseNum) => `${song + verse(verseNum)  }\n`, '');
+const verses = (first, last) => range(first, last).reduce((song, verseNum) => `${song + verse(verseNum)}\n`, '');
+
+/**
+ * The below code is only used to make the tests pass.
+ */
+export class Song {
+  verse(...args) {
+    return verse(...args);
+  }
+
+  verses(...args) {
+    return verses(...args);
+  }
+}

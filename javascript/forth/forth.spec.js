@@ -226,12 +226,6 @@ describe('Forth', () => {
       expect(first.stack).toEqual([0]);
       expect(second.stack).toEqual([2]);
     });
-
-    test('double over', () => {
-      forth.evaluate(': double-over over over ;');
-      forth.evaluate('3 4 5 6 double-over');
-      expect(forth.stack).toEqual([3, 4, 5, 6, 5, 6])
-    })
   });
 
   describe('case-insensitivity', () => {

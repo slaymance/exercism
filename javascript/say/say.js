@@ -23,7 +23,7 @@ const MAGNITUDES = [
 const getHundreds = ([one, ten, hundred]) => hundred ? `${DIGITS[hundred - 1]} hundred${ten || one ? ' ' : ''}` : '';
 const getTens = ([one, ten]) => ten > 1 ? `${TENS[ten - 2]}${one ? '-' : ''}` : '';
 const getTeenOrOnes = ([one, ten]) => ten === 1 ? TEENS[one] : DIGITS[one - 1] || '';
-const getMagnitude = (nums, i) => i && !nums.every(num => num === 0) ? ` ${  MAGNITUDES[i - 1]}` : '';
+const getMagnitude = (nums, i) => i && !nums.every(num => num === 0) ? ` ${MAGNITUDES[i - 1]}` : '';
 
 const produceNum = (...args) => [
   getHundreds,
@@ -46,3 +46,12 @@ export const inEnglish = num => {
     .reverse()
     .join(' ');
 };
+
+/**
+ * The below code is only used to make the tests pass.
+ */
+export class Say {
+  inEnglish(...args) {
+    return inEnglish(...args);
+  }
+}

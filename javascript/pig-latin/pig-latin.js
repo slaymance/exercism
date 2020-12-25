@@ -20,7 +20,12 @@
 const firstVowelIndex = string => string.search(/[aeio]|(?<!q)u|(?<=\w)y|xr|yt/i);
 const splitAtIndex = (string, index) => string.slice(index) + string.slice(0, index);
 
-export const translate = string => string
+const translate = string => string
   .split(' ')
   .map(word => `${splitAtIndex(word, firstVowelIndex(word))}ay`)
   .join(' ');
+
+/**
+ * The below code is only used to make the tests pass.
+ */
+export const translator = { translate };

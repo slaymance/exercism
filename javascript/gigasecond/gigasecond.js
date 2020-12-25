@@ -5,6 +5,6 @@
  *
  */
 
-const GIGASECOND = 1000000000000;
+const GIGASECOND = 1_000_000_000_000;
 
 export const gigasecond = date => new Date(date.getTime() + GIGASECOND);

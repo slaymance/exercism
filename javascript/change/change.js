@@ -15,7 +15,7 @@ const memoize = fn => {
 };
 
 // In this exercise, I continue my refusal to use a class.
-export const calculate = (coins, target) => {
+const calculate = (coins, target) => {
   if (target < 0) throw new Error('Negative totals are not allowed.');
   if (target === 0) return [];
 
@@ -54,3 +54,12 @@ export const calculate = (coins, target) => {
  * change. Also, it would bloat memory over time if many different collections of coins were being
  * supplied.
  */
+
+/**
+ * The below code is only used to make the tests pass.
+ */
+export class Change {
+  calculate(...args) {
+    return calculate(...args);
+  }
+}
