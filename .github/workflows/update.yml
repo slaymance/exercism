@@ -21,8 +21,8 @@ jobs:
     - run: cd javascript && yarn update-actions
     - run: cd javascript && yarn test
     - uses: actions/checkout@v2
-      - name: Commit changes
-        run: |
+    - name: Commit changes
+    - run: |
           git config --global user.name 'Shane Laymance'
           git config --global user.email 'shane.laymance@gmail.com'
           git commit javascript -m "Automatic updates for JavaScript exercises"
