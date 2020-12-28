@@ -1,0 +1,40 @@
+name: Update Solutions
+
+on:
+  workflow_dispatch:
+        
+jobs:
+  update:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: cd javascript
+    - run: yarn update-solutions
+    - run: yarn test
+      env:
+        AUTHENTICITY_TOKEN: ${{ secrets.AUTHENTICITY_TOKEN }}
+        CSRF_TOKEN: ${{ secrets.CSRF_TOKEN }}
+        EXERCISM_SESSION: ${{ secrets.EXERCISM_SESSION }}
+        REMEMBER_USER_TOKEN: ${{ secrets.REMEMBER_USER_TOKEN }}
+        USER_ID: ${{ secrets.USER_ID }}
+      
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Commit changes
+        run: |
+          git config --global user.name 'Shane Laymance'
+          git config --global user.email 'shane.laymance@gmail.com'
+          git commit ./javascript -am "Automatic updates"
+          git push origin master
