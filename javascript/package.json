@@ -31,7 +31,11 @@
   "scripts": {
     "test": "jest --no-cache",
     "watch": "jest --no-cache --watch",
-    "lint": "eslint"
+    "lint": "eslint",
+    "publish": "node scripts/publish.js",
+    "update": "node scripts/update.js",
+    "download": "node scripts/download.js",
+    "update-solutions": "yarn publish && yarn update && yarn download"
   },
   "license": "MIT",
   "dependencies": {},
