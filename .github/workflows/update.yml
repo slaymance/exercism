@@ -18,9 +18,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd javascript
-    - run: yarn update-solutions
-    - run: yarn test
+    - run: cd javascript && yarn update-solutions
+    - run: cd javascript && yarn test
       env:
         AUTHENTICITY_TOKEN: ${{ secrets.AUTHENTICITY_TOKEN }}
         CSRF_TOKEN: ${{ secrets.CSRF_TOKEN }}
@@ -36,5 +35,5 @@ jobs:
         run: |
           git config --global user.name 'Shane Laymance'
           git config --global user.email 'shane.laymance@gmail.com'
-          git commit ./javascript -am "Automatic updates"
+          git commit javascript -m "Automatic updates for JavaScript exercises"
           git push origin master
