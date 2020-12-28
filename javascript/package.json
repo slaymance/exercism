@@ -32,10 +32,10 @@
     "test": "jest --no-cache",
     "watch": "jest --no-cache --watch",
     "lint": "eslint",
-    "publish": "node scripts/publish.js",
-    "update": "node scripts/update.js",
-    "download": "node scripts/download.js",
-    "update-solutions": "yarn publish && yarn update && yarn download"
+    "publish-solutions": "node scripts/publish.js",
+    "update-solutions": "node scripts/update.js",
+    "download-solutions": "node scripts/download.js",
+    "update-actions": "yarn publish-solutions && yarn update-solutions && yarn download-solutions"
   },
   "license": "MIT",
   "dependencies": {},
