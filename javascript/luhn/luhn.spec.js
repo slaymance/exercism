@@ -29,6 +29,10 @@ describe('Luhn', () => {
     expect(valid('8273 1232 7352 0569')).toEqual(false);
   });
 
+  test('invalid long number with an even remainder', () => {
+    expect(valid('1 2345 6789 1234 5678 9012')).toEqual(false);
+  });
+
   test('valid number with an even number of digits', () => {
     expect(valid('095 245 88')).toEqual(true);
   });
@@ -61,11 +65,11 @@ describe('Luhn', () => {
     expect(valid('091')).toEqual(true);
   });
 
-  test('using ascii value for non-doubled non-digit isn\'t allowed', () => {
+  test("using ascii value for non-doubled non-digit isn't allowed", () => {
     expect(valid('055b 444 285')).toEqual(false);
   });
 
-  test('using ascii value for doubled non-digit isn\'t allowed', () => {
+  test("using ascii value for doubled non-digit isn't allowed", () => {
     expect(valid(':9')).toEqual(false);
   });
 });

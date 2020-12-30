@@ -5,9 +5,23 @@
  *
  */
 
+const invertBy = obj => Object.entries(obj).reduce((inverted, [key, value]) => ({
+  ...inverted,
+  [value]: [...(inverted[value] ?? []), key].sort()
+}), {});
+
 export class GradeSchool {
   #roster = {};
-  add = (name, grade) => { this.#roster[grade] = (this.#roster[grade] || []).concat(name).sort(); }
-  grade = grade => [...(this.#roster[grade] || [])];
-  roster = () => Object.fromEntries(Object.entries(this.#roster).map(([key, grade]) => [key, [...grade]]));
+
+  add(name, grade) {
+    this.#roster[name] = grade;
+  }
+
+  grade(target) {
+    return Object.entries(this.#roster).flatMap(([name, grade]) => grade === target ? name : []).sort();
+  }
+
+  roster() {
+    return invertBy(this.#roster);
+  }
 }

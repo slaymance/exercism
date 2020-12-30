@@ -14,7 +14,9 @@ describe('Pangram()', () => {
   });
 
   test("missing the letter 'x'", () => {
-    expect(isPangram('a quick movement of the enemy will jeopardize five gunboats')).toBe(false);
+    expect(
+      isPangram('a quick movement of the enemy will jeopardize five gunboats')
+    ).toBe(false);
   });
 
   test("missing the letter 'h'", () => {
@@ -26,11 +28,15 @@ describe('Pangram()', () => {
   });
 
   test('with numbers', () => {
-    expect(isPangram('the 1 quick brown fox jumps over the 2 lazy dogs')).toBe(true);
+    expect(isPangram('the 1 quick brown fox jumps over the 2 lazy dogs')).toBe(
+      true
+    );
   });
 
   test('missing letters replaced by numbers', () => {
-    expect(isPangram('7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog')).toBe(false);
+    expect(isPangram('7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog')).toBe(
+      false
+    );
   });
 
   test('mixed case and punctuation', () => {
@@ -38,6 +44,8 @@ describe('Pangram()', () => {
   });
 
   test('case insensitive', () => {
-    expect(isPangram('the quick brown fox jumps over with lazy FX')).toBe(false);
+    expect(isPangram('the quick brown fox jumps over with lazy FX')).toBe(
+      false
+    );
   });
 });

@@ -58,15 +58,18 @@ describe('Rotational cipher', () => {
   });
 
   test('rotate punctuation', () => {
-    const expected = 'Gzo\'n zvo, Bmviyhv!';
-    const actual = RotationalCipher.rotate('Let\'s eat, Grandma!', 21);
+    const expected = "Gzo'n zvo, Bmviyhv!";
+    const actual = RotationalCipher.rotate("Let's eat, Grandma!", 21);
 
     expect(actual).toEqual(expected);
   });
 
   test('rotate all letters', () => {
     const expected = 'Gur dhvpx oebja sbk whzcf bire gur ynml qbt.';
-    const actual = RotationalCipher.rotate('The quick brown fox jumps over the lazy dog.', 13);
+    const actual = RotationalCipher.rotate(
+      'The quick brown fox jumps over the lazy dog.',
+      13
+    );
 
     expect(actual).toEqual(expected);
   });

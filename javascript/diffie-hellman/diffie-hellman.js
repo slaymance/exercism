@@ -33,13 +33,13 @@ export class DiffieHellman {
     [this.#p, this.#g] = [p, g];
   }
 
-  getPublicKeyFromPrivateKey(a) {
+  getPublicKey(a) {
     if (a <= 1 || a >= this.#p) throw new Error('Private key must be between 1 and p.');
 
     return this.#g ** a % this.#p;
   }
 
-  getSharedSecret(a, b) {
-    return b ** a % this.#p;
+  getSecret(B, a) {
+    return B ** a % this.#p;
   }
 }

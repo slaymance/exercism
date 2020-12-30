@@ -190,7 +190,7 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('Euler\'s identity/formula', () => {
+  test("Euler's identity/formula", () => {
     const expected = new ComplexNumber(-1, 0);
     const actual = new ComplexNumber(0, Math.PI).exp;
 

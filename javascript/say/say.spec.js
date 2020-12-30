@@ -47,8 +47,9 @@ describe('say', () => {
   });
 
   test('one million two thousand three hundred forty-five', () => {
-    expect(say.inEnglish(1002345))
-      .toBe('one million two thousand three hundred forty-five');
+    expect(say.inEnglish(1002345)).toBe(
+      'one million two thousand three hundred forty-five'
+    );
   });
 
   test('one billion', () => {

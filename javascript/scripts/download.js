@@ -20,6 +20,6 @@ const REMOVED_FILES = [
 
   exercises.forEach(async exercise => {
     const path = `${exercise}/${exercise}.spec.js`;
-    fs.writeFile(path, (await fs.readFile(path, 'utf8')).replace(/x(test|describe|it)/g, (_, r) => r), 'utf8');
-  })
+    fs.writeFile(path, (await fs.readFile(path, 'utf8')).replace(/x?(describe|test|it)(\.skip)?/g, '$1'), 'utf8');
+  });
 })();

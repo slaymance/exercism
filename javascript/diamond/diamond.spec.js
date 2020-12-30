@@ -6,11 +6,23 @@ describe('Diamond', () => {
   });
 
   test('Degenerate case with no row containing 3 distinct groups of spaces', () => {
-    expect(rows('B')).toEqual([' A ', 'B B', ' A ']);
+    // prettier-ignore
+    expect(rows('B')).toEqual([
+      ' A ',
+      'B B',
+      ' A '
+    ]);
   });
 
   test('Smallest non-degenerate case with odd diamond side length', () => {
-    expect(rows('C')).toEqual(['  A  ', ' B B ', 'C   C', ' B B ', '  A  ']);
+    // prettier-ignore
+    expect(rows('C')).toEqual([
+      '  A  ',
+      ' B B ',
+      'C   C',
+      ' B B ',
+      '  A  '
+    ]);
   });
 
   test('Smallest non-degenerate case with even diamond side length', () => {
@@ -21,7 +33,7 @@ describe('Diamond', () => {
       'D     D',
       ' C   C ',
       '  B B  ',
-      '   A   '
+      '   A   ',
     ]);
   });
 
@@ -77,7 +89,7 @@ describe('Diamond', () => {
       '                      D     D                      ',
       '                       C   C                       ',
       '                        B B                        ',
-      '                         A                         '
+      '                         A                         ',
     ]);
   });
 });

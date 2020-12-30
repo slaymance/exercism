@@ -28,7 +28,11 @@ empty list.
 If you want to know more about linked lists, check [Wikipedia](https://en.wikipedia.org/wiki/Linked_list).
 
 Your list must also implement the following interface:
+
 - `delete` (delete the first occurence of a specified value)
+- `count` (count the number of items in the list)
+
+**NOTE**: Do _not_ use a library to implement this exercise. Do _not_ use a backing array to implement this exercise.
 
 
 ## Setup
@@ -39,6 +43,8 @@ dependencies:
 [https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
 
 ## Requirements
+
+Please `cd` into exercise directory before running all below commands.
 
 Install assignment dependencies:
 
@@ -59,11 +65,21 @@ In the test suites all tests but the first have been skipped.
 Once you get a test passing, you can enable the next one by changing `xtest` to
 `test`.
 
-## Source
 
-Classic computer science topic
+## Submitting Solutions
+
+Once you have a solution ready, you can submit it using:
+
+```bash
+exercism submit linked-list.js
+```
 
 ## Submitting Incomplete Solutions
 
 It's possible to submit an incomplete solution so you can see how others have
 completed the exercise.
+
+## Exercise Source Credits
+
+Classic computer science topic
+

@@ -15,8 +15,11 @@ In the end, you should be able to:
   as 1, 2, 3, etc., and students within a grade should be sorted
   alphabetically by name.
   - "Who all is enrolled in school right now?"
-  - "Grade 1: Anna, Barb, and Charlie. Grade 2: Alex, Peter, and Zoe.
-    Grade 3…"
+  - "Let me think. We have
+  Anna, Barb, and Charlie in grade 1,
+  Alex, Peter, and Zoe in grade 2
+  and Jim in grade 5.
+  So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
 
 Note that all our students only have one name.  (It's a small town, what
 do you want?)
@@ -43,6 +46,8 @@ dependencies:
 
 ## Requirements
 
+Please `cd` into exercise directory before running all below commands.
+
 Install assignment dependencies:
 
 ```bash
@@ -62,11 +67,21 @@ In the test suites all tests but the first have been skipped.
 Once you get a test passing, you can enable the next one by changing `xtest` to
 `test`.
 
-## Source
 
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+## Submitting Solutions
+
+Once you have a solution ready, you can submit it using:
+
+```bash
+exercism submit grade-school.js
+```
 
 ## Submitting Incomplete Solutions
 
 It's possible to submit an incomplete solution so you can see how others have
 completed the exercise.
+
+## Exercise Source Credits
+
+A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+

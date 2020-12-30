@@ -13,7 +13,7 @@ describe('steps()', () => {
     expect(steps(12)).toEqual(9);
   });
 
-  test('Large number of even and odd steps', () => {
+  test('large number of even and odd steps', () => {
     expect(steps(1000000)).toEqual(152);
   });
 

@@ -5,47 +5,23 @@
  *
  */
 
-// Helper functions
-const isIntLessThan = comparator => num => Number.isInteger(num) && num <= comparator;
-const meetsRequirment = sum => (a, b, c) => sum === undefined || a + b + c === sum;
-// Creates an array of integers from min to, but not including, max.
-const range = (min, max) => [...Array(max).keys()].slice(min);
-
 export class Triplet {
-  #sides;
-
   constructor(...sides) {
-    this.#sides = sides.sort((a, b) => a - b);
-  }
-
-  get sides() {
-    return this.#sides;
-  }
-
-  sum() {
-    return this.sides.reduce((sum, side) => sum + side);
-  }
-
-  product() {
-    return this.sides.reduce((sum, side) => sum * side);
-  }
-
-  isPythagorean() {
-    const [a, b, c] = this.sides;
-    return a ** 2 + b ** 2 === c ** 2;
-  }
-
-  /**
-   * This brute forces all Pythagorean triples from the minFactor to the maxFactor. It only includes the triple if c
-   * is an integer less than/equal to maxFactor and a + b + c is equal to the sum if provided.
-   */
-  static where({ maxFactor = 0, minFactor = 3, sum }) {
-    const isIntLessThanMaxFactor = isIntLessThan(maxFactor);
-    const meetsSumRequirement = meetsRequirment(sum);
-
-    return range(minFactor, maxFactor - 1).flatMap(a => range(a + 1, maxFactor).flatMap(b => {
-      const c = Math.sqrt(a ** 2 + b ** 2);
-      return isIntLessThanMaxFactor(c) && meetsSumRequirement(a, b, c) ? new Triplet(a, b, c) : [];
-    }));
+    this.toArray = () => sides;
   }
 }
+
+function* getTriplets({ sum, maxFactor = sum / 2 | 0, minFactor = 3 }) {
+  for (let a = minFactor; a < sum / 3 | 0; a++) {
+    for (let b = a + 1; b < maxFactor; b++) {
+      const c = Math.sqrt(a ** 2 + b ** 2);
+      if ([
+        Number.isInteger(c),
+        c <= maxFactor,
+        a + b + c === (sum ?? a + b + c)
+      ].every(assertion => assertion)) yield new Triplet(a, b, c);
+    }
+  }
+}
+
+export const triplets = args => [...getTriplets(args)];

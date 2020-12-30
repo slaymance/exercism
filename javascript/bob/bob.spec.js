@@ -43,7 +43,7 @@ describe('Bob', () => {
 
   test('forceful question', () => {
     const result = hey('WHAT THE HELL WERE YOU THINKING?');
-    expect(result).toEqual('Calm down, I know what I\'m doing!');
+    expect(result).toEqual("Calm down, I know what I'm doing!");
   });
 
   test('shouting numbers', () => {
@@ -51,12 +51,12 @@ describe('Bob', () => {
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  test('only numbers', () => {
+  test('no letters', () => {
     const result = hey('1, 2, 3');
     expect(result).toEqual('Whatever.');
   });
 
-  test('question with only numbers', () => {
+  test('question with no letters', () => {
     const result = hey('4?');
     expect(result).toEqual('Sure.');
   });
