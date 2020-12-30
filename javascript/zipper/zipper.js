@@ -5,6 +5,14 @@
  *
  */
 
+/**
+ * I've been learning Haskell and the book "Learn You a Haskell for Great Good!" has an
+ * excellent chapter on a zippers which really made them click for me. You can read it here:
+ * http://learnyouahaskell.com/zippers
+ * I tried to model my implementation as much as possible after the examples in the chapter.
+ * Of course, everything in Haskell is a function whereas here we're using a class. But the
+ * methods here are still fundamentally the same.
+ */
 export class Zipper {
   static fromTree(tree, breadcrumbs) {
     return tree ? new Zipper(tree, breadcrumbs) : null;
