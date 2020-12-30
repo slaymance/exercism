@@ -36,15 +36,15 @@ export class Triangle {
     return this.#sides;
   }
 
-  isEquilateral() {
+  get isEquilateral() {
     return this.#isEquilateral;
   }
 
-  isIsosceles() {
+  get isIsosceles() {
     return this.#isIsosceles;
   }
 
-  isScalene() {
+  get isScalene() {
     return this.#isScalene;
   }
 }

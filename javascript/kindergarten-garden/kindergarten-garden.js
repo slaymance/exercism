@@ -8,10 +8,47 @@
 /* eslint-disable no-constructor-return */
 
 /**
- * My first Proxy! It's useful here since we want to create a property for each student
- * on the class. Think of the Proxy as a "catch-all" getter.
+ * I'm sad they changed this one. The requirement to have a getter for each student made it unique.
+ * I've left my solution to the old test cases below since I thought it was a practical use case
+ * for a Proxy.
  */
 export class Garden {
+  static STUDENTS = [
+    'Alice',
+    'Bob',
+    'Charlie',
+    'David',
+    'Eve',
+    'Fred',
+    'Ginny',
+    'Harriet',
+    'Ileana',
+    'Joseph',
+    'Kincaid',
+    'Larry'
+  ];
+  static PLANTS = {
+    C: 'clover',
+    G: 'grass',
+    R: 'radishes',
+    V: 'violets'
+  };
+
+  #rows;
+  #students;
+
+  constructor(cups, students) {
+    this.#rows = cups.split('\n');
+    this.#students = students?.slice().sort() ?? Garden.STUDENTS;
+  }
+
+  plants(student) {
+    const cupNum = this.#students.findIndex(testStudent => new RegExp(student, 'i').test(testStudent)) * 2;
+    return this.#rows.flatMap(row => [...row.slice(cupNum, cupNum + 2)]).map(cup => Garden.PLANTS[cup]);
+  }
+}
+
+export class GardenOld {
   static STUDENTS = [
     'Alice',
     'Bob',

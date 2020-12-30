@@ -1,4 +1,4 @@
-## Affine Cipher
+# Affine Cipher
 
 Create an implementation of the affine cipher,
 an ancient encryption system created in the Middle East.
@@ -105,7 +105,7 @@ Once you get a test passing, you can enable the next one by changing `xtest` to
 Once you have a solution ready, you can submit it using:
 
 ```bash
-exercism submit allergies.js
+exercism submit affine-cipher.js
 ```
 
 ## Submitting Incomplete Solutions
@@ -115,4 +115,5 @@ completed the exercise.
 
 ## Exercise Source Credits
 
-Jumpstart Lab Warm-up [http://jumpstartlab.com](http://jumpstartlab.com)
+Wikipedia [http://en.wikipedia.org/wiki/Affine_cipher](http://en.wikipedia.org/wiki/Affine_cipher)
+

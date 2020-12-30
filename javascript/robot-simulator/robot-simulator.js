@@ -23,7 +23,7 @@ export class Robot {
     return [...chain].map(instruction => Robot.INSTRUCTIONS[instruction]);
   }
 
-  #bearing;
+  #bearing = Robot.NORTH;
   #coordinates;
 
   get bearing() {
@@ -66,7 +66,7 @@ export class Robot {
 
   place({ direction, x, y }) {
     this.orient(direction);
-    this.at(x, y)
+    this.at(x, y);
   }
 
   evaluate(chain) {

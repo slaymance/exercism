@@ -20,8 +20,11 @@ export class Series {
     return this.#digits;
   }
 
-  slices(size = 0) {
-    if (size > this.digits.length) throw new Error('Slice size is too big.');
+  slices(size) {
+    if (!this.digits.length) throw new Error('series cannot be empty');
+    if (size > this.digits.length) throw new Error('slice length cannot be greater than series length');
+    if (size === 0) throw new Error('slice length cannot be zero');
+    if (size < 0) throw new Error('slice length cannot be negative');
     return Array.from(Array(this.digits.length - size + 1), (_, i) => this.digits.slice(i, i + size));
   }
 }
