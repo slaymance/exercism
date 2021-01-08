@@ -25,5 +25,5 @@ const TRANSLATIONS = invert({
 export const translate = (rna = '') => {
   const protein = TRANSLATIONS[rna.slice(0, 3)];
   if (!protein) throw new Error('Invalid codon');
-  return protein === STOP ? [] : [protein].concat(translate(rna.slice(3)));
+  return protein === STOP ? [] : [protein, ...translate(rna.slice(3))];
 };
