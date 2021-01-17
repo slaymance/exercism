@@ -21,7 +21,5 @@ const rotate = (string, shift) => string.replace(/[a-z]/gi, transpose(shift));
  * The below code is only used to make the tests pass.
  */
 export class RotationalCipher {
-  static rotate(...args) {
-    return rotate(...args);
-  }
+  static rotate = rotate;
 }
