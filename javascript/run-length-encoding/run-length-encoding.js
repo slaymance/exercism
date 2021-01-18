@@ -1,8 +1,6 @@
 /**
- * Check out all my JavaScript Exercism solutions at:
- *
- * github.com/slaymance/exercism/tree/master/javascript
- *
+ * Check out all my solutions to the Exercism JavaScript track:
+ * github.com/slaymance/exercism/tree/main/javascript
  */
 
 export const encode = string => string.replace(/(.)\1+/g, ({ length }, char) => length + char);

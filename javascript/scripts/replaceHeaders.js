@@ -4,14 +4,19 @@ const { RESTRICTED_FILES } = require('./constants');
 
 const CUSTOM_HEADER =
   `/**
+ * Check out all my solutions to the Exercism JavaScript track:
+ * github.com/slaymance/exercism/tree/main/javascript
+ */
+`;
+
+const REPLACED_HEADER =
+  `/**
  * Check out all my JavaScript Exercism solutions at:
  *
  * github.com/slaymance/exercism/tree/master/javascript
  *
  */
 `;
-
-const REPLACED_HEADER = /\/\/\n\/\/ This is only a SKELETON file for the '.*' exercise\. It's been provided as a\n\/\/ convenience to get you started writing code faster\.\n\/\/\n/;
 
 const getAllJSFiles = async (dir = '.', files = []) => {
   for (const file of await fs.readdir(dir)) {
