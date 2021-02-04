@@ -36,7 +36,7 @@ export class Character {
   constructor() {
     return new Proxy(this, {
       get(character, stat) {
-        if (Character.STATS.includes(stat) && !Reflect.has(...arguments))
+        if (!Reflect.has(...arguments) && Character.STATS.includes(stat))
           Reflect.set(character, stat, Character.rollAbility());
 
         return Reflect.get(...arguments);
