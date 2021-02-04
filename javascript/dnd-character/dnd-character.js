@@ -3,6 +3,8 @@
  * github.com/slaymance/exercism/tree/main/javascript
  */
 
+/* eslint-disable no-constructor-return */
+
 export const abilityModifier = ability => {
   if (ability < 3) throw new Error('Ability scores must be at least 3');
   if (ability > 18) throw new Error('Ability scores can be at most 18');
@@ -13,6 +15,14 @@ export const abilityModifier = ability => {
 export class Character {
   static DIE_SIDES = 6;
   static BASE_HP = 10;
+  static STATS = [
+    'strength',
+    'dexterity',
+    'constitution',
+    'intelligence',
+    'wisdom',
+    'charisma',
+  ];
 
   static rollAbility() {
     return Array
@@ -22,38 +32,14 @@ export class Character {
       .reduce((sum, roll) => sum + roll);
   }
 
-  #charisma = Character.rollAbility();
-  #constitution = Character.rollAbility();
-  #dexterity = Character.rollAbility();
-  #intelligence = Character.rollAbility();
-  #strength = Character.rollAbility();
-  #wisdom = Character.rollAbility();
-
-  get strength() {
-    return this.#strength;
-  }
-
-  get dexterity() {
-    return this.#dexterity;
-  }
-
-  get constitution() {
-    return this.#constitution;
-  }
-
-  get intelligence() {
-    return this.#intelligence;
-  }
-
-  get wisdom() {
-    return this.#wisdom;
-  }
-
-  get charisma() {
-    return this.#charisma;
-  }
-
-  get hitpoints() {
-    return Character.BASE_HP + abilityModifier(this.#constitution);
+  constructor() {
+    return new Proxy(this, {
+      get(target, prop) {
+        if (prop === 'hitpoints') return Character.BASE_HP + abilityModifier(target.constitution);
+        if (!Character.STATS.includes(prop)) return null;
+        if (!Reflect.has(target, prop)) Reflect.set(target, prop, Character.rollAbility());
+        return Reflect.get(target, prop);
+      }
+    });
   }
 }
