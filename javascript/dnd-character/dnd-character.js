@@ -34,11 +34,11 @@ export class Character {
 
   constructor() {
     return new Proxy(this, {
-      get(target, prop) {
-        if (prop === 'hitpoints') return Character.BASE_HP + abilityModifier(target.constitution);
-        if (!Character.STATS.includes(prop)) return null;
-        if (!Reflect.has(target, prop)) Reflect.set(target, prop, Character.rollAbility());
-        return Reflect.get(target, prop);
+      get(character, stat) {
+        if (stat === 'hitpoints') return Character.BASE_HP + abilityModifier(character.constitution);
+        if (!Character.STATS.includes(stat)) return null;
+        if (!Reflect.has(character, stat)) Reflect.set(character, stat, Character.rollAbility());
+        return Reflect.get(character, stat);
       }
     });
   }
