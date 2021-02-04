@@ -4,6 +4,7 @@
  */
 
 /* eslint-disable no-constructor-return */
+/* eslint-disable prefer-rest-params */
 
 export const abilityModifier = ability => {
   if (ability < 3) throw new Error('Ability scores must be at least 3');
@@ -21,7 +22,7 @@ export class Character {
     'constitution',
     'intelligence',
     'wisdom',
-    'charisma',
+    'charisma'
   ];
 
   static rollAbility() {
@@ -35,11 +36,15 @@ export class Character {
   constructor() {
     return new Proxy(this, {
       get(character, stat) {
-        if (stat === 'hitpoints') return Character.BASE_HP + abilityModifier(character.constitution);
-        if (!Character.STATS.includes(stat)) return null;
-        if (!Reflect.has(character, stat)) Reflect.set(character, stat, Character.rollAbility());
-        return Reflect.get(character, stat);
+        if (Character.STATS.includes(stat) && !Reflect.has(...arguments))
+          Reflect.set(character, stat, Character.rollAbility());
+
+        return Reflect.get(...arguments);
       }
     });
+  }
+
+  get hitpoints() {
+    return Character.BASE_HP + abilityModifier(this.constitution);
   }
 }
