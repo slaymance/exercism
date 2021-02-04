@@ -40,6 +40,9 @@ export class Character {
           Reflect.set(character, stat, Character.rollAbility());
 
         return Reflect.get(...arguments);
+      },
+      set() {
+        return null; // Prevents cheaters from altering their stats
       }
     });
   }
