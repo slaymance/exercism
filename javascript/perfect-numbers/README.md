@@ -1,5 +1,10 @@
 # Perfect Numbers
 
+Welcome to Perfect Numbers on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a number is perfect, abundant, or deficient based on
 Nicomachus' (60 - 120 CE) classification scheme for positive integers.
 
@@ -17,51 +22,21 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
 
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @komyg
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
+- @ankorGH
+- @matthewmorgan
+- @rchavarria
+- @serixscorpio
+- @SleeplessByte
+- @tejasbubane
 
-Install assignment dependencies:
+### Based on
 
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit perfect-numbers.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
-
+Taken from Chapter 2 of Functional Thinking by Neal Ford. - http://shop.oreilly.com/product/0636920029687.do

@@ -1,5 +1,10 @@
 # Prime Factors
 
+Welcome to Prime Factors on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Compute the prime factors of a given natural number.
 
 A prime number is only evenly divisible by itself and 1.
@@ -24,56 +29,25 @@ factors of 60: 2, 2, 3, and 5.
 
 You can check this yourself:
 
-- 2 * 2 * 3 * 5
-- = 4 * 15
+- 2 _ 2 _ 3 \* 5
+- = 4 \* 15
 - = 60
 - Success!
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @rchavarria
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
+- @ankorGH
+- @matthewmorgan
+- @ryanplusplus
+- @SleeplessByte
+- @xarxziux
 
-Install assignment dependencies:
+### Based on
 
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit prime-factors.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-The Prime Factors Kata by Uncle Bob [http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
-
+The Prime Factors Kata by Uncle Bob - http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata

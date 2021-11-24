@@ -1,5 +1,10 @@
 # Isogram
 
+Welcome to Isogram on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a word or phrase is an isogram.
 
 An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter, however spaces and hyphens are allowed to appear multiple times.
@@ -11,53 +16,21 @@ Examples of isograms:
 - downstream
 - six-year-old
 
-The word *isograms*, however, is not an isogram, because the s repeats.
+The word _isograms_, however, is not an isogram, because the s repeats.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Contributed to by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @amscotti
+- @ankorGH
+- @matthewmorgan
+- @ovidiu141
+- @PakkuDon
+- @rchavarria
+- @serixscorpio
+- @SleeplessByte
 
-## Requirements
+### Based on
 
-Please `cd` into exercise directory before running all below commands.
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit isogram.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
-
+Wikipedia - https://en.wikipedia.org/wiki/Isogram

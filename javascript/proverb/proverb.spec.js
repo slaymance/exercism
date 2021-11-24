@@ -32,7 +32,7 @@ And all for the want of a nail.`
     );
   });
 
-  test('the whole proveb', () => {
+  test('the whole proverb', () => {
     const result = proverb(
       'nail',
       'shoe',

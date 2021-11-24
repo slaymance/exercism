@@ -26,7 +26,7 @@ const validRectangleOfLength = length => crossSection => new RegExp(
  * As soon as a possible cross section is found that would preclude a valid rectangle from forming in any of the
  * following cross sections, it breaks out of the rectangle search loop and looks for another possible rectangle.
  */
-const count = (plane = []) => plane.reduce((rectangles, [...cross], crossInd) => rectangles +
+export const count = (plane = []) => plane.reduce((rectangles, [...cross], crossInd) => rectangles +
   cross.reduce((count, char, charInd) => {
     if (char === CORNER) {
       for (const [i, nextChar] of [...cross.entries()].slice(charInd + 1)) {
@@ -43,12 +43,3 @@ const count = (plane = []) => plane.reduce((rectangles, [...cross], crossInd) =>
 
     return count;
   }, 0), 0);
-
-/**
- * The below code is only used to make the tests pass.
- */
-export class Rectangles {
-  static count(...args) {
-    return count(...args);
-  }
-}

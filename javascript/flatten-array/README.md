@@ -1,5 +1,10 @@
 # Flatten Array
 
+Welcome to Flatten Array on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Take a nested list and return a single flattened list with all values except nil/null.
 
 The challenge is to write a function that accepts an arbitrarily-deep nested list-like structure and returns a flattened structure without any nil/null values.
@@ -10,51 +15,21 @@ input: [1,[2,3,null,4],[null],5]
 
 output: [1,2,3,4,5]
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @matthewmorgan
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
+- @ankorGH
+- @gabriel376
+- @rchavarria
+- @SleeplessByte
+- @tejasbubane
+- @xarxziux
 
-Install assignment dependencies:
+### Based on
 
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit flatten-array.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Interview Question [https://reference.wolfram.com/language/ref/Flatten.html](https://reference.wolfram.com/language/ref/Flatten.html)
-
+Interview Question - https://reference.wolfram.com/language/ref/Flatten.html

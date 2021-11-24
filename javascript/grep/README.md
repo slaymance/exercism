@@ -1,10 +1,15 @@
 # Grep
 
+Welcome to Grep on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Search a file for lines matching a regular expression pattern. Return the line
 number and contents of each matching line.
 
 The Unix [`grep`](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html) command can be used to search for lines in one or more files
-that match a user-provided search query (known as the *pattern*).
+that match a user-provided search query (known as the _pattern_).
 
 The `grep` command takes three arguments:
 
@@ -33,7 +38,7 @@ hello
 hello again
 ```
 
-### Flags
+## Flags
 
 As said earlier, the `grep` command should also support the following flags:
 
@@ -64,7 +69,7 @@ The `grep` command should support multiple flags at once.
 For example, running `grep -l -v "hello" file1.txt file2.txt` should
 print the names of files that do not contain the string "hello".
 
-### Node process
+## Node process
 
 Unlike other exercises, `grep.js` is _not_ imported inside the test file `grep.spec.js`. Instead, it will be used as if it's an executable. To facilitate that, the `grep.js` file has been set-up with a shebang, and a comment that explains what this does:
 
@@ -89,15 +94,15 @@ Unlike other exercises, `grep.js` is _not_ imported inside the test file `grep.s
 
 The tests will start a new node _process_, executing `grep.js`.
 
-### Reading arguments
+## Reading arguments
 
 In order to retrieve the arguments the _process_ was started with, use `process.argv`.
 
-### Reading files
+## Reading files
 
 The function `readLines` has been provided. There is no need to transform the file path in order to use it. The `readlines` function will _resolve_ the path from the current working directory, which, for the `grep.js` processes is set to the exercise directory.
 
-### Writing output
+## Writing output
 
 In order to write output use
 
@@ -106,52 +111,17 @@ In order to write output use
 
 The tests consider execution to be successful (resolved) if nothing is written to the standard error stream, and not successful (rejected) if something is written to the standard error stream.
 
+## Source
 
-## Setup
+### Created by
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+- @TomPradat
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+### Contributed to by
 
-## Requirements
+- @iHiD
+- @SleeplessByte
 
-Please `cd` into exercise directory before running all below commands.
+### Based on
 
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit grep.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Conversation with Nate Foster. [http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf](http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf)
-
+Conversation with Nate Foster. - http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf

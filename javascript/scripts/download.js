@@ -5,8 +5,12 @@ const { sh } = require('./helpers');
 
 const REMOVED_FILES = [
   '.eslintrc',
+  '.gitignore',
   '.npmrc',
   'babel.config.js',
+  'HELP.md',
+  'HINTS.md',
+  'LICENSE',
   'package.json'
 ];
 

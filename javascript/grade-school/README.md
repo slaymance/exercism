@@ -1,5 +1,10 @@
 # Grade School
 
+Welcome to Grade School on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given students' names along with the grade that they are in, create a roster
 for the school.
 
@@ -11,17 +16,17 @@ In the end, you should be able to:
 - Get a list of all students enrolled in a grade
   - "Which students are in grade 2?"
   - "We've only got Jim just now."
-- Get a sorted list of all students in all grades.  Grades should sort
+- Get a sorted list of all students in all grades. Grades should sort
   as 1, 2, 3, etc., and students within a grade should be sorted
   alphabetically by name.
   - "Who all is enrolled in school right now?"
   - "Let me think. We have
-  Anna, Barb, and Charlie in grade 1,
-  Alex, Peter, and Zoe in grade 2
-  and Jim in grade 5.
-  So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
+    Anna, Barb, and Charlie in grade 1,
+    Alex, Peter, and Zoe in grade 2
+    and Jim in grade 5.
+    So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
 
-Note that all our students only have one name.  (It's a small town, what
+Note that all our students only have one name. (It's a small town, what
 do you want?)
 
 ## For bonus points
@@ -37,51 +42,25 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @rchavarria
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
+- @ankorGH
+- @draalger
+- @ee7
+- @kytrinyx
+- @matthewmorgan
+- @mgmatola
+- @ryanplusplus
+- @SleeplessByte
+- @StevenACoffman
+- @xarxziux
 
-Install assignment dependencies:
+### Based on
 
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit grade-school.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
-
+A pairing session with Phil Battos at gSchool - http://gschool.it

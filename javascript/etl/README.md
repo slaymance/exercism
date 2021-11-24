@@ -1,8 +1,13 @@
-# ETL
+# Etl
+
+Welcome to Etl on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
-### ETL
+## ETL
 
 Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so
 we're going to migrate this."
@@ -11,7 +16,7 @@ we're going to migrate this."
 once." That's then typically followed by much forehead slapping and
 moaning about how stupid we could possibly be.)
 
-### The goal
+## The goal
 
 We're going to extract some Scrabble scores from a legacy system.
 
@@ -39,58 +44,31 @@ input letters:
 Your mission, should you choose to accept it, is to transform the legacy data
 format to the shiny new format.
 
-### Notes
+## Notes
 
 A final note about scoring, Scrabble is played around the world in a
 variety of languages, each with its own unique scoring table. For
 example, an "E" is scored at 2 in the Māori-language version of the
 game while being scored at 4 in the Hawaiian-language version.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @rchavarria
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
+- @ankorGH
+- @draalger
+- @hayashi-ay
+- @kytrinyx
+- @matthewmorgan
+- @ryanplusplus
+- @SleeplessByte
+- @tejasbubane
+- @trvrfrd
 
-Install assignment dependencies:
+### Based on
 
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit etl.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-The Jumpstart Lab team [http://jumpstartlab.com](http://jumpstartlab.com)
-
+The Jumpstart Lab team - http://jumpstartlab.com

@@ -1,10 +1,15 @@
 # Resistor Color
 
+Welcome to Resistor Color on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 If you want to build something using a Raspberry Pi, you'll probably use _resistors_.
 For this exercise, you need to know two things about them:
 
-* Each resistor has a resistance value.
-* Resistors are small - so small in fact that if you printed the resistance value on them, it would be hard to read.
+- Each resistor has a resistance value.
+- Resistors are small - so small in fact that if you printed the resistance value on them, it would be hard to read.
 
 To get around this problem, manufacturers print color-coded bands onto the resistors to denote their resistance values.
 Each band has a position and a numeric value.
@@ -27,6 +32,7 @@ These colors are encoded as follows:
 - White: 9
 
 The goal of this exercise is to create a way:
+
 - to look up the numerical value associated with a particular color band
 - to list the different band colors
 
@@ -36,52 +42,17 @@ More information on the color encoding of resistors can be found in the [Electro
 
 Although the color names are capitalised in the description, the function colorCode will always be called with the lowercase equivalent, e.g brown instead of Brown
 
+## Source
 
-## Setup
+### Created by
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+- @SleeplessByte
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+### Contributed to by
 
-## Requirements
+- @ankorGH
+- @TomPradat
 
-Please `cd` into exercise directory before running all below commands.
+### Based on
 
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit resistor-color.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1458](https://github.com/exercism/problem-specifications/issues/1458)
-
+Maud de Vries, Erik Schierboom - https://github.com/exercism/problem-specifications/issues/1458

@@ -23,13 +23,6 @@ module.exports = {
     'no-empty': 'off',
     'no-useless-escape': 'warn'
   },
-  overrides: [
-    {
-      files: ['.meta/proof.ci.js', '.meta/exemplar.js', '*.spec.js'],
-      excludedFiles: ['custom.spec.js'],
-      extends: '@exercism/eslint-config-javascript/maintainers'
-    }
-  ]
 };
 
 

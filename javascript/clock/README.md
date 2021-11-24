@@ -1,56 +1,35 @@
 # Clock
 
+Welcome to Clock on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a clock that handles times without dates.
 
 You should be able to add and subtract minutes to it.
 
 Two clocks that represent the same time should be equal to each other.
 
-## Setup
+Using the built-in [Date class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) and its methods is not allowed.
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+## Source
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+### Created by
 
-## Requirements
+- @matthewmorgan
 
-Please `cd` into exercise directory before running all below commands.
+### Contributed to by
 
-Install assignment dependencies:
+- @ankorGH
+- @ovidiu141
+- @rchavarria
+- @ryanplusplus
+- @SleeplessByte
+- @tejasbubane
+- @Tyresius92
+- @xarxziux
 
-```bash
-$ npm install
-```
+### Based on
 
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit clock.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Pairing session with Erin Drummond [https://twitter.com/ebdrummond](https://twitter.com/ebdrummond)
-
+Pairing session with Erin Drummond - https://twitter.com/ebdrummond

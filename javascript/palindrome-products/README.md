@@ -1,5 +1,10 @@
 # Palindrome Products
 
+Welcome to Palindrome Products on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Detect palindrome products in a given range.
 
 A palindromic number is a number that remains the same when its digits are
@@ -32,51 +37,23 @@ Given the range `[10, 99]` (both inclusive)...
 The smallest palindrome product is `121`. Its factors are `(11, 11)`.
 The largest palindrome product is `9009`. Its factors are `(91, 99)`.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Contributed to by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @ankorGH
+- @cmccandless
+- @draalger
+- @ErikSchierboom
+- @javaeeeee
+- @kytrinyx
+- @matthewmorgan
+- @rchavarria
+- @ryanplusplus
+- @SleeplessByte
+- @smb26
+- @xarxziux
 
-## Requirements
+### Based on
 
-Please `cd` into exercise directory before running all below commands.
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit palindrome-products.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-Problem 4 at Project Euler [http://projecteuler.net/problem=4](http://projecteuler.net/problem=4)
-
+Problem 4 at Project Euler - http://projecteuler.net/problem=4

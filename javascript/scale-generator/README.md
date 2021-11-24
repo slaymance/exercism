@@ -1,5 +1,10 @@
 # Scale Generator
 
+Welcome to Scale Generator on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a tonic, or starting note, and a set of intervals, generate
 the musical scale starting with the tonic and following the
 specified interval pattern.
@@ -21,15 +26,15 @@ The collection of notes in these scales is written with either sharps or
 flats, depending on the tonic. Here is a list of which are which:
 
 No Sharps or Flats:
-C major
+C major,
 a minor
 
 Use Sharps:
-G, D, A, E, B, F# major
+G, D, A, E, B, F# major,
 e, b, f#, c#, g#, d# minor
 
 Use Flats:
-F, Bb, Eb, Ab, Db, Gb major
+F, Bb, Eb, Ab, Db, Gb major,
 d, g, c, f, bb, eb minor
 
 The diatonic scales, and all other scales that derive from the
@@ -43,52 +48,17 @@ a "whole step" or "major second" (written as an upper-case "M"). The
 diatonic scales are built using only these two intervals between
 adjacent notes.
 
-Non-diatonic scales can contain other intervals.  An "augmented second"
+Non-diatonic scales can contain other intervals. An "augmented second"
 interval, written "A", has two interceding notes (e.g., from A to C or Db to E)
 or a "whole step" plus a "half step". There are also smaller and larger
 intervals, but they will not figure into this exercise.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @seeksort
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit scale-generator.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
+- @SleeplessByte

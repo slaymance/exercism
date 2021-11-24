@@ -1,5 +1,10 @@
 # Leap
 
+Welcome to Leap on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a year, report if it is a leap year.
 
 The tricky thing here is that a leap year in the Gregorian calendar occurs:
@@ -10,7 +15,7 @@ on every year that is evenly divisible by 4
     unless the year is also evenly divisible by 400
 ```
 
-For example, 1997 is not a leap year, but 1996 is.  1900 is not a leap
+For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap
 year, but 2000 is.
 
 ## Notes
@@ -23,51 +28,25 @@ phenomenon, go watch [this youtube video][video].
 
 [video]: http://www.youtube.com/watch?v=xX96xng7sAE
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @rchavarria
 
-## Requirements
+### Contributed to by
 
-Please `cd` into exercise directory before running all below commands.
+- @ankorGH
+- @draalger
+- @kytrinyx
+- @matthewmorgan
+- @PakkuDon
+- @ryanplusplus
+- @SleeplessByte
+- @tarunvelli
+- @tejasbubane
+- @xarxziux
 
-Install assignment dependencies:
+### Based on
 
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xtest` to
-`test`.
-
-
-## Submitting Solutions
-
-Once you have a solution ready, you can submit it using:
-
-```bash
-exercism submit leap.js
-```
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
-
-## Exercise Source Credits
-
-JavaRanch Cattle Drive, exercise 3 [http://www.javaranch.com/leap.jsp](http://www.javaranch.com/leap.jsp)
-
+JavaRanch Cattle Drive, exercise 3 - http://www.javaranch.com/leap.jsp
